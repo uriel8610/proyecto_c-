@@ -15,5 +15,12 @@ namespace Proyecto_interfaz
         {
             InitializeComponent();
         }
+
+        private void Ingresar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            principal p = new principal();
+            p.Show();
+        }
     }
 }
