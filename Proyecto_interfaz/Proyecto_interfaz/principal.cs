@@ -213,6 +213,12 @@ namespace Proyecto_interfaz
             datos.cerrar();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = dtpInicio.Text.ToString();
+            textBox2.Text = dtpFinal.Text.ToString();
+        }
+
 
 
     }
