@@ -20,6 +20,7 @@ namespace Proyecto_interfaz
         {
             InitializeComponent();
             llenar_campos();
+            llenar_camposEP();
         }
 
 
@@ -44,7 +45,7 @@ namespace Proyecto_interfaz
         }
 
 
-        public void llenar_campos()  //AÚN NO ESTA TERMINADA (esto va en el evento de seleccionar el nombre de un medico)
+        public void llenar_campos()  
         {
             BaseDeDatos bd = new BaseDeDatos();
             datos.Abrir();
@@ -145,5 +146,74 @@ namespace Proyecto_interfaz
             datos.cerrar();
 
         }
+
+        //Boton Editar Paciente: Edita los datos del paciente
+        private void btEditarEP_Click(object sender, EventArgs e)
+        {
+            string sexo;
+             BaseDeDatos bd = new BaseDeDatos();
+            datos.Abrir();
+
+            //Verificar Sexo
+            if (rbFemeninoEP.Checked)
+                sexo = "F";
+            else
+                sexo = "M";
+          
+            consulta = "UPDATE persona p, paciente pa SET p.Nombre='" + cbNombreEP.Text + "',p.Apellido='" + txApellidoEP.Text + "',p.Direccion='" + txDireccionEP.Text + "',p.Telefono='" + txTelefonoEP.Text + "',p.eMail='" + txeMailEP.Text + "',p.Edad=" + Convert.ToInt32(txEdadEP.Text) + ",p.Sexo='" + sexo + "',p.FechaRegistro='" + txfechaRegistroEP.Text + "' WHERE p.nombre='" + cbNombreEP.Text + "' AND pa.idPersona=p.idPersona;";
+            
+            datos.leer(consulta);
+            datos.cerrar();
+
+        }
+
+
+
+        public void llenar_camposEP()
+        {
+            BaseDeDatos bd = new BaseDeDatos();
+            datos.Abrir();
+            
+            consulta = "SELECT p.nombre from persona p, paciente pa WHERE p.idPersona=pa.idPersona";
+            datos.leer(consulta);
+            while (datos.cnLeerConsulta.Read())
+            {
+                cbNombreEP.Items.Add(datos.cnLeerConsulta[0]);
+            }
+
+            datos.cerrar();
+        }
+
+        private void cbNombreEP_SelectedIndexChanged(object sender, EventArgs e) //COMBO DE EDITAR PACIENTES
+        {
+            BaseDeDatos bd = new BaseDeDatos();
+            int i = cbNombreEP.SelectedIndex;
+
+            datos.Abrir();
+            consulta = "SELECT * FROM Persona WHERE Nombre='" + cbNombreEP.Text + "';";
+            datos.leer(consulta);
+
+            while (datos.cnLeerConsulta.Read())
+            {
+                id = Convert.ToInt32(datos.cnLeerConsulta[0].ToString());
+                cbNombreEP.Text = datos.cnLeerConsulta[1].ToString();
+                txApellidoEP.Text = datos.cnLeerConsulta[2].ToString();                
+                txDireccionEP.Text = datos.cnLeerConsulta[3].ToString();
+                txTelefonoEP.Text = datos.cnLeerConsulta[4].ToString();
+                txeMailEP.Text = datos.cnLeerConsulta[5].ToString();                
+                txEdadEP.Text = datos.cnLeerConsulta[6].ToString();
+                txfechaRegistroEP.Text = datos.cnLeerConsulta[8].ToString();
+
+                if (Convert.ToString(datos.cnLeerConsulta[7]) == "F")
+                    rbFemeninoEP.Checked = true;
+                else
+                    rbMasculinoEP.Checked = true;
+            }
+
+            datos.cerrar();
+        }
+
+
+
     }
 }
