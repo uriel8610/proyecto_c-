@@ -16,14 +16,44 @@ namespace Proyecto_interfaz
         string consulta;
         BaseDeDatos datos = new BaseDeDatos();
 
+
+        /// <summary>
+        /// Listas para guardar las especialidades y los IDs
+        /// </summary>
+        List<string> idEspecialidad = new List<string>();
+        List<string> Especialidad = new List<string>();
+
+        /// <summary>
+        /// Se usa para obtener la fecha del sistema 
+        /// </summary>
+        DateTime fechaSistema = DateTime.Now;
+        string fecha;
+
         public principal()
         {
             InitializeComponent();
+            fecha = DateTime.Now.ToString("dd/mm/yyyy");//modulo de agregar medico
             llenar_campos();
             llenar_camposEP();
             llenar_camposEU();
         }
 
+        //MODULO DE AGRGAR MEDICO
+        private void LimpiarCampos()
+        {
+
+            txtNombreAM.Text = string.Empty;
+            txtApellidoAM.Text = string.Empty;
+            txtDireccionAM.Text = string.Empty;
+            txtTelefonoAM.Text = string.Empty;
+            txtEmailAM.Text = string.Empty;
+            txtEdadAM.Text = string.Empty;
+            txtCedulaAM.Text = string.Empty;
+            chFemeninoAM.Checked = false;
+            chMasculinoAM.Checked = false;
+            cbEspecialidadAM.Text = string.Empty;
+
+        }
 
 
         public void llenar_campos()  //Llena el ComboBox de Especialidad de los médicos y el ComboBox de Nombre de los médicos 
@@ -267,6 +297,156 @@ namespace Proyecto_interfaz
 
         private void btEditarEU_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void principal_Load(object sender, EventArgs e)
+        {
+
+            ///<remarks>
+            /// instancia de la clase ConexionBDD en donde se realiza la conexion ODBC
+            /// </remarks> 
+
+            BaseDeDatos c1 = new BaseDeDatos();
+            ///string para realizar consulta 
+            string consulta;
+
+
+
+            consulta = "SELECT * FROM especialidad";
+
+            c1.Abrir();
+            c1.leer(consulta);
+            while (c1.cnLeerConsulta.Read())
+            {
+
+                idEspecialidad.Add(c1.cnLeerConsulta[0].ToString());
+                Especialidad.Add(c1.cnLeerConsulta[1].ToString());
+
+            }
+
+
+            ///Foreach para agregar al comboBox "cbEspecialidades" en la interfaz
+            foreach (string especialidad in Especialidad)
+            {
+                cbEspecialidadAM.Items.Add(especialidad);
+
+
+            }
+
+            c1.cerrar();
+
+        }
+
+        private void btAgregarAM_Click(object sender, EventArgs e)
+        {
+
+            
+            ///estancia de la clase ConexionBDD 
+            ///<remarks>
+            /// clase ConexionBDD en donde se realiza la conexion ODBC
+            /// </remarks>   
+           BaseDeDatos c1 = new BaseDeDatos();
+
+            ///Los siguientes strings son para realizar consultas a la base de datos 
+            string consulta, consulta2, consulta3, consulta4;
+            ///con este char definimos el sexo de la persona 
+            char sexo = 'N';
+            /// es necesario para sacar los IDs de la base de datos
+            string idString = "NULL";
+            ///se utiliza para el comboBox para tomar los IDs
+            string especialidadSelct;
+            /// Se usa para sacar los IDs de las especialidades de la base de datos 
+            int idEspecialidad = 0;
+
+
+
+            ///condiciones para asigar el sexo a la perosna 
+            if (chFemeninoAM.Checked)
+            {
+                sexo = 'F';
+            }
+
+            if (chMasculinoAM.Checked)
+            {
+                sexo = 'M';
+            }
+
+            ///Condiciones por seguridad
+            if (chMasculinoAM.Checked == true && chFemeninoAM.Checked == true)
+            {
+                chFemeninoAM.Checked.Equals(false);
+                chMasculinoAM.Checked.Equals(false);
+
+                MessageBox.Show("Seleccione solo una casilla a la vez");
+            }
+
+            //condiciones para los checkbox
+            if (txtNombreAM.Text == string.Empty || txtApellidoAM.Text == string.Empty || txtDireccionAM.Text == string.Empty || txtTelefonoAM.Text == string.Empty || txtEmailAM.Text == string.Empty || txtEdadAM.Text == string.Empty || txtCedulaAM.Text == string.Empty || cbEspecialidadAM.Text == string.Empty || (chFemeninoAM.Checked == false && chMasculinoAM.Checked == false))
+            {
+
+                MessageBox.Show("Rellene todos los campos por favor ");
+            }
+
+            /*
+             condicion para que haga consultas solo cuando todos los campos estan llenos 
+             */
+            else if ((chFemeninoAM.Checked == true && chMasculinoAM.Checked == false) || (chFemeninoAM.Checked == false && chMasculinoAM.Checked == true))
+            {
+
+
+                ///<summary>
+                /// Insercion a la Base de datos a la tabla Persona 
+                /// </summary> 
+                consulta = " INSERT INTO Persona( Nombre, Apellido, Direccion, Telefono, eMail, Edad, Sexo, fecha )VALUES('" + txtNombreAM.Text + "','" + txtApellidoAM.Text + "','" + txtDireccionAM.Text + "','" + txtDireccionAM.Text + "', '" + txtEmailAM.Text + "'," + txtEdadAM.Text + ",'" + sexo + "', '" + fecha + "');";
+                c1.Abrir();
+                c1.actualizar(consulta);
+                c1.cerrar();
+
+                consulta2 = "SELECT idPersona FROM persona WHERE nombre= '" + txtNombreAM.Text + "' && apellido='" + txtApellidoAM.Text + "';";
+                c1.Abrir();
+                c1.leer(consulta2);
+                while (c1.cnLeerConsulta.Read())
+                {
+                    idString = c1.cnLeerConsulta[0].ToString();
+
+                }
+
+                c1.cerrar();
+
+
+
+                ///<summary>
+                /// Select a la Base de datos a la tabla Especialidad 
+                /// </summary>
+                especialidadSelct = cbEspecialidadAM.SelectedItem.ToString();
+
+                consulta3 = "SELECT idEspecialidad FROM especialidad WHERE descripcion='" + especialidadSelct + "'";
+                c1.Abrir();
+                c1.leer(consulta3);
+
+                while (c1.cnLeerConsulta.Read())
+                {
+                    idEspecialidad = Convert.ToInt32(c1.cnLeerConsulta[0].ToString());
+                }
+                c1.cerrar();
+
+
+
+                ///<summary>
+                /// Insercion a la Base de datos a la Medico 
+                /// </summary>
+                consulta4 = "INSERT INTO Medico( idPersona,Cedula,idEspecialida, estado )VALUES( '" + idString + "','" + txtCedulaAM.Text + "'," + idEspecialidad + ",1);";
+                c1.Abrir();
+                c1.actualizar(consulta4);
+                c1.cerrar();
+
+                ///Mensaje de aviso de insercion correcta 
+                MessageBox.Show("Elemento insertado correctamente");
+
+                ///Funcion para limpiar los elementos de la interfaz
+                LimpiarCampos();
+            }
 
         }
 

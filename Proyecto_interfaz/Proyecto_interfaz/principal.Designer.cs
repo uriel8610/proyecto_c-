@@ -58,6 +58,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.btAgregarAM = new System.Windows.Forms.Button();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.btEditar = new System.Windows.Forms.Button();
             this.gpEstado = new System.Windows.Forms.GroupBox();
@@ -124,7 +125,25 @@
             this.label25 = new System.Windows.Forms.Label();
             this.tabPage11 = new System.Windows.Forms.TabPage();
             this.tabPage15 = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
+            this.lbNombreAM = new System.Windows.Forms.Label();
+            this.lbApellidoAM = new System.Windows.Forms.Label();
+            this.lbDireccionAM = new System.Windows.Forms.Label();
+            this.lbTelefonoAM = new System.Windows.Forms.Label();
+            this.lbEmailAM = new System.Windows.Forms.Label();
+            this.lbEdadAM = new System.Windows.Forms.Label();
+            this.lbCedulaAM = new System.Windows.Forms.Label();
+            this.lbEspecialidadAM = new System.Windows.Forms.Label();
+            this.txtNombreAM = new System.Windows.Forms.TextBox();
+            this.txtApellidoAM = new System.Windows.Forms.TextBox();
+            this.txtDireccionAM = new System.Windows.Forms.TextBox();
+            this.txtTelefonoAM = new System.Windows.Forms.TextBox();
+            this.txtEmailAM = new System.Windows.Forms.TextBox();
+            this.txtEdadAM = new System.Windows.Forms.TextBox();
+            this.txtCedulaAM = new System.Windows.Forms.TextBox();
+            this.cbEspecialidadAM = new System.Windows.Forms.ComboBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.chFemeninoAM = new System.Windows.Forms.CheckBox();
+            this.chMasculinoAM = new System.Windows.Forms.CheckBox();
             this.tcAgregarEspecialidad.SuspendLayout();
             this.tpCita.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -144,6 +163,7 @@
             this.tabPage10.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcAgregarEspecialidad
@@ -437,7 +457,24 @@
             // 
             // tabPage6
             // 
-            this.tabPage6.Controls.Add(this.button2);
+            this.tabPage6.Controls.Add(this.groupBox4);
+            this.tabPage6.Controls.Add(this.cbEspecialidadAM);
+            this.tabPage6.Controls.Add(this.txtCedulaAM);
+            this.tabPage6.Controls.Add(this.txtEdadAM);
+            this.tabPage6.Controls.Add(this.txtEmailAM);
+            this.tabPage6.Controls.Add(this.txtTelefonoAM);
+            this.tabPage6.Controls.Add(this.txtDireccionAM);
+            this.tabPage6.Controls.Add(this.txtApellidoAM);
+            this.tabPage6.Controls.Add(this.txtNombreAM);
+            this.tabPage6.Controls.Add(this.lbEspecialidadAM);
+            this.tabPage6.Controls.Add(this.lbCedulaAM);
+            this.tabPage6.Controls.Add(this.lbEdadAM);
+            this.tabPage6.Controls.Add(this.lbEmailAM);
+            this.tabPage6.Controls.Add(this.lbTelefonoAM);
+            this.tabPage6.Controls.Add(this.lbDireccionAM);
+            this.tabPage6.Controls.Add(this.lbApellidoAM);
+            this.tabPage6.Controls.Add(this.lbNombreAM);
+            this.tabPage6.Controls.Add(this.btAgregarAM);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
@@ -445,6 +482,16 @@
             this.tabPage6.TabIndex = 0;
             this.tabPage6.Text = "Agregar";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // btAgregarAM
+            // 
+            this.btAgregarAM.Location = new System.Drawing.Point(371, 249);
+            this.btAgregarAM.Name = "btAgregarAM";
+            this.btAgregarAM.Size = new System.Drawing.Size(75, 23);
+            this.btAgregarAM.TabIndex = 0;
+            this.btAgregarAM.Text = "Agregar";
+            this.btAgregarAM.UseVisualStyleBackColor = true;
+            this.btAgregarAM.Click += new System.EventHandler(this.btAgregarAM_Click);
             // 
             // tabPage7
             // 
@@ -1085,14 +1132,165 @@
             this.tabPage15.Text = "Especialidad";
             this.tabPage15.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // lbNombreAM
             // 
-            this.button2.Location = new System.Drawing.Point(344, 44);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.lbNombreAM.AutoSize = true;
+            this.lbNombreAM.Location = new System.Drawing.Point(20, 63);
+            this.lbNombreAM.Name = "lbNombreAM";
+            this.lbNombreAM.Size = new System.Drawing.Size(44, 13);
+            this.lbNombreAM.TabIndex = 1;
+            this.lbNombreAM.Text = "Nombre";
+            // 
+            // lbApellidoAM
+            // 
+            this.lbApellidoAM.AutoSize = true;
+            this.lbApellidoAM.Location = new System.Drawing.Point(23, 101);
+            this.lbApellidoAM.Name = "lbApellidoAM";
+            this.lbApellidoAM.Size = new System.Drawing.Size(44, 13);
+            this.lbApellidoAM.TabIndex = 2;
+            this.lbApellidoAM.Text = "Apellido";
+            // 
+            // lbDireccionAM
+            // 
+            this.lbDireccionAM.AutoSize = true;
+            this.lbDireccionAM.Location = new System.Drawing.Point(23, 128);
+            this.lbDireccionAM.Name = "lbDireccionAM";
+            this.lbDireccionAM.Size = new System.Drawing.Size(52, 13);
+            this.lbDireccionAM.TabIndex = 3;
+            this.lbDireccionAM.Text = "Direccion";
+            // 
+            // lbTelefonoAM
+            // 
+            this.lbTelefonoAM.AutoSize = true;
+            this.lbTelefonoAM.Location = new System.Drawing.Point(23, 162);
+            this.lbTelefonoAM.Name = "lbTelefonoAM";
+            this.lbTelefonoAM.Size = new System.Drawing.Size(49, 13);
+            this.lbTelefonoAM.TabIndex = 4;
+            this.lbTelefonoAM.Text = "Telefono";
+            // 
+            // lbEmailAM
+            // 
+            this.lbEmailAM.AutoSize = true;
+            this.lbEmailAM.Location = new System.Drawing.Point(23, 194);
+            this.lbEmailAM.Name = "lbEmailAM";
+            this.lbEmailAM.Size = new System.Drawing.Size(32, 13);
+            this.lbEmailAM.TabIndex = 5;
+            this.lbEmailAM.Text = "Email";
+            // 
+            // lbEdadAM
+            // 
+            this.lbEdadAM.AutoSize = true;
+            this.lbEdadAM.Location = new System.Drawing.Point(293, 63);
+            this.lbEdadAM.Name = "lbEdadAM";
+            this.lbEdadAM.Size = new System.Drawing.Size(32, 13);
+            this.lbEdadAM.TabIndex = 6;
+            this.lbEdadAM.Text = "Edad";
+            // 
+            // lbCedulaAM
+            // 
+            this.lbCedulaAM.AutoSize = true;
+            this.lbCedulaAM.Location = new System.Drawing.Point(293, 93);
+            this.lbCedulaAM.Name = "lbCedulaAM";
+            this.lbCedulaAM.Size = new System.Drawing.Size(40, 13);
+            this.lbCedulaAM.TabIndex = 7;
+            this.lbCedulaAM.Text = "Cedula";
+            // 
+            // lbEspecialidadAM
+            // 
+            this.lbEspecialidadAM.AutoSize = true;
+            this.lbEspecialidadAM.Location = new System.Drawing.Point(293, 128);
+            this.lbEspecialidadAM.Name = "lbEspecialidadAM";
+            this.lbEspecialidadAM.Size = new System.Drawing.Size(67, 13);
+            this.lbEspecialidadAM.TabIndex = 8;
+            this.lbEspecialidadAM.Text = "Especialidad";
+            // 
+            // txtNombreAM
+            // 
+            this.txtNombreAM.Location = new System.Drawing.Point(100, 63);
+            this.txtNombreAM.Name = "txtNombreAM";
+            this.txtNombreAM.Size = new System.Drawing.Size(100, 20);
+            this.txtNombreAM.TabIndex = 9;
+            // 
+            // txtApellidoAM
+            // 
+            this.txtApellidoAM.Location = new System.Drawing.Point(100, 93);
+            this.txtApellidoAM.Name = "txtApellidoAM";
+            this.txtApellidoAM.Size = new System.Drawing.Size(100, 20);
+            this.txtApellidoAM.TabIndex = 10;
+            // 
+            // txtDireccionAM
+            // 
+            this.txtDireccionAM.Location = new System.Drawing.Point(100, 119);
+            this.txtDireccionAM.Name = "txtDireccionAM";
+            this.txtDireccionAM.Size = new System.Drawing.Size(100, 20);
+            this.txtDireccionAM.TabIndex = 11;
+            // 
+            // txtTelefonoAM
+            // 
+            this.txtTelefonoAM.Location = new System.Drawing.Point(100, 155);
+            this.txtTelefonoAM.Name = "txtTelefonoAM";
+            this.txtTelefonoAM.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefonoAM.TabIndex = 12;
+            // 
+            // txtEmailAM
+            // 
+            this.txtEmailAM.Location = new System.Drawing.Point(100, 187);
+            this.txtEmailAM.Name = "txtEmailAM";
+            this.txtEmailAM.Size = new System.Drawing.Size(100, 20);
+            this.txtEmailAM.TabIndex = 13;
+            // 
+            // txtEdadAM
+            // 
+            this.txtEdadAM.Location = new System.Drawing.Point(371, 55);
+            this.txtEdadAM.Name = "txtEdadAM";
+            this.txtEdadAM.Size = new System.Drawing.Size(121, 20);
+            this.txtEdadAM.TabIndex = 14;
+            // 
+            // txtCedulaAM
+            // 
+            this.txtCedulaAM.Location = new System.Drawing.Point(371, 93);
+            this.txtCedulaAM.Name = "txtCedulaAM";
+            this.txtCedulaAM.Size = new System.Drawing.Size(121, 20);
+            this.txtCedulaAM.TabIndex = 15;
+            // 
+            // cbEspecialidadAM
+            // 
+            this.cbEspecialidadAM.FormattingEnabled = true;
+            this.cbEspecialidadAM.Location = new System.Drawing.Point(371, 128);
+            this.cbEspecialidadAM.Name = "cbEspecialidadAM";
+            this.cbEspecialidadAM.Size = new System.Drawing.Size(121, 21);
+            this.cbEspecialidadAM.TabIndex = 16;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.chMasculinoAM);
+            this.groupBox4.Controls.Add(this.chFemeninoAM);
+            this.groupBox4.Location = new System.Drawing.Point(313, 187);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(158, 40);
+            this.groupBox4.TabIndex = 17;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Sexo";
+            // 
+            // chFemeninoAM
+            // 
+            this.chFemeninoAM.AutoSize = true;
+            this.chFemeninoAM.Location = new System.Drawing.Point(7, 20);
+            this.chFemeninoAM.Name = "chFemeninoAM";
+            this.chFemeninoAM.Size = new System.Drawing.Size(32, 17);
+            this.chFemeninoAM.TabIndex = 0;
+            this.chFemeninoAM.Text = "F";
+            this.chFemeninoAM.UseVisualStyleBackColor = true;
+            // 
+            // chMasculinoAM
+            // 
+            this.chMasculinoAM.AutoSize = true;
+            this.chMasculinoAM.Location = new System.Drawing.Point(94, 17);
+            this.chMasculinoAM.Name = "chMasculinoAM";
+            this.chMasculinoAM.Size = new System.Drawing.Size(35, 17);
+            this.chMasculinoAM.TabIndex = 1;
+            this.chMasculinoAM.Text = "M";
+            this.chMasculinoAM.UseVisualStyleBackColor = true;
             // 
             // principal
             // 
@@ -1102,6 +1300,7 @@
             this.Controls.Add(this.tcAgregarEspecialidad);
             this.Name = "principal";
             this.Text = "principal";
+            this.Load += new System.EventHandler(this.principal_Load);
             this.tcAgregarEspecialidad.ResumeLayout(false);
             this.tpCita.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
@@ -1114,6 +1313,7 @@
             this.tabPage2.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
             this.gpEstado.ResumeLayout(false);
@@ -1130,6 +1330,8 @@
             this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1232,6 +1434,25 @@
         private System.Windows.Forms.ComboBox cbTipoEU;
         private System.Windows.Forms.TextBox txtContraseñaEU;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btAgregarAM;
+        private System.Windows.Forms.Label lbEspecialidadAM;
+        private System.Windows.Forms.Label lbCedulaAM;
+        private System.Windows.Forms.Label lbEdadAM;
+        private System.Windows.Forms.Label lbEmailAM;
+        private System.Windows.Forms.Label lbTelefonoAM;
+        private System.Windows.Forms.Label lbDireccionAM;
+        private System.Windows.Forms.Label lbApellidoAM;
+        private System.Windows.Forms.Label lbNombreAM;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.CheckBox chMasculinoAM;
+        private System.Windows.Forms.CheckBox chFemeninoAM;
+        private System.Windows.Forms.ComboBox cbEspecialidadAM;
+        private System.Windows.Forms.TextBox txtCedulaAM;
+        private System.Windows.Forms.TextBox txtEdadAM;
+        private System.Windows.Forms.TextBox txtEmailAM;
+        private System.Windows.Forms.TextBox txtTelefonoAM;
+        private System.Windows.Forms.TextBox txtDireccionAM;
+        private System.Windows.Forms.TextBox txtApellidoAM;
+        private System.Windows.Forms.TextBox txtNombreAM;
     }
 }
