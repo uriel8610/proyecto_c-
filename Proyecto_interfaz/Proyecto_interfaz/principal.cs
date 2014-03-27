@@ -21,31 +21,12 @@ namespace Proyecto_interfaz
             InitializeComponent();
             llenar_campos();
             llenar_camposEP();
+            llenar_camposEU();
         }
 
 
-        //Llena ComboBox de Médicos
-        public void llenar_Medicos()
-        {
-            BaseDeDatos bd = new BaseDeDatos();
-            datos.Abrir();
 
-            consulta = "SELECT Descripcion FROM especialidad";
-
-            datos.leer(consulta);
-
-            while (datos.cnLeerConsulta.Read())
-            {
-                cbEspecialidad.Items.Add(datos.cnLeerConsulta[0]);
-            }
-
-
-            datos.cerrar();
-
-        }
-
-
-        public void llenar_campos()  
+        public void llenar_campos()  //Llena el ComboBox de Especialidad de los médicos y el ComboBox de Nombre de los médicos 
         {
             BaseDeDatos bd = new BaseDeDatos();
             datos.Abrir();
@@ -73,8 +54,9 @@ namespace Proyecto_interfaz
         {
 
         }
+        
 
-        private void btEditar_Click(object sender, EventArgs e)
+        private void btEditar_Click(object sender, EventArgs e) //Accion del boton Editar Médico (Envía las actualizaciones a la BD)
         {
             string sexo;
             string estado;
@@ -102,6 +84,8 @@ namespace Proyecto_interfaz
             datos.cerrar();
         }
 
+
+        //Llena los datos del Medico a Editar al seleccionar un item del ComboBox con los nombres de los médicos
         private void cbNombre_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -127,10 +111,9 @@ namespace Proyecto_interfaz
                     rbF.Checked = true;
                 else
                     rbM.Checked = true;
-
             }
 
-            consulta = "SELECT m.cedula,e.descripcion,m.estado FROM persona p,medico m,especialidad e WHERE p.nombre='" + cbNombre.Text + "' AND p.idPersona = m.idPersona and m.idEspecialidad=e.idEspecialidad";
+                        consulta = "SELECT m.cedula,e.descripcion,m.estado FROM persona p,medico m,especialidad e WHERE p.nombre='" + cbNombre.Text + "' AND p.idPersona = m.idPersona and m.idEspecialidad=e.idEspecialidad";
             datos.leer(consulta);
             while (datos.cnLeerConsulta.Read())
             {
@@ -146,6 +129,7 @@ namespace Proyecto_interfaz
             datos.cerrar();
 
         }
+
 
         //Boton Editar Paciente: Edita los datos del paciente
         private void btEditarEP_Click(object sender, EventArgs e)
@@ -169,7 +153,7 @@ namespace Proyecto_interfaz
 
 
 
-        public void llenar_camposEP()
+        public void llenar_camposEP() //llena el combobox de los nombres de los pacientes que se pueden Editar
         {
             BaseDeDatos bd = new BaseDeDatos();
             datos.Abrir();
@@ -219,6 +203,77 @@ namespace Proyecto_interfaz
             textBox2.Text = dtpFinal.Text.ToString();
         }
 
+
+        public void llenar_camposEU()  //Llena el ComboBox de Nombre de los Usuarios 
+        {
+            BaseDeDatos bd = new BaseDeDatos();
+            datos.Abrir();
+
+            consulta = "select p.nombre from persona p, usuario u where u.idPersona=p.idPersona";
+            datos.leer(consulta);
+            while (datos.cnLeerConsulta.Read())
+            {
+                cbNombreEU.Items.Add(datos.cnLeerConsulta[0]);
+            }
+
+            datos.cerrar();
+        }
+
+
+        private void cbNombreEU_SelectedIndexChanged(object sender, EventArgs e) //Llena el ComboBox de los nombres de Usuarios que se pueden editar
+        {
+            BaseDeDatos bd = new BaseDeDatos();
+           // int i = cbNombre.SelectedIndex;
+
+            datos.Abrir();
+            consulta = "SELECT * FROM Persona WHERE Nombre='" + cbNombreEU.Text + "';";
+            datos.leer(consulta);
+
+            while (datos.cnLeerConsulta.Read())
+            {
+                id = Convert.ToInt32(datos.cnLeerConsulta[0].ToString());
+                cbNombreEU.Text = datos.cnLeerConsulta[1].ToString();
+                txtApellidoEU.Text = datos.cnLeerConsulta[2].ToString();
+                txtDireccionEU.Text = datos.cnLeerConsulta[3].ToString();
+                txtTelefonoEU.Text = datos.cnLeerConsulta[4].ToString();
+                txteMailEU.Text = datos.cnLeerConsulta[5].ToString();
+                txtEdadEU.Text = datos.cnLeerConsulta[6].ToString();
+                txtFechaRegistroEU.Text = datos.cnLeerConsulta[8].ToString();
+
+                if (Convert.ToString(datos.cnLeerConsulta[7]) == "F")
+                    rbFemeninoEU.Checked = true;
+                else
+                    rbMasculinoEU.Checked = true;
+            }
+
+            datos.cerrar();
+
+           /* consulta = "SELECT e.descripcion,m.estado FROM persona p,medico m,especialidad e WHERE p.nombre='" + cbNombre.Text + "' AND p.idPersona = m.idPersona and m.idEspecialidad=e.idEspecialidad";
+            datos.leer(consulta);
+            while (datos.cnLeerConsulta.Read())
+            {
+                //txtCedula.Text = datos.cnLeerConsulta[0].ToString();
+                cbEspecialidad.Text = datos.cnLeerConsulta[1].ToString();
+
+                if (Convert.ToString(datos.cnLeerConsulta[2]) == "Activo")
+                    rbAlta.Checked = true;
+                else
+                    rbBaja.Checked = true;
+            }
+            */
+            
+
+        }
+
+        private void btEditarEU_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+
+        
 
 
     }
