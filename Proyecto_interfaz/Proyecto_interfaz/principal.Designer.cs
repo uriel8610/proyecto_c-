@@ -97,6 +97,10 @@
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.txtContraseñaEU = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.cbTipoEU = new System.Windows.Forms.ComboBox();
             this.btEditarEU = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.rbAltaEU = new System.Windows.Forms.RadioButton();
@@ -120,10 +124,7 @@
             this.label25 = new System.Windows.Forms.Label();
             this.tabPage11 = new System.Windows.Forms.TabPage();
             this.tabPage15 = new System.Windows.Forms.TabPage();
-            this.cbTipoEU = new System.Windows.Forms.ComboBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.txtContraseñaEU = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.tcAgregarEspecialidad.SuspendLayout();
             this.tpCita.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -133,6 +134,7 @@
             this.groupBox2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabControl2.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.gpEstado.SuspendLayout();
             this.gpSexo.SuspendLayout();
@@ -435,6 +437,7 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.button2);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
@@ -841,6 +844,39 @@
             this.tabPage10.Text = "Editar";
             this.tabPage10.UseVisualStyleBackColor = true;
             // 
+            // txtContraseñaEU
+            // 
+            this.txtContraseñaEU.Location = new System.Drawing.Point(115, 219);
+            this.txtContraseñaEU.Name = "txtContraseñaEU";
+            this.txtContraseñaEU.Size = new System.Drawing.Size(194, 20);
+            this.txtContraseñaEU.TabIndex = 104;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(30, 219);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(61, 13);
+            this.label28.TabIndex = 103;
+            this.label28.Text = "Contraseña";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(33, 258);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(28, 13);
+            this.label26.TabIndex = 100;
+            this.label26.Text = "Tipo";
+            // 
+            // cbTipoEU
+            // 
+            this.cbTipoEU.FormattingEnabled = true;
+            this.cbTipoEU.Location = new System.Drawing.Point(115, 255);
+            this.cbTipoEU.Name = "cbTipoEU";
+            this.cbTipoEU.Size = new System.Drawing.Size(194, 21);
+            this.cbTipoEU.TabIndex = 99;
+            // 
             // btEditarEU
             // 
             this.btEditarEU.Location = new System.Drawing.Point(358, 242);
@@ -1049,38 +1085,14 @@
             this.tabPage15.Text = "Especialidad";
             this.tabPage15.UseVisualStyleBackColor = true;
             // 
-            // cbTipoEU
+            // button2
             // 
-            this.cbTipoEU.FormattingEnabled = true;
-            this.cbTipoEU.Location = new System.Drawing.Point(115, 255);
-            this.cbTipoEU.Name = "cbTipoEU";
-            this.cbTipoEU.Size = new System.Drawing.Size(194, 21);
-            this.cbTipoEU.TabIndex = 99;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(33, 258);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(28, 13);
-            this.label26.TabIndex = 100;
-            this.label26.Text = "Tipo";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(30, 219);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(61, 13);
-            this.label28.TabIndex = 103;
-            this.label28.Text = "Contraseña";
-            // 
-            // txtContraseñaEU
-            // 
-            this.txtContraseñaEU.Location = new System.Drawing.Point(115, 219);
-            this.txtContraseñaEU.Name = "txtContraseñaEU";
-            this.txtContraseñaEU.Size = new System.Drawing.Size(194, 20);
-            this.txtContraseñaEU.TabIndex = 104;
+            this.button2.Location = new System.Drawing.Point(344, 44);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // principal
             // 
@@ -1101,6 +1113,7 @@
             this.groupBox2.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
+            this.tabPage6.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
             this.gpEstado.ResumeLayout(false);
@@ -1219,5 +1232,6 @@
         private System.Windows.Forms.ComboBox cbTipoEU;
         private System.Windows.Forms.TextBox txtContraseñaEU;
         private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Button button2;
     }
 }
