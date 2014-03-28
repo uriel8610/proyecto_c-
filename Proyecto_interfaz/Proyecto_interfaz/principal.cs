@@ -460,6 +460,35 @@ namespace Proyecto_interfaz
 
         }
 
+        private void btAltaM_Click(object sender, EventArgs e)
+        {
+
+            string consulta = "SELECT  p.Nombre, p.Apellido, p.Direccion, m.Cedula, m.Estado FROM Medico m, Persona p WHERE p.idPersona = m.idPersona && Estado='Alta'";
+            datos.Abrir();
+            datos.leer(consulta);
+
+
+            // DataRow dr;
+            dgvAltaBajaM.Columns.Add("Nombre", "Nombre");
+            dgvAltaBajaM.Columns.Add("Apellido", "Apellido");
+            dgvAltaBajaM.Columns.Add("Direccion", "Direccion");
+            dgvAltaBajaM.Columns.Add("Cedula", "Cedula");
+            dgvAltaBajaM.Columns.Add("Estado", "Estado");
+            while (datos.cnLeerConsulta.Read())
+            {
+                int renglon = dgvAltaBajaM.Rows.Add();
+
+                dgvAltaBajaM.Rows[renglon].Cells["Nombre"].Value = datos.cnLeerConsulta[0].ToString();
+                dgvAltaBajaM.Rows[renglon].Cells["Apellido"].Value = datos.cnLeerConsulta[1].ToString();
+                dgvAltaBajaM.Rows[renglon].Cells["Direccion"].Value = datos.cnLeerConsulta[2].ToString();
+                dgvAltaBajaM.Rows[renglon].Cells["Cedula"].Value = datos.cnLeerConsulta[3].ToString();
+                dgvAltaBajaM.Rows[renglon].Cells["Estado"].Value = datos.cnLeerConsulta[4].ToString();
+            }
+           
+
+
+        }
+
 
 
         
