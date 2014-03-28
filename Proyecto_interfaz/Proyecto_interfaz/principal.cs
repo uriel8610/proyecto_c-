@@ -455,6 +455,11 @@ namespace Proyecto_interfaz
 
         }
 
+        private void label32_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
 
         

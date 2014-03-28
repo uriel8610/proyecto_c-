@@ -158,12 +158,25 @@
             this.label25 = new System.Windows.Forms.Label();
             this.tabPage11 = new System.Windows.Forms.TabPage();
             this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.cbPacientes = new System.Windows.Forms.ComboBox();
+            this.cbMedicos = new System.Windows.Forms.ComboBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.cita = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.fechaActual = new System.Windows.Forms.DateTimePicker();
+            this.cbHorario = new System.Windows.Forms.ComboBox();
+            this.horaActual = new System.Windows.Forms.TextBox();
+            this.Guardar = new System.Windows.Forms.Button();
             this.tcAgregarEspecialidad.SuspendLayout();
             this.tpCita.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage16.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.tabPage12.SuspendLayout();
             this.tabControl4.SuspendLayout();
             this.tabPage14.SuspendLayout();
@@ -196,7 +209,6 @@
             this.tcAgregarEspecialidad.SelectedIndex = 0;
             this.tcAgregarEspecialidad.Size = new System.Drawing.Size(587, 418);
             this.tcAgregarEspecialidad.TabIndex = 0;
-            this.tcAgregarEspecialidad.SelectedIndexChanged += new System.EventHandler(this.co);
             // 
             // tpCita
             // 
@@ -369,6 +381,18 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.Guardar);
+            this.tabPage5.Controls.Add(this.horaActual);
+            this.tabPage5.Controls.Add(this.cbHorario);
+            this.tabPage5.Controls.Add(this.fechaActual);
+            this.tabPage5.Controls.Add(this.label32);
+            this.tabPage5.Controls.Add(this.label31);
+            this.tabPage5.Controls.Add(this.label30);
+            this.tabPage5.Controls.Add(this.label29);
+            this.tabPage5.Controls.Add(this.cita);
+            this.tabPage5.Controls.Add(this.label27);
+            this.tabPage5.Controls.Add(this.cbMedicos);
+            this.tabPage5.Controls.Add(this.cbPacientes);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
@@ -1448,6 +1472,108 @@
             this.tabPage15.Text = "Especialidad";
             this.tabPage15.UseVisualStyleBackColor = true;
             // 
+            // cbPacientes
+            // 
+            this.cbPacientes.FormattingEnabled = true;
+            this.cbPacientes.Location = new System.Drawing.Point(87, 91);
+            this.cbPacientes.Name = "cbPacientes";
+            this.cbPacientes.Size = new System.Drawing.Size(213, 21);
+            this.cbPacientes.TabIndex = 0;
+            // 
+            // cbMedicos
+            // 
+            this.cbMedicos.FormattingEnabled = true;
+            this.cbMedicos.Location = new System.Drawing.Point(87, 64);
+            this.cbMedicos.Name = "cbMedicos";
+            this.cbMedicos.Size = new System.Drawing.Size(213, 21);
+            this.cbMedicos.TabIndex = 1;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(6, 64);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(42, 13);
+            this.label27.TabIndex = 2;
+            this.label27.Text = "Medico";
+            // 
+            // cita
+            // 
+            this.cita.AutoSize = true;
+            this.cita.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cita.Location = new System.Drawing.Point(150, 13);
+            this.cita.Name = "cita";
+            this.cita.Size = new System.Drawing.Size(0, 30);
+            this.cita.TabIndex = 3;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(6, 91);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(49, 13);
+            this.label29.TabIndex = 4;
+            this.label29.Text = "Paciente";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(6, 118);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(41, 13);
+            this.label30.TabIndex = 5;
+            this.label30.Text = "Horario";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(6, 143);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(70, 13);
+            this.label31.TabIndex = 6;
+            this.label31.Text = "Fecha Actual";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(6, 170);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(63, 13);
+            this.label32.TabIndex = 7;
+            this.label32.Text = "Hora Actual";
+            this.label32.Click += new System.EventHandler(this.label32_Click);
+            // 
+            // fechaActual
+            // 
+            this.fechaActual.Location = new System.Drawing.Point(87, 143);
+            this.fechaActual.Name = "fechaActual";
+            this.fechaActual.Size = new System.Drawing.Size(213, 20);
+            this.fechaActual.TabIndex = 8;
+            // 
+            // cbHorario
+            // 
+            this.cbHorario.FormattingEnabled = true;
+            this.cbHorario.Location = new System.Drawing.Point(87, 115);
+            this.cbHorario.Name = "cbHorario";
+            this.cbHorario.Size = new System.Drawing.Size(213, 21);
+            this.cbHorario.TabIndex = 9;
+            // 
+            // horaActual
+            // 
+            this.horaActual.Location = new System.Drawing.Point(87, 169);
+            this.horaActual.Name = "horaActual";
+            this.horaActual.Size = new System.Drawing.Size(213, 20);
+            this.horaActual.TabIndex = 10;
+            // 
+            // Guardar
+            // 
+            this.Guardar.Location = new System.Drawing.Point(423, 245);
+            this.Guardar.Name = "Guardar";
+            this.Guardar.Size = new System.Drawing.Size(64, 20);
+            this.Guardar.TabIndex = 11;
+            this.Guardar.Text = "Guardar";
+            this.Guardar.UseVisualStyleBackColor = true;
+            // 
             // principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1464,6 +1590,8 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.tabPage12.ResumeLayout(false);
             this.tabControl4.ResumeLayout(false);
             this.tabPage14.ResumeLayout(false);
@@ -1628,5 +1756,17 @@
         private System.Windows.Forms.RadioButton M3;
         private System.Windows.Forms.RadioButton M2;
         private System.Windows.Forms.RadioButton M1;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label cita;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.ComboBox cbMedicos;
+        private System.Windows.Forms.ComboBox cbPacientes;
+        private System.Windows.Forms.Button Guardar;
+        private System.Windows.Forms.TextBox horaActual;
+        private System.Windows.Forms.ComboBox cbHorario;
+        private System.Windows.Forms.DateTimePicker fechaActual;
     }
 }
