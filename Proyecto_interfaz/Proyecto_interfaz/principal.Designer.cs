@@ -32,6 +32,20 @@
             this.tpCita = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage16 = new System.Windows.Forms.TabPage();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.medico5 = new System.Windows.Forms.Label();
+            this.medico4 = new System.Windows.Forms.Label();
+            this.medico3 = new System.Windows.Forms.Label();
+            this.medico2 = new System.Windows.Forms.Label();
+            this.medico1 = new System.Windows.Forms.Label();
+            this.M5 = new System.Windows.Forms.RadioButton();
+            this.M4 = new System.Windows.Forms.RadioButton();
+            this.M3 = new System.Windows.Forms.RadioButton();
+            this.M2 = new System.Windows.Forms.RadioButton();
+            this.M1 = new System.Windows.Forms.RadioButton();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage12 = new System.Windows.Forms.TabPage();
             this.tabControl4 = new System.Windows.Forms.TabControl();
@@ -58,6 +72,25 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.chMasculinoAM = new System.Windows.Forms.CheckBox();
+            this.chFemeninoAM = new System.Windows.Forms.CheckBox();
+            this.cbEspecialidadAM = new System.Windows.Forms.ComboBox();
+            this.txtCedulaAM = new System.Windows.Forms.TextBox();
+            this.txtEdadAM = new System.Windows.Forms.TextBox();
+            this.txtEmailAM = new System.Windows.Forms.TextBox();
+            this.txtTelefonoAM = new System.Windows.Forms.TextBox();
+            this.txtDireccionAM = new System.Windows.Forms.TextBox();
+            this.txtApellidoAM = new System.Windows.Forms.TextBox();
+            this.txtNombreAM = new System.Windows.Forms.TextBox();
+            this.lbEspecialidadAM = new System.Windows.Forms.Label();
+            this.lbCedulaAM = new System.Windows.Forms.Label();
+            this.lbEdadAM = new System.Windows.Forms.Label();
+            this.lbEmailAM = new System.Windows.Forms.Label();
+            this.lbTelefonoAM = new System.Windows.Forms.Label();
+            this.lbDireccionAM = new System.Windows.Forms.Label();
+            this.lbApellidoAM = new System.Windows.Forms.Label();
+            this.lbNombreAM = new System.Windows.Forms.Label();
             this.btAgregarAM = new System.Windows.Forms.Button();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.btEditar = new System.Windows.Forms.Button();
@@ -125,28 +158,12 @@
             this.label25 = new System.Windows.Forms.Label();
             this.tabPage11 = new System.Windows.Forms.TabPage();
             this.tabPage15 = new System.Windows.Forms.TabPage();
-            this.lbNombreAM = new System.Windows.Forms.Label();
-            this.lbApellidoAM = new System.Windows.Forms.Label();
-            this.lbDireccionAM = new System.Windows.Forms.Label();
-            this.lbTelefonoAM = new System.Windows.Forms.Label();
-            this.lbEmailAM = new System.Windows.Forms.Label();
-            this.lbEdadAM = new System.Windows.Forms.Label();
-            this.lbCedulaAM = new System.Windows.Forms.Label();
-            this.lbEspecialidadAM = new System.Windows.Forms.Label();
-            this.txtNombreAM = new System.Windows.Forms.TextBox();
-            this.txtApellidoAM = new System.Windows.Forms.TextBox();
-            this.txtDireccionAM = new System.Windows.Forms.TextBox();
-            this.txtTelefonoAM = new System.Windows.Forms.TextBox();
-            this.txtEmailAM = new System.Windows.Forms.TextBox();
-            this.txtEdadAM = new System.Windows.Forms.TextBox();
-            this.txtCedulaAM = new System.Windows.Forms.TextBox();
-            this.cbEspecialidadAM = new System.Windows.Forms.ComboBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.chFemeninoAM = new System.Windows.Forms.CheckBox();
-            this.chMasculinoAM = new System.Windows.Forms.CheckBox();
             this.tcAgregarEspecialidad.SuspendLayout();
             this.tpCita.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.tabPage16.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.tabPage12.SuspendLayout();
             this.tabControl4.SuspendLayout();
             this.tabPage14.SuspendLayout();
@@ -154,6 +171,7 @@
             this.tabPage2.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.gpEstado.SuspendLayout();
             this.gpSexo.SuspendLayout();
@@ -163,7 +181,6 @@
             this.tabPage10.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcAgregarEspecialidad
@@ -179,6 +196,7 @@
             this.tcAgregarEspecialidad.SelectedIndex = 0;
             this.tcAgregarEspecialidad.Size = new System.Drawing.Size(587, 418);
             this.tcAgregarEspecialidad.TabIndex = 0;
+            this.tcAgregarEspecialidad.SelectedIndexChanged += new System.EventHandler(this.co);
             // 
             // tpCita
             // 
@@ -194,11 +212,12 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage16);
             this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Location = new System.Drawing.Point(6, 65);
+            this.tabControl1.Location = new System.Drawing.Point(6, 67);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(531, 217);
+            this.tabControl1.Size = new System.Drawing.Size(563, 329);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage3
@@ -206,17 +225,154 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(523, 191);
+            this.tabPage3.Size = new System.Drawing.Size(555, 303);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Agregar";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage16
+            // 
+            this.tabPage16.Controls.Add(this.groupBox6);
+            this.tabPage16.Controls.Add(this.groupBox5);
+            this.tabPage16.Location = new System.Drawing.Point(4, 22);
+            this.tabPage16.Name = "tabPage16";
+            this.tabPage16.Size = new System.Drawing.Size(555, 303);
+            this.tabPage16.TabIndex = 2;
+            this.tabPage16.Text = "Ver";
+            this.tabPage16.UseVisualStyleBackColor = true;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.monthCalendar1);
+            this.groupBox6.Location = new System.Drawing.Point(248, 29);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(288, 215);
+            this.groupBox6.TabIndex = 1;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Informacion";
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(50, 41);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 0;
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.medico5);
+            this.groupBox5.Controls.Add(this.medico4);
+            this.groupBox5.Controls.Add(this.medico3);
+            this.groupBox5.Controls.Add(this.medico2);
+            this.groupBox5.Controls.Add(this.medico1);
+            this.groupBox5.Controls.Add(this.M5);
+            this.groupBox5.Controls.Add(this.M4);
+            this.groupBox5.Controls.Add(this.M3);
+            this.groupBox5.Controls.Add(this.M2);
+            this.groupBox5.Controls.Add(this.M1);
+            this.groupBox5.Location = new System.Drawing.Point(3, 29);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(199, 192);
+            this.groupBox5.TabIndex = 0;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Medicos";
+            // 
+            // medico5
+            // 
+            this.medico5.AutoSize = true;
+            this.medico5.Location = new System.Drawing.Point(38, 169);
+            this.medico5.Name = "medico5";
+            this.medico5.Size = new System.Drawing.Size(0, 13);
+            this.medico5.TabIndex = 9;
+            // 
+            // medico4
+            // 
+            this.medico4.AutoSize = true;
+            this.medico4.Location = new System.Drawing.Point(38, 137);
+            this.medico4.Name = "medico4";
+            this.medico4.Size = new System.Drawing.Size(0, 13);
+            this.medico4.TabIndex = 8;
+            // 
+            // medico3
+            // 
+            this.medico3.AutoSize = true;
+            this.medico3.Location = new System.Drawing.Point(38, 98);
+            this.medico3.Name = "medico3";
+            this.medico3.Size = new System.Drawing.Size(0, 13);
+            this.medico3.TabIndex = 7;
+            // 
+            // medico2
+            // 
+            this.medico2.AutoSize = true;
+            this.medico2.Location = new System.Drawing.Point(37, 58);
+            this.medico2.Name = "medico2";
+            this.medico2.Size = new System.Drawing.Size(0, 13);
+            this.medico2.TabIndex = 6;
+            // 
+            // medico1
+            // 
+            this.medico1.AutoSize = true;
+            this.medico1.Location = new System.Drawing.Point(38, 27);
+            this.medico1.Name = "medico1";
+            this.medico1.Size = new System.Drawing.Size(0, 13);
+            this.medico1.TabIndex = 5;
+            // 
+            // M5
+            // 
+            this.M5.AutoSize = true;
+            this.M5.Location = new System.Drawing.Point(14, 169);
+            this.M5.Name = "M5";
+            this.M5.Size = new System.Drawing.Size(14, 13);
+            this.M5.TabIndex = 4;
+            this.M5.TabStop = true;
+            this.M5.UseVisualStyleBackColor = true;
+            // 
+            // M4
+            // 
+            this.M4.AutoSize = true;
+            this.M4.Location = new System.Drawing.Point(14, 137);
+            this.M4.Name = "M4";
+            this.M4.Size = new System.Drawing.Size(14, 13);
+            this.M4.TabIndex = 3;
+            this.M4.TabStop = true;
+            this.M4.UseVisualStyleBackColor = true;
+            // 
+            // M3
+            // 
+            this.M3.AutoSize = true;
+            this.M3.Location = new System.Drawing.Point(14, 98);
+            this.M3.Name = "M3";
+            this.M3.Size = new System.Drawing.Size(14, 13);
+            this.M3.TabIndex = 2;
+            this.M3.TabStop = true;
+            this.M3.UseVisualStyleBackColor = true;
+            // 
+            // M2
+            // 
+            this.M2.AutoSize = true;
+            this.M2.Location = new System.Drawing.Point(14, 60);
+            this.M2.Name = "M2";
+            this.M2.Size = new System.Drawing.Size(14, 13);
+            this.M2.TabIndex = 1;
+            this.M2.TabStop = true;
+            this.M2.UseVisualStyleBackColor = true;
+            // 
+            // M1
+            // 
+            this.M1.AutoSize = true;
+            this.M1.Location = new System.Drawing.Point(14, 25);
+            this.M1.Name = "M1";
+            this.M1.Size = new System.Drawing.Size(14, 13);
+            this.M1.TabIndex = 0;
+            this.M1.TabStop = true;
+            this.M1.UseVisualStyleBackColor = true;
             // 
             // tabPage5
             // 
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(523, 191);
+            this.tabPage5.Size = new System.Drawing.Size(555, 303);
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "Editar";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -482,6 +638,166 @@
             this.tabPage6.TabIndex = 0;
             this.tabPage6.Text = "Agregar";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.chMasculinoAM);
+            this.groupBox4.Controls.Add(this.chFemeninoAM);
+            this.groupBox4.Location = new System.Drawing.Point(313, 187);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(158, 40);
+            this.groupBox4.TabIndex = 17;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Sexo";
+            // 
+            // chMasculinoAM
+            // 
+            this.chMasculinoAM.AutoSize = true;
+            this.chMasculinoAM.Location = new System.Drawing.Point(94, 17);
+            this.chMasculinoAM.Name = "chMasculinoAM";
+            this.chMasculinoAM.Size = new System.Drawing.Size(35, 17);
+            this.chMasculinoAM.TabIndex = 1;
+            this.chMasculinoAM.Text = "M";
+            this.chMasculinoAM.UseVisualStyleBackColor = true;
+            // 
+            // chFemeninoAM
+            // 
+            this.chFemeninoAM.AutoSize = true;
+            this.chFemeninoAM.Location = new System.Drawing.Point(7, 20);
+            this.chFemeninoAM.Name = "chFemeninoAM";
+            this.chFemeninoAM.Size = new System.Drawing.Size(32, 17);
+            this.chFemeninoAM.TabIndex = 0;
+            this.chFemeninoAM.Text = "F";
+            this.chFemeninoAM.UseVisualStyleBackColor = true;
+            // 
+            // cbEspecialidadAM
+            // 
+            this.cbEspecialidadAM.FormattingEnabled = true;
+            this.cbEspecialidadAM.Location = new System.Drawing.Point(371, 128);
+            this.cbEspecialidadAM.Name = "cbEspecialidadAM";
+            this.cbEspecialidadAM.Size = new System.Drawing.Size(121, 21);
+            this.cbEspecialidadAM.TabIndex = 16;
+            // 
+            // txtCedulaAM
+            // 
+            this.txtCedulaAM.Location = new System.Drawing.Point(371, 93);
+            this.txtCedulaAM.Name = "txtCedulaAM";
+            this.txtCedulaAM.Size = new System.Drawing.Size(121, 20);
+            this.txtCedulaAM.TabIndex = 15;
+            // 
+            // txtEdadAM
+            // 
+            this.txtEdadAM.Location = new System.Drawing.Point(371, 55);
+            this.txtEdadAM.Name = "txtEdadAM";
+            this.txtEdadAM.Size = new System.Drawing.Size(121, 20);
+            this.txtEdadAM.TabIndex = 14;
+            // 
+            // txtEmailAM
+            // 
+            this.txtEmailAM.Location = new System.Drawing.Point(100, 187);
+            this.txtEmailAM.Name = "txtEmailAM";
+            this.txtEmailAM.Size = new System.Drawing.Size(100, 20);
+            this.txtEmailAM.TabIndex = 13;
+            // 
+            // txtTelefonoAM
+            // 
+            this.txtTelefonoAM.Location = new System.Drawing.Point(100, 155);
+            this.txtTelefonoAM.Name = "txtTelefonoAM";
+            this.txtTelefonoAM.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefonoAM.TabIndex = 12;
+            // 
+            // txtDireccionAM
+            // 
+            this.txtDireccionAM.Location = new System.Drawing.Point(100, 119);
+            this.txtDireccionAM.Name = "txtDireccionAM";
+            this.txtDireccionAM.Size = new System.Drawing.Size(100, 20);
+            this.txtDireccionAM.TabIndex = 11;
+            // 
+            // txtApellidoAM
+            // 
+            this.txtApellidoAM.Location = new System.Drawing.Point(100, 93);
+            this.txtApellidoAM.Name = "txtApellidoAM";
+            this.txtApellidoAM.Size = new System.Drawing.Size(100, 20);
+            this.txtApellidoAM.TabIndex = 10;
+            // 
+            // txtNombreAM
+            // 
+            this.txtNombreAM.Location = new System.Drawing.Point(100, 63);
+            this.txtNombreAM.Name = "txtNombreAM";
+            this.txtNombreAM.Size = new System.Drawing.Size(100, 20);
+            this.txtNombreAM.TabIndex = 9;
+            // 
+            // lbEspecialidadAM
+            // 
+            this.lbEspecialidadAM.AutoSize = true;
+            this.lbEspecialidadAM.Location = new System.Drawing.Point(293, 128);
+            this.lbEspecialidadAM.Name = "lbEspecialidadAM";
+            this.lbEspecialidadAM.Size = new System.Drawing.Size(67, 13);
+            this.lbEspecialidadAM.TabIndex = 8;
+            this.lbEspecialidadAM.Text = "Especialidad";
+            // 
+            // lbCedulaAM
+            // 
+            this.lbCedulaAM.AutoSize = true;
+            this.lbCedulaAM.Location = new System.Drawing.Point(293, 93);
+            this.lbCedulaAM.Name = "lbCedulaAM";
+            this.lbCedulaAM.Size = new System.Drawing.Size(40, 13);
+            this.lbCedulaAM.TabIndex = 7;
+            this.lbCedulaAM.Text = "Cedula";
+            // 
+            // lbEdadAM
+            // 
+            this.lbEdadAM.AutoSize = true;
+            this.lbEdadAM.Location = new System.Drawing.Point(293, 63);
+            this.lbEdadAM.Name = "lbEdadAM";
+            this.lbEdadAM.Size = new System.Drawing.Size(32, 13);
+            this.lbEdadAM.TabIndex = 6;
+            this.lbEdadAM.Text = "Edad";
+            // 
+            // lbEmailAM
+            // 
+            this.lbEmailAM.AutoSize = true;
+            this.lbEmailAM.Location = new System.Drawing.Point(23, 194);
+            this.lbEmailAM.Name = "lbEmailAM";
+            this.lbEmailAM.Size = new System.Drawing.Size(32, 13);
+            this.lbEmailAM.TabIndex = 5;
+            this.lbEmailAM.Text = "Email";
+            // 
+            // lbTelefonoAM
+            // 
+            this.lbTelefonoAM.AutoSize = true;
+            this.lbTelefonoAM.Location = new System.Drawing.Point(23, 162);
+            this.lbTelefonoAM.Name = "lbTelefonoAM";
+            this.lbTelefonoAM.Size = new System.Drawing.Size(49, 13);
+            this.lbTelefonoAM.TabIndex = 4;
+            this.lbTelefonoAM.Text = "Telefono";
+            // 
+            // lbDireccionAM
+            // 
+            this.lbDireccionAM.AutoSize = true;
+            this.lbDireccionAM.Location = new System.Drawing.Point(23, 128);
+            this.lbDireccionAM.Name = "lbDireccionAM";
+            this.lbDireccionAM.Size = new System.Drawing.Size(52, 13);
+            this.lbDireccionAM.TabIndex = 3;
+            this.lbDireccionAM.Text = "Direccion";
+            // 
+            // lbApellidoAM
+            // 
+            this.lbApellidoAM.AutoSize = true;
+            this.lbApellidoAM.Location = new System.Drawing.Point(23, 101);
+            this.lbApellidoAM.Name = "lbApellidoAM";
+            this.lbApellidoAM.Size = new System.Drawing.Size(44, 13);
+            this.lbApellidoAM.TabIndex = 2;
+            this.lbApellidoAM.Text = "Apellido";
+            // 
+            // lbNombreAM
+            // 
+            this.lbNombreAM.AutoSize = true;
+            this.lbNombreAM.Location = new System.Drawing.Point(20, 63);
+            this.lbNombreAM.Name = "lbNombreAM";
+            this.lbNombreAM.Size = new System.Drawing.Size(44, 13);
+            this.lbNombreAM.TabIndex = 1;
+            this.lbNombreAM.Text = "Nombre";
             // 
             // btAgregarAM
             // 
@@ -1132,166 +1448,6 @@
             this.tabPage15.Text = "Especialidad";
             this.tabPage15.UseVisualStyleBackColor = true;
             // 
-            // lbNombreAM
-            // 
-            this.lbNombreAM.AutoSize = true;
-            this.lbNombreAM.Location = new System.Drawing.Point(20, 63);
-            this.lbNombreAM.Name = "lbNombreAM";
-            this.lbNombreAM.Size = new System.Drawing.Size(44, 13);
-            this.lbNombreAM.TabIndex = 1;
-            this.lbNombreAM.Text = "Nombre";
-            // 
-            // lbApellidoAM
-            // 
-            this.lbApellidoAM.AutoSize = true;
-            this.lbApellidoAM.Location = new System.Drawing.Point(23, 101);
-            this.lbApellidoAM.Name = "lbApellidoAM";
-            this.lbApellidoAM.Size = new System.Drawing.Size(44, 13);
-            this.lbApellidoAM.TabIndex = 2;
-            this.lbApellidoAM.Text = "Apellido";
-            // 
-            // lbDireccionAM
-            // 
-            this.lbDireccionAM.AutoSize = true;
-            this.lbDireccionAM.Location = new System.Drawing.Point(23, 128);
-            this.lbDireccionAM.Name = "lbDireccionAM";
-            this.lbDireccionAM.Size = new System.Drawing.Size(52, 13);
-            this.lbDireccionAM.TabIndex = 3;
-            this.lbDireccionAM.Text = "Direccion";
-            // 
-            // lbTelefonoAM
-            // 
-            this.lbTelefonoAM.AutoSize = true;
-            this.lbTelefonoAM.Location = new System.Drawing.Point(23, 162);
-            this.lbTelefonoAM.Name = "lbTelefonoAM";
-            this.lbTelefonoAM.Size = new System.Drawing.Size(49, 13);
-            this.lbTelefonoAM.TabIndex = 4;
-            this.lbTelefonoAM.Text = "Telefono";
-            // 
-            // lbEmailAM
-            // 
-            this.lbEmailAM.AutoSize = true;
-            this.lbEmailAM.Location = new System.Drawing.Point(23, 194);
-            this.lbEmailAM.Name = "lbEmailAM";
-            this.lbEmailAM.Size = new System.Drawing.Size(32, 13);
-            this.lbEmailAM.TabIndex = 5;
-            this.lbEmailAM.Text = "Email";
-            // 
-            // lbEdadAM
-            // 
-            this.lbEdadAM.AutoSize = true;
-            this.lbEdadAM.Location = new System.Drawing.Point(293, 63);
-            this.lbEdadAM.Name = "lbEdadAM";
-            this.lbEdadAM.Size = new System.Drawing.Size(32, 13);
-            this.lbEdadAM.TabIndex = 6;
-            this.lbEdadAM.Text = "Edad";
-            // 
-            // lbCedulaAM
-            // 
-            this.lbCedulaAM.AutoSize = true;
-            this.lbCedulaAM.Location = new System.Drawing.Point(293, 93);
-            this.lbCedulaAM.Name = "lbCedulaAM";
-            this.lbCedulaAM.Size = new System.Drawing.Size(40, 13);
-            this.lbCedulaAM.TabIndex = 7;
-            this.lbCedulaAM.Text = "Cedula";
-            // 
-            // lbEspecialidadAM
-            // 
-            this.lbEspecialidadAM.AutoSize = true;
-            this.lbEspecialidadAM.Location = new System.Drawing.Point(293, 128);
-            this.lbEspecialidadAM.Name = "lbEspecialidadAM";
-            this.lbEspecialidadAM.Size = new System.Drawing.Size(67, 13);
-            this.lbEspecialidadAM.TabIndex = 8;
-            this.lbEspecialidadAM.Text = "Especialidad";
-            // 
-            // txtNombreAM
-            // 
-            this.txtNombreAM.Location = new System.Drawing.Point(100, 63);
-            this.txtNombreAM.Name = "txtNombreAM";
-            this.txtNombreAM.Size = new System.Drawing.Size(100, 20);
-            this.txtNombreAM.TabIndex = 9;
-            // 
-            // txtApellidoAM
-            // 
-            this.txtApellidoAM.Location = new System.Drawing.Point(100, 93);
-            this.txtApellidoAM.Name = "txtApellidoAM";
-            this.txtApellidoAM.Size = new System.Drawing.Size(100, 20);
-            this.txtApellidoAM.TabIndex = 10;
-            // 
-            // txtDireccionAM
-            // 
-            this.txtDireccionAM.Location = new System.Drawing.Point(100, 119);
-            this.txtDireccionAM.Name = "txtDireccionAM";
-            this.txtDireccionAM.Size = new System.Drawing.Size(100, 20);
-            this.txtDireccionAM.TabIndex = 11;
-            // 
-            // txtTelefonoAM
-            // 
-            this.txtTelefonoAM.Location = new System.Drawing.Point(100, 155);
-            this.txtTelefonoAM.Name = "txtTelefonoAM";
-            this.txtTelefonoAM.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefonoAM.TabIndex = 12;
-            // 
-            // txtEmailAM
-            // 
-            this.txtEmailAM.Location = new System.Drawing.Point(100, 187);
-            this.txtEmailAM.Name = "txtEmailAM";
-            this.txtEmailAM.Size = new System.Drawing.Size(100, 20);
-            this.txtEmailAM.TabIndex = 13;
-            // 
-            // txtEdadAM
-            // 
-            this.txtEdadAM.Location = new System.Drawing.Point(371, 55);
-            this.txtEdadAM.Name = "txtEdadAM";
-            this.txtEdadAM.Size = new System.Drawing.Size(121, 20);
-            this.txtEdadAM.TabIndex = 14;
-            // 
-            // txtCedulaAM
-            // 
-            this.txtCedulaAM.Location = new System.Drawing.Point(371, 93);
-            this.txtCedulaAM.Name = "txtCedulaAM";
-            this.txtCedulaAM.Size = new System.Drawing.Size(121, 20);
-            this.txtCedulaAM.TabIndex = 15;
-            // 
-            // cbEspecialidadAM
-            // 
-            this.cbEspecialidadAM.FormattingEnabled = true;
-            this.cbEspecialidadAM.Location = new System.Drawing.Point(371, 128);
-            this.cbEspecialidadAM.Name = "cbEspecialidadAM";
-            this.cbEspecialidadAM.Size = new System.Drawing.Size(121, 21);
-            this.cbEspecialidadAM.TabIndex = 16;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.chMasculinoAM);
-            this.groupBox4.Controls.Add(this.chFemeninoAM);
-            this.groupBox4.Location = new System.Drawing.Point(313, 187);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(158, 40);
-            this.groupBox4.TabIndex = 17;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Sexo";
-            // 
-            // chFemeninoAM
-            // 
-            this.chFemeninoAM.AutoSize = true;
-            this.chFemeninoAM.Location = new System.Drawing.Point(7, 20);
-            this.chFemeninoAM.Name = "chFemeninoAM";
-            this.chFemeninoAM.Size = new System.Drawing.Size(32, 17);
-            this.chFemeninoAM.TabIndex = 0;
-            this.chFemeninoAM.Text = "F";
-            this.chFemeninoAM.UseVisualStyleBackColor = true;
-            // 
-            // chMasculinoAM
-            // 
-            this.chMasculinoAM.AutoSize = true;
-            this.chMasculinoAM.Location = new System.Drawing.Point(94, 17);
-            this.chMasculinoAM.Name = "chMasculinoAM";
-            this.chMasculinoAM.Size = new System.Drawing.Size(35, 17);
-            this.chMasculinoAM.TabIndex = 1;
-            this.chMasculinoAM.Text = "M";
-            this.chMasculinoAM.UseVisualStyleBackColor = true;
-            // 
             // principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1304,6 +1460,10 @@
             this.tcAgregarEspecialidad.ResumeLayout(false);
             this.tpCita.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
+            this.tabPage16.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.tabPage12.ResumeLayout(false);
             this.tabControl4.ResumeLayout(false);
             this.tabPage14.ResumeLayout(false);
@@ -1314,6 +1474,8 @@
             this.tabControl2.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
             this.gpEstado.ResumeLayout(false);
@@ -1330,8 +1492,6 @@
             this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1454,5 +1614,19 @@
         private System.Windows.Forms.TextBox txtDireccionAM;
         private System.Windows.Forms.TextBox txtApellidoAM;
         private System.Windows.Forms.TextBox txtNombreAM;
+        private System.Windows.Forms.TabPage tabPage16;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label medico5;
+        private System.Windows.Forms.Label medico4;
+        private System.Windows.Forms.Label medico3;
+        private System.Windows.Forms.Label medico2;
+        private System.Windows.Forms.Label medico1;
+        private System.Windows.Forms.RadioButton M5;
+        private System.Windows.Forms.RadioButton M4;
+        private System.Windows.Forms.RadioButton M3;
+        private System.Windows.Forms.RadioButton M2;
+        private System.Windows.Forms.RadioButton M1;
     }
 }
