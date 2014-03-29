@@ -88,30 +88,19 @@ namespace Proyecto_interfaz
 
         private void btEditar_Click(object sender, EventArgs e) //Accion del boton Editar Médico (Envía las actualizaciones a la BD)
         {
-            string sexo;
-            string estado;
+            //string sexo;
+            //string estado;
             BaseDeDatos bd = new BaseDeDatos();
             datos.Abrir();
 
-            //brief Verificar Sexo
-            if (rbF.Checked)
-                sexo = "F";
-            else
-                sexo = "M";
-
-            //Verify Status
-            if (rbAlta.Checked)
-                estado = "Alta";
-            else
-                estado = "Baja";
-
-            consulta = "UPDATE persona p, medico m SET p.Nombre='" + cbNombre.Text + "',p.Apellido='" + txtApellido.Text + "',p.Direccion='" + txtDireccion.Text + "',p.Telefono='" + txtTelefono.Text + "',p.eMail='" + txtEmail.Text + "',p.Edad=" + Convert.ToInt32(txtEdad.Text) + ",p.Sexo='" + sexo + "',p.FechaRegistro='" + txtFechaRegistro.Text + "',m.Estado='" + estado + "',m.Cedula='" + txtCedula.Text + "' WHERE p.nombre='" + cbNombre.Text + "' AND m.idPersona=p.idPersona;";
+            consulta = "UPDATE persona p, medico m SET p.Nombre='" + cbNombre.Text + "',p.Apellido='" + txtApellido.Text + "',p.Direccion='" + txtDireccion.Text + "',p.Telefono='" + txtTelefono.Text + "',p.eMail='" + txtEmail.Text + "',p.Edad=" + Convert.ToInt32(txtEdad.Text) + ",p.FechaRegistro='" + txtFechaRegistro.Text + "',m.Cedula='" + txtCedula.Text + "' WHERE p.nombre='" + cbNombre.Text + "' AND m.idPersona=p.idPersona;";
             datos.leer(consulta);
 
             consulta = "UPDATE medico m, especialidad e SET m.idEspecialidad = e.idEspecialidad WHERE e.Descripcion = '" + cbEspecialidad.Text + "'";
             datos.leer(consulta);
 
             datos.cerrar();
+            MessageBox.Show("Médico Editado");
         }
 
 
@@ -136,24 +125,14 @@ namespace Proyecto_interfaz
                 txtEmail.Text = datos.cnLeerConsulta[5].ToString();
                 txtEdad.Text = datos.cnLeerConsulta[6].ToString();
                 txtFechaRegistro.Text = datos.cnLeerConsulta[8].ToString();
-
-                if (Convert.ToString(datos.cnLeerConsulta[7]) == "F")
-                    rbF.Checked = true;
-                else
-                    rbM.Checked = true;
             }
 
-                        consulta = "SELECT m.cedula,e.descripcion,m.estado FROM persona p,medico m,especialidad e WHERE p.nombre='" + cbNombre.Text + "' AND p.idPersona = m.idPersona and m.idEspecialidad=e.idEspecialidad";
+            consulta = "SELECT m.cedula,e.descripcion,m.estado FROM persona p,medico m,especialidad e WHERE p.nombre='" + cbNombre.Text + "' AND p.idPersona = m.idPersona and m.idEspecialidad=e.idEspecialidad";
             datos.leer(consulta);
             while (datos.cnLeerConsulta.Read())
             {
                 txtCedula.Text = datos.cnLeerConsulta[0].ToString();
                 cbEspecialidad.Text = datos.cnLeerConsulta[1].ToString();
-
-                if (Convert.ToString(datos.cnLeerConsulta[2]) == "Activo")
-                    rbAlta.Checked = true;
-                else
-                    rbBaja.Checked = true;
             }
 
             datos.cerrar();
@@ -174,16 +153,18 @@ namespace Proyecto_interfaz
             else
                 sexo = "M";
           
-            consulta = "UPDATE persona p, paciente pa SET p.Nombre='" + cbNombreEP.Text + "',p.Apellido='" + txApellidoEP.Text + "',p.Direccion='" + txDireccionEP.Text + "',p.Telefono='" + txTelefonoEP.Text + "',p.eMail='" + txeMailEP.Text + "',p.Edad=" + Convert.ToInt32(txEdadEP.Text) + ",p.Sexo='" + sexo + "',p.FechaRegistro='" + txfechaRegistroEP.Text + "' WHERE p.nombre='" + cbNombreEP.Text + "' AND pa.idPersona=p.idPersona;";
+            consulta = "UPDATE persona p, paciente pa SET p.Nombre='" + cbNombreEP.Text + "',p.Apellido='" + txApellidoEP.Text + "',p.Direccion='" + txDireccionEP.Text + "',p.Telefono='" + txTelefonoEP.Text + "',p.eMail='" + txeMailEP.Text + "',p.Edad=" + Convert.ToInt32(txEdadEP.Text) + ",p.Sexo='" + sexo + "',p.FechaRegistro='" + txfechaRegistroEP.Text + "' WHERE p.nombre='" + cbNombreEP.Text + "' AND pa.idPersona=p.idPersona;";            
             
             datos.leer(consulta);
             datos.cerrar();
+            MessageBox.Show("Paciente Editado");
 
         }
 
 
 
-        public void llenar_camposEP() //llena el combobox de los nombres de los pacientes que se pueden Editar
+        //llena el combobox de los nombres de los pacientes que se pueden Editar
+        public void llenar_camposEP() 
         {
             BaseDeDatos bd = new BaseDeDatos();
             datos.Abrir();
@@ -198,7 +179,9 @@ namespace Proyecto_interfaz
             datos.cerrar();
         }
 
-        private void cbNombreEP_SelectedIndexChanged(object sender, EventArgs e) //COMBO DE EDITAR PACIENTES
+
+        //COMBO DE EDITAR PACIENTES (Muestra los datos del usuario elegido en el ComboBox)
+        private void cbNombreEP_SelectedIndexChanged(object sender, EventArgs e) 
         {
             BaseDeDatos bd = new BaseDeDatos();
             int i = cbNombreEP.SelectedIndex;
@@ -227,6 +210,8 @@ namespace Proyecto_interfaz
             datos.cerrar();
         }
 
+
+
         private void button1_Click(object sender, EventArgs e)
         {
             textBox1.Text = dtpInicio.Text.ToString();
@@ -234,16 +219,26 @@ namespace Proyecto_interfaz
         }
 
 
-        public void llenar_camposEU()  //Llena el ComboBox de Nombre de los Usuarios 
+
+
+        //Llena el ComboBox de Nombre de los Usuarios
+        public void llenar_camposEU()   
         {
             BaseDeDatos bd = new BaseDeDatos();
             datos.Abrir();
 
-            consulta = "select p.nombre from persona p, usuario u where u.idPersona=p.idPersona";
+            consulta = "select p.nombre from persona p, usuario u where u.idPersona=p.idPersona AND u.estado='Alta'";
             datos.leer(consulta);
             while (datos.cnLeerConsulta.Read())
             {
                 cbNombreEU.Items.Add(datos.cnLeerConsulta[0]);
+            }
+
+            consulta = "SELECT descripcion FROM tipousuario";
+            datos.leer(consulta);
+            while (datos.cnLeerConsulta.Read())
+            {
+                cbTipoEU.Items.Add(datos.cnLeerConsulta[0]);
             }
 
             datos.cerrar();
@@ -269,34 +264,44 @@ namespace Proyecto_interfaz
                 txteMailEU.Text = datos.cnLeerConsulta[5].ToString();
                 txtEdadEU.Text = datos.cnLeerConsulta[6].ToString();
                 txtFechaRegistroEU.Text = datos.cnLeerConsulta[8].ToString();
-
-                if (Convert.ToString(datos.cnLeerConsulta[7]) == "F")
-                    rbFemeninoEU.Checked = true;
-                else
-                    rbMasculinoEU.Checked = true;
             }
 
-            datos.cerrar();
-
-           /* consulta = "SELECT e.descripcion,m.estado FROM persona p,medico m,especialidad e WHERE p.nombre='" + cbNombre.Text + "' AND p.idPersona = m.idPersona and m.idEspecialidad=e.idEspecialidad";
+            consulta = "SELECT u.contrasena,u.estado,t.descripcion FROM persona p,tipousuario t,usuario u  WHERE p.nombre = '" + cbNombreEU.Text + "' and p.idPersona=u.idPersona AND u.idTipoUsuario=t.idTipoUsuario";
             datos.leer(consulta);
             while (datos.cnLeerConsulta.Read())
             {
-                //txtCedula.Text = datos.cnLeerConsulta[0].ToString();
-                cbEspecialidad.Text = datos.cnLeerConsulta[1].ToString();
-
-                if (Convert.ToString(datos.cnLeerConsulta[2]) == "Activo")
-                    rbAlta.Checked = true;
-                else
-                    rbBaja.Checked = true;
+                txtContraseñaEU.Text = datos.cnLeerConsulta[0].ToString();
+                cbTipoEU.Text = datos.cnLeerConsulta[2].ToString();
             }
-            */
-            
 
+            datos.cerrar();      
         }
 
+
+        //Edita todos los datos de un usuario (secretaria)
         private void btEditarEU_Click(object sender, EventArgs e)
         {
+            string sexo;
+            int tipo;
+            BaseDeDatos bd = new BaseDeDatos();
+            datos.Abrir();
+
+            //Verificar Sexo
+            if (rbFemeninoEP.Checked)
+                sexo = "F";
+            else
+                sexo = "M";
+
+            if (cbTipoEU.Text == "Administrador")
+                tipo = 0001;
+            else
+                tipo = 0002;
+
+            consulta = "UPDATE persona p, usuario u, tipousuario t SET p.Nombre='" + cbNombreEU.Text + "',p.Apellido='" + txtApellidoEU.Text + "',p.Direccion='" + txtDireccionEU.Text + "',p.Telefono='" + txtTelefonoEU.Text + "',p.eMail='" + txteMailEU.Text + "',p.Edad=" + Convert.ToInt32(txtEdadEU.Text) + ",p.Sexo='" + sexo + "',u.idTipoUsuario=" + tipo + ",u.contrasena='" + txtContraseñaEU.Text + "' WHERE p.nombre='" + cbNombreEU.Text + "' AND u.idPersona=p.idPersona AND u.idTipoUsuario=t.idTipoUsuario;";
+            datos.leer(consulta);
+
+            datos.cerrar();
+            MessageBox.Show("Usuario Editado");
 
         }
 
@@ -486,6 +491,11 @@ namespace Proyecto_interfaz
             }
            
 
+
+        }
+
+        private void rbMasculinoEP_CheckedChanged(object sender, EventArgs e)
+        {
 
         }
 

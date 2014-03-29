@@ -106,12 +106,6 @@
             this.btAgregarAM = new System.Windows.Forms.Button();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.btEditar = new System.Windows.Forms.Button();
-            this.gpEstado = new System.Windows.Forms.GroupBox();
-            this.rbAlta = new System.Windows.Forms.RadioButton();
-            this.rbBaja = new System.Windows.Forms.RadioButton();
-            this.gpSexo = new System.Windows.Forms.GroupBox();
-            this.rbM = new System.Windows.Forms.RadioButton();
-            this.rbF = new System.Windows.Forms.RadioButton();
             this.cbEspecialidad = new System.Windows.Forms.ComboBox();
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -131,6 +125,9 @@
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.dgvAltaBajaM = new System.Windows.Forms.DataGridView();
+            this.btBajaM = new System.Windows.Forms.Button();
+            this.btAltaM = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -148,12 +145,6 @@
             this.label26 = new System.Windows.Forms.Label();
             this.cbTipoEU = new System.Windows.Forms.ComboBox();
             this.btEditarEU = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.rbAltaEU = new System.Windows.Forms.RadioButton();
-            this.rbBajaEU = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbMasculinoEU = new System.Windows.Forms.RadioButton();
-            this.rbFemeninoEU = new System.Windows.Forms.RadioButton();
             this.txtEdadEU = new System.Windows.Forms.TextBox();
             this.txtFechaRegistroEU = new System.Windows.Forms.TextBox();
             this.txteMailEU = new System.Windows.Forms.TextBox();
@@ -170,9 +161,6 @@
             this.label25 = new System.Windows.Forms.Label();
             this.tabPage11 = new System.Windows.Forms.TabPage();
             this.tabPage15 = new System.Windows.Forms.TabPage();
-            this.btAltaM = new System.Windows.Forms.Button();
-            this.btBajaM = new System.Windows.Forms.Button();
-            this.dgvAltaBajaM = new System.Windows.Forms.DataGridView();
             this.tcAgregarEspecialidad.SuspendLayout();
             this.tpCita.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -189,16 +177,12 @@
             this.tabPage6.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tabPage7.SuspendLayout();
-            this.gpEstado.SuspendLayout();
-            this.gpSexo.SuspendLayout();
             this.tabPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAltaBajaM)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage10.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAltaBajaM)).BeginInit();
             this.SuspendLayout();
             // 
             // tcAgregarEspecialidad
@@ -566,7 +550,7 @@
             // 
             // btEditarEP
             // 
-            this.btEditarEP.Location = new System.Drawing.Point(348, 250);
+            this.btEditarEP.Location = new System.Drawing.Point(348, 220);
             this.btEditarEP.Name = "btEditarEP";
             this.btEditarEP.Size = new System.Drawing.Size(128, 37);
             this.btEditarEP.TabIndex = 83;
@@ -578,7 +562,8 @@
             // 
             this.groupBox2.Controls.Add(this.rbMasculinoEP);
             this.groupBox2.Controls.Add(this.rbFemeninoEP);
-            this.groupBox2.Location = new System.Drawing.Point(348, 28);
+            this.groupBox2.Enabled = false;
+            this.groupBox2.Location = new System.Drawing.Point(338, 69);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(139, 43);
             this.groupBox2.TabIndex = 81;
@@ -595,6 +580,7 @@
             this.rbMasculinoEP.TabStop = true;
             this.rbMasculinoEP.Text = "M";
             this.rbMasculinoEP.UseVisualStyleBackColor = true;
+            this.rbMasculinoEP.CheckedChanged += new System.EventHandler(this.rbMasculinoEP_CheckedChanged);
             // 
             // rbFemeninoEP
             // 
@@ -609,14 +595,15 @@
             // 
             // txEdadEP
             // 
-            this.txEdadEP.Location = new System.Drawing.Point(116, 267);
+            this.txEdadEP.Location = new System.Drawing.Point(373, 30);
             this.txEdadEP.Name = "txEdadEP";
-            this.txEdadEP.Size = new System.Drawing.Size(194, 20);
+            this.txEdadEP.Size = new System.Drawing.Size(103, 20);
             this.txEdadEP.TabIndex = 80;
             // 
             // txfechaRegistroEP
             // 
-            this.txfechaRegistroEP.Location = new System.Drawing.Point(116, 225);
+            this.txfechaRegistroEP.Enabled = false;
+            this.txfechaRegistroEP.Location = new System.Drawing.Point(116, 229);
             this.txfechaRegistroEP.Name = "txfechaRegistroEP";
             this.txfechaRegistroEP.Size = new System.Drawing.Size(194, 20);
             this.txfechaRegistroEP.TabIndex = 79;
@@ -640,7 +627,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(33, 232);
+            this.label13.Location = new System.Drawing.Point(31, 236);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(79, 13);
             this.label13.TabIndex = 76;
@@ -649,7 +636,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(36, 270);
+            this.label14.Location = new System.Drawing.Point(335, 33);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(32, 13);
             this.label14.TabIndex = 77;
@@ -943,8 +930,6 @@
             // tabPage7
             // 
             this.tabPage7.Controls.Add(this.btEditar);
-            this.tabPage7.Controls.Add(this.gpEstado);
-            this.tabPage7.Controls.Add(this.gpSexo);
             this.tabPage7.Controls.Add(this.cbEspecialidad);
             this.tabPage7.Controls.Add(this.txtCedula);
             this.tabPage7.Controls.Add(this.label10);
@@ -974,7 +959,7 @@
             // 
             // btEditar
             // 
-            this.btEditar.Location = new System.Drawing.Point(352, 235);
+            this.btEditar.Location = new System.Drawing.Point(351, 218);
             this.btEditar.Name = "btEditar";
             this.btEditar.Size = new System.Drawing.Size(128, 37);
             this.btEditar.TabIndex = 51;
@@ -982,91 +967,25 @@
             this.btEditar.UseVisualStyleBackColor = true;
             this.btEditar.Click += new System.EventHandler(this.btEditar_Click);
             // 
-            // gpEstado
-            // 
-            this.gpEstado.Controls.Add(this.rbAlta);
-            this.gpEstado.Controls.Add(this.rbBaja);
-            this.gpEstado.Location = new System.Drawing.Point(341, 83);
-            this.gpEstado.Name = "gpEstado";
-            this.gpEstado.Size = new System.Drawing.Size(139, 41);
-            this.gpEstado.TabIndex = 50;
-            this.gpEstado.TabStop = false;
-            this.gpEstado.Text = "Estado";
-            // 
-            // rbAlta
-            // 
-            this.rbAlta.AutoSize = true;
-            this.rbAlta.Location = new System.Drawing.Point(17, 18);
-            this.rbAlta.Name = "rbAlta";
-            this.rbAlta.Size = new System.Drawing.Size(43, 17);
-            this.rbAlta.TabIndex = 28;
-            this.rbAlta.TabStop = true;
-            this.rbAlta.Text = "Alta";
-            this.rbAlta.UseVisualStyleBackColor = true;
-            // 
-            // rbBaja
-            // 
-            this.rbBaja.AutoSize = true;
-            this.rbBaja.Location = new System.Drawing.Point(73, 19);
-            this.rbBaja.Name = "rbBaja";
-            this.rbBaja.Size = new System.Drawing.Size(46, 17);
-            this.rbBaja.TabIndex = 29;
-            this.rbBaja.TabStop = true;
-            this.rbBaja.Text = "Baja";
-            this.rbBaja.UseVisualStyleBackColor = true;
-            // 
-            // gpSexo
-            // 
-            this.gpSexo.Controls.Add(this.rbM);
-            this.gpSexo.Controls.Add(this.rbF);
-            this.gpSexo.Location = new System.Drawing.Point(341, 20);
-            this.gpSexo.Name = "gpSexo";
-            this.gpSexo.Size = new System.Drawing.Size(139, 43);
-            this.gpSexo.TabIndex = 49;
-            this.gpSexo.TabStop = false;
-            this.gpSexo.Text = "Sexo";
-            // 
-            // rbM
-            // 
-            this.rbM.AutoSize = true;
-            this.rbM.Location = new System.Drawing.Point(17, 19);
-            this.rbM.Name = "rbM";
-            this.rbM.Size = new System.Drawing.Size(34, 17);
-            this.rbM.TabIndex = 25;
-            this.rbM.TabStop = true;
-            this.rbM.Text = "M";
-            this.rbM.UseVisualStyleBackColor = true;
-            // 
-            // rbF
-            // 
-            this.rbF.AutoSize = true;
-            this.rbF.Location = new System.Drawing.Point(73, 19);
-            this.rbF.Name = "rbF";
-            this.rbF.Size = new System.Drawing.Size(31, 17);
-            this.rbF.TabIndex = 26;
-            this.rbF.TabStop = true;
-            this.rbF.Text = "F";
-            this.rbF.UseVisualStyleBackColor = true;
-            // 
             // cbEspecialidad
             // 
             this.cbEspecialidad.FormattingEnabled = true;
-            this.cbEspecialidad.Location = new System.Drawing.Point(107, 251);
+            this.cbEspecialidad.Location = new System.Drawing.Point(107, 199);
             this.cbEspecialidad.Name = "cbEspecialidad";
             this.cbEspecialidad.Size = new System.Drawing.Size(194, 21);
             this.cbEspecialidad.TabIndex = 48;
             // 
             // txtCedula
             // 
-            this.txtCedula.Location = new System.Drawing.Point(107, 221);
+            this.txtCedula.Location = new System.Drawing.Point(373, 67);
             this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(194, 20);
+            this.txtCedula.Size = new System.Drawing.Size(130, 20);
             this.txtCedula.TabIndex = 47;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(20, 254);
+            this.label10.Location = new System.Drawing.Point(20, 202);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(67, 13);
             this.label10.TabIndex = 43;
@@ -1075,7 +994,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(22, 225);
+            this.label9.Location = new System.Drawing.Point(335, 70);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(40, 13);
             this.label9.TabIndex = 42;
@@ -1083,21 +1002,22 @@
             // 
             // txtEdad
             // 
-            this.txtEdad.Location = new System.Drawing.Point(107, 191);
+            this.txtEdad.Location = new System.Drawing.Point(373, 25);
             this.txtEdad.Name = "txtEdad";
-            this.txtEdad.Size = new System.Drawing.Size(194, 20);
+            this.txtEdad.Size = new System.Drawing.Size(130, 20);
             this.txtEdad.TabIndex = 46;
             // 
             // txtFechaRegistro
             // 
-            this.txtFechaRegistro.Location = new System.Drawing.Point(107, 163);
+            this.txtFechaRegistro.Enabled = false;
+            this.txtFechaRegistro.Location = new System.Drawing.Point(107, 235);
             this.txtFechaRegistro.Name = "txtFechaRegistro";
             this.txtFechaRegistro.Size = new System.Drawing.Size(194, 20);
             this.txtFechaRegistro.TabIndex = 45;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(107, 136);
+            this.txtEmail.Location = new System.Drawing.Point(107, 163);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(194, 20);
             this.txtEmail.TabIndex = 44;
@@ -1105,7 +1025,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(24, 143);
+            this.label5.Location = new System.Drawing.Point(24, 170);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 39;
@@ -1114,7 +1034,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(22, 170);
+            this.label6.Location = new System.Drawing.Point(20, 234);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 13);
             this.label6.TabIndex = 40;
@@ -1123,7 +1043,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(22, 197);
+            this.label7.Location = new System.Drawing.Point(335, 28);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(32, 13);
             this.label7.TabIndex = 41;
@@ -1140,14 +1060,14 @@
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(107, 52);
+            this.txtApellido.Location = new System.Drawing.Point(107, 56);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(194, 20);
             this.txtApellido.TabIndex = 31;
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(107, 83);
+            this.txtDireccion.Location = new System.Drawing.Point(107, 91);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(194, 20);
             this.txtDireccion.TabIndex = 32;
@@ -1164,7 +1084,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 57);
+            this.label2.Location = new System.Drawing.Point(22, 61);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 35;
@@ -1173,7 +1093,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 90);
+            this.label3.Location = new System.Drawing.Point(22, 98);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 36;
@@ -1181,7 +1101,7 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(107, 110);
+            this.txtTelefono.Location = new System.Drawing.Point(107, 126);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(194, 20);
             this.txtTelefono.TabIndex = 33;
@@ -1189,7 +1109,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 117);
+            this.label4.Location = new System.Drawing.Point(22, 133);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 37;
@@ -1206,6 +1126,33 @@
             this.tabPage8.TabIndex = 2;
             this.tabPage8.Text = "Alta/Baja";
             this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // dgvAltaBajaM
+            // 
+            this.dgvAltaBajaM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAltaBajaM.Location = new System.Drawing.Point(31, 84);
+            this.dgvAltaBajaM.Name = "dgvAltaBajaM";
+            this.dgvAltaBajaM.Size = new System.Drawing.Size(477, 154);
+            this.dgvAltaBajaM.TabIndex = 2;
+            // 
+            // btBajaM
+            // 
+            this.btBajaM.Location = new System.Drawing.Point(211, 22);
+            this.btBajaM.Name = "btBajaM";
+            this.btBajaM.Size = new System.Drawing.Size(75, 23);
+            this.btBajaM.TabIndex = 1;
+            this.btBajaM.Text = "Baja";
+            this.btBajaM.UseVisualStyleBackColor = true;
+            // 
+            // btAltaM
+            // 
+            this.btAltaM.Location = new System.Drawing.Point(31, 22);
+            this.btAltaM.Name = "btAltaM";
+            this.btAltaM.Size = new System.Drawing.Size(75, 23);
+            this.btAltaM.TabIndex = 0;
+            this.btAltaM.Text = "Alta";
+            this.btAltaM.UseVisualStyleBackColor = true;
+            this.btAltaM.Click += new System.EventHandler(this.btAltaM_Click);
             // 
             // tabPage4
             // 
@@ -1317,8 +1264,6 @@
             this.tabPage10.Controls.Add(this.label26);
             this.tabPage10.Controls.Add(this.cbTipoEU);
             this.tabPage10.Controls.Add(this.btEditarEU);
-            this.tabPage10.Controls.Add(this.groupBox3);
-            this.tabPage10.Controls.Add(this.groupBox1);
             this.tabPage10.Controls.Add(this.txtEdadEU);
             this.tabPage10.Controls.Add(this.txtFechaRegistroEU);
             this.tabPage10.Controls.Add(this.txteMailEU);
@@ -1343,7 +1288,7 @@
             // 
             // txtContraseñaEU
             // 
-            this.txtContraseñaEU.Location = new System.Drawing.Point(115, 219);
+            this.txtContraseñaEU.Location = new System.Drawing.Point(115, 183);
             this.txtContraseñaEU.Name = "txtContraseñaEU";
             this.txtContraseñaEU.Size = new System.Drawing.Size(194, 20);
             this.txtContraseñaEU.TabIndex = 104;
@@ -1351,7 +1296,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(30, 219);
+            this.label28.Location = new System.Drawing.Point(33, 186);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(61, 13);
             this.label28.TabIndex = 103;
@@ -1360,7 +1305,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(33, 258);
+            this.label26.Location = new System.Drawing.Point(34, 224);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(28, 13);
             this.label26.TabIndex = 100;
@@ -1369,7 +1314,7 @@
             // cbTipoEU
             // 
             this.cbTipoEU.FormattingEnabled = true;
-            this.cbTipoEU.Location = new System.Drawing.Point(115, 255);
+            this.cbTipoEU.Location = new System.Drawing.Point(115, 220);
             this.cbTipoEU.Name = "cbTipoEU";
             this.cbTipoEU.Size = new System.Drawing.Size(194, 21);
             this.cbTipoEU.TabIndex = 99;
@@ -1384,72 +1329,6 @@
             this.btEditarEU.UseVisualStyleBackColor = true;
             this.btEditarEU.Click += new System.EventHandler(this.btEditarEU_Click);
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.rbAltaEU);
-            this.groupBox3.Controls.Add(this.rbBajaEU);
-            this.groupBox3.Location = new System.Drawing.Point(358, 163);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(139, 41);
-            this.groupBox3.TabIndex = 97;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Estado";
-            // 
-            // rbAltaEU
-            // 
-            this.rbAltaEU.AutoSize = true;
-            this.rbAltaEU.Location = new System.Drawing.Point(17, 18);
-            this.rbAltaEU.Name = "rbAltaEU";
-            this.rbAltaEU.Size = new System.Drawing.Size(43, 17);
-            this.rbAltaEU.TabIndex = 28;
-            this.rbAltaEU.TabStop = true;
-            this.rbAltaEU.Text = "Alta";
-            this.rbAltaEU.UseVisualStyleBackColor = true;
-            // 
-            // rbBajaEU
-            // 
-            this.rbBajaEU.AutoSize = true;
-            this.rbBajaEU.Location = new System.Drawing.Point(73, 19);
-            this.rbBajaEU.Name = "rbBajaEU";
-            this.rbBajaEU.Size = new System.Drawing.Size(46, 17);
-            this.rbBajaEU.TabIndex = 29;
-            this.rbBajaEU.TabStop = true;
-            this.rbBajaEU.Text = "Baja";
-            this.rbBajaEU.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.rbMasculinoEU);
-            this.groupBox1.Controls.Add(this.rbFemeninoEU);
-            this.groupBox1.Location = new System.Drawing.Point(358, 105);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(139, 43);
-            this.groupBox1.TabIndex = 96;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Sexo";
-            // 
-            // rbMasculinoEU
-            // 
-            this.rbMasculinoEU.AutoSize = true;
-            this.rbMasculinoEU.Location = new System.Drawing.Point(17, 19);
-            this.rbMasculinoEU.Name = "rbMasculinoEU";
-            this.rbMasculinoEU.Size = new System.Drawing.Size(34, 17);
-            this.rbMasculinoEU.TabIndex = 25;
-            this.rbMasculinoEU.TabStop = true;
-            this.rbMasculinoEU.Text = "M";
-            this.rbMasculinoEU.UseVisualStyleBackColor = true;
-            // 
-            // rbFemeninoEU
-            // 
-            this.rbFemeninoEU.AutoSize = true;
-            this.rbFemeninoEU.Location = new System.Drawing.Point(73, 19);
-            this.rbFemeninoEU.Name = "rbFemeninoEU";
-            this.rbFemeninoEU.Size = new System.Drawing.Size(31, 17);
-            this.rbFemeninoEU.TabIndex = 26;
-            this.rbFemeninoEU.TabStop = true;
-            this.rbFemeninoEU.Text = "F";
-            this.rbFemeninoEU.UseVisualStyleBackColor = true;
-            // 
             // txtEdadEU
             // 
             this.txtEdadEU.Location = new System.Drawing.Point(383, 30);
@@ -1459,14 +1338,14 @@
             // 
             // txtFechaRegistroEU
             // 
-            this.txtFechaRegistroEU.Location = new System.Drawing.Point(115, 188);
+            this.txtFechaRegistroEU.Location = new System.Drawing.Point(115, 259);
             this.txtFechaRegistroEU.Name = "txtFechaRegistroEU";
             this.txtFechaRegistroEU.Size = new System.Drawing.Size(194, 20);
             this.txtFechaRegistroEU.TabIndex = 94;
             // 
             // txteMailEU
             // 
-            this.txteMailEU.Location = new System.Drawing.Point(382, 61);
+            this.txteMailEU.Location = new System.Drawing.Point(382, 66);
             this.txteMailEU.Name = "txteMailEU";
             this.txteMailEU.Size = new System.Drawing.Size(109, 20);
             this.txteMailEU.TabIndex = 93;
@@ -1474,7 +1353,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(334, 67);
+            this.label19.Location = new System.Drawing.Point(334, 72);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(35, 13);
             this.label19.TabIndex = 90;
@@ -1483,7 +1362,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(28, 191);
+            this.label20.Location = new System.Drawing.Point(34, 262);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(79, 13);
             this.label20.TabIndex = 91;
@@ -1550,7 +1429,7 @@
             // 
             // txtTelefonoEU
             // 
-            this.txtTelefonoEU.Location = new System.Drawing.Point(115, 148);
+            this.txtTelefonoEU.Location = new System.Drawing.Point(115, 144);
             this.txtTelefonoEU.Name = "txtTelefonoEU";
             this.txtTelefonoEU.Size = new System.Drawing.Size(194, 20);
             this.txtTelefonoEU.TabIndex = 84;
@@ -1558,7 +1437,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(30, 151);
+            this.label25.Location = new System.Drawing.Point(30, 147);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(49, 13);
             this.label25.TabIndex = 88;
@@ -1581,33 +1460,6 @@
             this.tabPage15.TabIndex = 7;
             this.tabPage15.Text = "Especialidad";
             this.tabPage15.UseVisualStyleBackColor = true;
-            // 
-            // btAltaM
-            // 
-            this.btAltaM.Location = new System.Drawing.Point(31, 22);
-            this.btAltaM.Name = "btAltaM";
-            this.btAltaM.Size = new System.Drawing.Size(75, 23);
-            this.btAltaM.TabIndex = 0;
-            this.btAltaM.Text = "Alta";
-            this.btAltaM.UseVisualStyleBackColor = true;
-            this.btAltaM.Click += new System.EventHandler(this.btAltaM_Click);
-            // 
-            // btBajaM
-            // 
-            this.btBajaM.Location = new System.Drawing.Point(211, 22);
-            this.btBajaM.Name = "btBajaM";
-            this.btBajaM.Size = new System.Drawing.Size(75, 23);
-            this.btBajaM.TabIndex = 1;
-            this.btBajaM.Text = "Baja";
-            this.btBajaM.UseVisualStyleBackColor = true;
-            // 
-            // dgvAltaBajaM
-            // 
-            this.dgvAltaBajaM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAltaBajaM.Location = new System.Drawing.Point(31, 84);
-            this.dgvAltaBajaM.Name = "dgvAltaBajaM";
-            this.dgvAltaBajaM.Size = new System.Drawing.Size(477, 154);
-            this.dgvAltaBajaM.TabIndex = 2;
             // 
             // principal
             // 
@@ -1641,22 +1493,14 @@
             this.groupBox4.PerformLayout();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
-            this.gpEstado.ResumeLayout(false);
-            this.gpEstado.PerformLayout();
-            this.gpSexo.ResumeLayout(false);
-            this.gpSexo.PerformLayout();
             this.tabPage8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAltaBajaM)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
             this.tabPage10.ResumeLayout(false);
             this.tabPage10.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAltaBajaM)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1684,12 +1528,6 @@
         private System.Windows.Forms.TabPage tabPage10;
         private System.Windows.Forms.TabPage tabPage11;
         private System.Windows.Forms.Button btEditar;
-        private System.Windows.Forms.GroupBox gpEstado;
-        private System.Windows.Forms.RadioButton rbAlta;
-        private System.Windows.Forms.RadioButton rbBaja;
-        private System.Windows.Forms.GroupBox gpSexo;
-        private System.Windows.Forms.RadioButton rbM;
-        private System.Windows.Forms.RadioButton rbF;
         private System.Windows.Forms.ComboBox cbEspecialidad;
         private System.Windows.Forms.TextBox txtCedula;
         private System.Windows.Forms.Label label10;
@@ -1735,12 +1573,6 @@
         private System.Windows.Forms.DateTimePicker dtpInicio;
         private System.Windows.Forms.TabPage tabPage15;
         private System.Windows.Forms.Button btEditarEU;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.RadioButton rbAltaEU;
-        private System.Windows.Forms.RadioButton rbBajaEU;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rbMasculinoEU;
-        private System.Windows.Forms.RadioButton rbFemeninoEU;
         private System.Windows.Forms.TextBox txtEdadEU;
         private System.Windows.Forms.TextBox txtFechaRegistroEU;
         private System.Windows.Forms.TextBox txteMailEU;
