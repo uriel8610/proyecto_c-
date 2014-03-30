@@ -139,8 +139,11 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.label43 = new System.Windows.Forms.Label();
+            this.txtContraseña_AU = new System.Windows.Forms.TextBox();
+            this.cbTipoUsuario_AU = new System.Windows.Forms.ComboBox();
+            this.label42 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
-            this.dtpFecha_AU = new System.Windows.Forms.DateTimePicker();
             this.txtEdad_AU = new System.Windows.Forms.TextBox();
             this.txtEmail_AU = new System.Windows.Forms.TextBox();
             this.txtNombre_AU = new System.Windows.Forms.TextBox();
@@ -183,10 +186,7 @@
             this.label33 = new System.Windows.Forms.Label();
             this.btAgregar_AE = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.label42 = new System.Windows.Forms.Label();
-            this.cbTipoUsuario_AU = new System.Windows.Forms.ComboBox();
-            this.txtContraseña_AU = new System.Windows.Forms.TextBox();
-            this.label43 = new System.Windows.Forms.Label();
+            this.txtFecha_AU = new System.Windows.Forms.TextBox();
             this.tcAgregarEspecialidad.SuspendLayout();
             this.tpCita.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -1278,12 +1278,12 @@
             // 
             // tabPage9
             // 
+            this.tabPage9.Controls.Add(this.txtFecha_AU);
             this.tabPage9.Controls.Add(this.label43);
             this.tabPage9.Controls.Add(this.txtContraseña_AU);
             this.tabPage9.Controls.Add(this.cbTipoUsuario_AU);
             this.tabPage9.Controls.Add(this.label42);
             this.tabPage9.Controls.Add(this.label41);
-            this.tabPage9.Controls.Add(this.dtpFecha_AU);
             this.tabPage9.Controls.Add(this.txtEdad_AU);
             this.tabPage9.Controls.Add(this.txtEmail_AU);
             this.tabPage9.Controls.Add(this.txtNombre_AU);
@@ -1308,21 +1308,47 @@
             this.tabPage9.Text = "Agregar";
             this.tabPage9.UseVisualStyleBackColor = true;
             // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(257, 80);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(61, 13);
+            this.label43.TabIndex = 22;
+            this.label43.Text = "Contraseña";
+            // 
+            // txtContraseña_AU
+            // 
+            this.txtContraseña_AU.Location = new System.Drawing.Point(337, 73);
+            this.txtContraseña_AU.Name = "txtContraseña_AU";
+            this.txtContraseña_AU.Size = new System.Drawing.Size(100, 20);
+            this.txtContraseña_AU.TabIndex = 21;
+            // 
+            // cbTipoUsuario_AU
+            // 
+            this.cbTipoUsuario_AU.FormattingEnabled = true;
+            this.cbTipoUsuario_AU.Location = new System.Drawing.Point(337, 27);
+            this.cbTipoUsuario_AU.Name = "cbTipoUsuario_AU";
+            this.cbTipoUsuario_AU.Size = new System.Drawing.Size(121, 21);
+            this.cbTipoUsuario_AU.TabIndex = 20;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(257, 35);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(80, 13);
+            this.label42.TabIndex = 19;
+            this.label42.Text = "Tipo de usuario";
+            // 
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(347, 118);
+            this.label41.Location = new System.Drawing.Point(247, 118);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(90, 13);
             this.label41.TabIndex = 17;
             this.label41.Text = "Fecha de Ingreso";
-            // 
-            // dtpFecha_AU
-            // 
-            this.dtpFecha_AU.Location = new System.Drawing.Point(291, 154);
-            this.dtpFecha_AU.Name = "dtpFecha_AU";
-            this.dtpFecha_AU.Size = new System.Drawing.Size(200, 20);
-            this.dtpFecha_AU.TabIndex = 16;
             // 
             // txtEdad_AU
             // 
@@ -1369,7 +1395,7 @@
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(389, 184);
+            this.label40.Location = new System.Drawing.Point(334, 161);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(31, 13);
             this.label40.TabIndex = 9;
@@ -1377,7 +1403,7 @@
             // 
             // btAgregar_AU
             // 
-            this.btAgregar_AU.Location = new System.Drawing.Point(416, 267);
+            this.btAgregar_AU.Location = new System.Drawing.Point(361, 244);
             this.btAgregar_AU.Name = "btAgregar_AU";
             this.btAgregar_AU.Size = new System.Drawing.Size(75, 23);
             this.btAgregar_AU.TabIndex = 8;
@@ -1388,7 +1414,7 @@
             // chFemenino_AU
             // 
             this.chFemenino_AU.AutoSize = true;
-            this.chFemenino_AU.Location = new System.Drawing.Point(459, 215);
+            this.chFemenino_AU.Location = new System.Drawing.Point(404, 192);
             this.chFemenino_AU.Name = "chFemenino_AU";
             this.chFemenino_AU.Size = new System.Drawing.Size(32, 17);
             this.chFemenino_AU.TabIndex = 7;
@@ -1398,7 +1424,7 @@
             // chMasculino_AU
             // 
             this.chMasculino_AU.AutoSize = true;
-            this.chMasculino_AU.Location = new System.Drawing.Point(392, 215);
+            this.chMasculino_AU.Location = new System.Drawing.Point(337, 192);
             this.chMasculino_AU.Name = "chMasculino_AU";
             this.chMasculino_AU.Size = new System.Drawing.Size(35, 17);
             this.chMasculino_AU.TabIndex = 6;
@@ -1696,38 +1722,12 @@
             // 
             this.fontDialog1.Color = System.Drawing.SystemColors.ControlText;
             // 
-            // label42
+            // txtFecha_AU
             // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(257, 35);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(80, 13);
-            this.label42.TabIndex = 19;
-            this.label42.Text = "Tipo de usuario";
-            // 
-            // cbTipoUsuario_AU
-            // 
-            this.cbTipoUsuario_AU.FormattingEnabled = true;
-            this.cbTipoUsuario_AU.Location = new System.Drawing.Point(337, 27);
-            this.cbTipoUsuario_AU.Name = "cbTipoUsuario_AU";
-            this.cbTipoUsuario_AU.Size = new System.Drawing.Size(121, 21);
-            this.cbTipoUsuario_AU.TabIndex = 20;
-            // 
-            // txtContraseña_AU
-            // 
-            this.txtContraseña_AU.Location = new System.Drawing.Point(337, 73);
-            this.txtContraseña_AU.Name = "txtContraseña_AU";
-            this.txtContraseña_AU.Size = new System.Drawing.Size(100, 20);
-            this.txtContraseña_AU.TabIndex = 21;
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(270, 80);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(61, 13);
-            this.label43.TabIndex = 22;
-            this.label43.Text = "Contraseña";
+            this.txtFecha_AU.Location = new System.Drawing.Point(337, 111);
+            this.txtFecha_AU.Name = "txtFecha_AU";
+            this.txtFecha_AU.Size = new System.Drawing.Size(100, 20);
+            this.txtFecha_AU.TabIndex = 23;
             // 
             // principal
             // 
@@ -1917,7 +1917,6 @@
         private System.Windows.Forms.Button btAgregar_AE;
         private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.DateTimePicker dtpFecha_AU;
         private System.Windows.Forms.TextBox txtEdad_AU;
         private System.Windows.Forms.TextBox txtEmail_AU;
         private System.Windows.Forms.TextBox txtNombre_AU;
@@ -1938,5 +1937,6 @@
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.TextBox txtContraseña_AU;
+        private System.Windows.Forms.TextBox txtFecha_AU;
     }
 }
