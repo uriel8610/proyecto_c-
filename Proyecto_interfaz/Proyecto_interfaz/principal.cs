@@ -499,10 +499,26 @@ namespace Proyecto_interfaz
 
         }
 
+        private void txtNombreAM_TextChanged(object sender, EventArgs e)
+        {
 
+        }
 
-        
-
+        private void btAgregar_AE_Click(object sender, EventArgs e)
+        {
+            //Instancia base de datos
+            BaseDeDatos c= new BaseDeDatos();
+            //Agregar especilida del campo text box
+            String consulta = " INSERT INTO Especialidad( Descripcion )VALUES('" +txtEspecialida_AE.Text + "');";
+            //Mensaje de inserccion correcta
+            MessageBox.Show("Inserccion correcta");
+            //Agregar a la base de datos
+            c.Abrir();
+            c.actualizar(consulta);
+            c.cerrar();
+            //Limpiar el texto en el textbox
+            txtEspecialida_AE.Clear();
+        }
 
     }
 }

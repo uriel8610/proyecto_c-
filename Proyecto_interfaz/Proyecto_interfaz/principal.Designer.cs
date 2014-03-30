@@ -161,6 +161,10 @@
             this.label25 = new System.Windows.Forms.Label();
             this.tabPage11 = new System.Windows.Forms.TabPage();
             this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.txtEspecialida_AE = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.btAgregar_AE = new System.Windows.Forms.Button();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.tcAgregarEspecialidad.SuspendLayout();
             this.tpCita.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -183,6 +187,7 @@
             this.tabPage1.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage10.SuspendLayout();
+            this.tabPage15.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcAgregarEspecialidad
@@ -844,6 +849,7 @@
             this.txtNombreAM.Name = "txtNombreAM";
             this.txtNombreAM.Size = new System.Drawing.Size(100, 20);
             this.txtNombreAM.TabIndex = 9;
+            this.txtNombreAM.TextChanged += new System.EventHandler(this.txtNombreAM_TextChanged);
             // 
             // lbEspecialidadAM
             // 
@@ -1454,12 +1460,45 @@
             // 
             // tabPage15
             // 
+            this.tabPage15.Controls.Add(this.txtEspecialida_AE);
+            this.tabPage15.Controls.Add(this.label33);
+            this.tabPage15.Controls.Add(this.btAgregar_AE);
             this.tabPage15.Location = new System.Drawing.Point(4, 22);
             this.tabPage15.Name = "tabPage15";
             this.tabPage15.Size = new System.Drawing.Size(579, 392);
             this.tabPage15.TabIndex = 7;
             this.tabPage15.Text = "Especialidad";
             this.tabPage15.UseVisualStyleBackColor = true;
+            // 
+            // txtEspecialida_AE
+            // 
+            this.txtEspecialida_AE.Location = new System.Drawing.Point(206, 124);
+            this.txtEspecialida_AE.Name = "txtEspecialida_AE";
+            this.txtEspecialida_AE.Size = new System.Drawing.Size(117, 20);
+            this.txtEspecialida_AE.TabIndex = 2;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(203, 64);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(120, 13);
+            this.label33.TabIndex = 1;
+            this.label33.Text = "Agregue la especialidad";
+            // 
+            // btAgregar_AE
+            // 
+            this.btAgregar_AE.Location = new System.Drawing.Point(230, 188);
+            this.btAgregar_AE.Name = "btAgregar_AE";
+            this.btAgregar_AE.Size = new System.Drawing.Size(75, 23);
+            this.btAgregar_AE.TabIndex = 0;
+            this.btAgregar_AE.Text = "Agregar";
+            this.btAgregar_AE.UseVisualStyleBackColor = true;
+            this.btAgregar_AE.Click += new System.EventHandler(this.btAgregar_AE_Click);
+            // 
+            // fontDialog1
+            // 
+            this.fontDialog1.Color = System.Drawing.SystemColors.ControlText;
             // 
             // principal
             // 
@@ -1501,6 +1540,8 @@
             this.tabControl3.ResumeLayout(false);
             this.tabPage10.ResumeLayout(false);
             this.tabPage10.PerformLayout();
+            this.tabPage15.ResumeLayout(false);
+            this.tabPage15.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1640,5 +1681,9 @@
         private System.Windows.Forms.DataGridView dgvAltaBajaM;
         private System.Windows.Forms.Button btBajaM;
         private System.Windows.Forms.Button btAltaM;
+        private System.Windows.Forms.TextBox txtEspecialida_AE;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Button btAgregar_AE;
+        private System.Windows.Forms.FontDialog fontDialog1;
     }
 }
