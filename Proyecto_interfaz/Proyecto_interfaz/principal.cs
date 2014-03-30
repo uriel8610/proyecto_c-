@@ -520,5 +520,118 @@ namespace Proyecto_interfaz
             txtEspecialida_AE.Clear();
         }
 
+        private void btAgregar_AU_Click(object sender, EventArgs e)
+        {
+
+
+            ///estancia de la clase ConexionBDD 
+            ///<remarks>
+            /// clase ConexionBDD en donde se realiza la conexion ODBC
+            /// </remarks>   
+            BaseDeDatos c1 = new BaseDeDatos();
+
+            ///Los siguientes strings son para realizar consultas a la base de datos 
+            string consulta, consulta2, consulta3, consulta4;
+            ///con este char definimos el sexo de la persona 
+            char sexo = 'N';
+            /// es necesario para sacar los IDs de la base de datos
+            string idString = "NULL";
+            ///se utiliza para el comboBox para tomar los IDs
+            string tipousuarioselect;
+            /// Se usa para sacar los IDs de las especialidades de la base de datos 
+            int idTipoUsuario = 1;
+
+
+
+            ///condiciones para asigar el sexo a la perosna 
+            if (chFemenino_AU.Checked)
+            {
+                sexo = 'F';
+            }
+
+            if (chMasculino_AU.Checked)
+            {
+                sexo = 'M';
+            }
+
+            ///Condiciones por seguridad
+            if (chMasculino_AU.Checked == true && chFemenino_AU.Checked == true)
+            {
+                chFemenino_AU.Checked.Equals(false);
+                chMasculino_AU.Checked.Equals(false);
+
+                MessageBox.Show("Seleccione solo una casilla a la vez");
+            }
+
+            //condiciones para los checkbox
+            if (txtNombre_AU.Text == string.Empty || txtApellido_AU.Text == string.Empty || txtDireccion_AU.Text == string.Empty || txtTelefono_AU.Text == string.Empty || txtEmail_AU.Text == string.Empty || txtEdad_AU.Text == string.Empty)
+            {
+
+                MessageBox.Show("Rellene todos los campos por favor ");
+            }
+
+            /*
+             condicion para que haga consultas solo cuando todos los campos estan llenos 
+             */
+            else if ((chFemenino_AU.Checked == true && chMasculino_AU.Checked == false) || (chFemenino_AU.Checked == false && chMasculino_AU.Checked == true))
+            {
+
+
+                ///<summary>
+                /// Insercion a la Base de datos a la tabla Persona 
+                /// </summary> 
+                consulta = " INSERT INTO Persona( Nombre, Apellido, Direccion, Telefono, eMail, Edad, Sexo, fecha )VALUES('" + txtNombre_AU.Text + "','" + txtApellido_AU.Text + "','" + txtDireccion_AU.Text + "','" + txtDireccion_AU.Text + "', '" + txtEmail_AU.Text + "'," + txtEdad_AU.Text + ",'" + sexo + "', '" + dtpFecha_AU.Value + "');";
+                c1.Abrir();
+                c1.actualizar(consulta);
+                c1.cerrar();
+
+                consulta2 = "SELECT idPersona FROM persona WHERE nombre= '" + txtNombre_AU.Text + "' && apellido='" + txtApellido_AU.Text + "';";
+                c1.Abrir();
+                c1.leer(consulta2);
+                while (c1.cnLeerConsulta.Read())
+                {
+                    idString = c1.cnLeerConsulta[0].ToString();
+
+                }
+
+                c1.cerrar();
+
+
+
+                ///<summary>
+                /// Select a la Base de datos a la tabla tipo de usuario 
+                /// </summary>
+                tipousuarioselect = cbTipoUsuario_AU.SelectedItem.ToString();
+
+                consulta3 = "SELECT idTipoUsuario FROM usuario WHERE Descripcion='" + tipousuarioselect + "'";
+                c1.Abrir();
+                c1.leer(consulta3);
+
+                while (c1.cnLeerConsulta.Read())
+                {
+                    idTipoUsuario = Convert.ToInt32(c1.cnLeerConsulta[0].ToString());
+                }
+                c1.cerrar();
+
+
+
+                ///<summary>
+                /// Insercion a la Base de datos a la Medico 
+                /// </summary>
+                consulta4 = "INSERT INTO usuario( idPersona,idTipoUsuario,Contraseña, Estado )VALUES( '" + idString + "','" + idTipoUsuario + "'," + txtContraseña_AU.Text + ",1);";
+                c1.Abrir();
+                c1.actualizar(consulta4);
+                c1.cerrar();
+
+                ///Mensaje de aviso de insercion correcta 
+                MessageBox.Show("Elemento insertado correctamente");
+
+                ///Funcion para limpiar los elementos de la interfaz
+                LimpiarCampos();
+            }
+
+        }
+
+ 
     }
 }

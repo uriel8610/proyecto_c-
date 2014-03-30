@@ -139,6 +139,24 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.label41 = new System.Windows.Forms.Label();
+            this.dtpFecha_AU = new System.Windows.Forms.DateTimePicker();
+            this.txtEdad_AU = new System.Windows.Forms.TextBox();
+            this.txtEmail_AU = new System.Windows.Forms.TextBox();
+            this.txtNombre_AU = new System.Windows.Forms.TextBox();
+            this.txtTelefono_AU = new System.Windows.Forms.TextBox();
+            this.txtDireccion_AU = new System.Windows.Forms.TextBox();
+            this.txtApellido_AU = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.btAgregar_AU = new System.Windows.Forms.Button();
+            this.chFemenino_AU = new System.Windows.Forms.CheckBox();
+            this.chMasculino_AU = new System.Windows.Forms.CheckBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.txtContraseñaEU = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
@@ -165,6 +183,10 @@
             this.label33 = new System.Windows.Forms.Label();
             this.btAgregar_AE = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.label42 = new System.Windows.Forms.Label();
+            this.cbTipoUsuario_AU = new System.Windows.Forms.ComboBox();
+            this.txtContraseña_AU = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
             this.tcAgregarEspecialidad.SuspendLayout();
             this.tpCita.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -186,6 +208,7 @@
             this.tabPage4.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl3.SuspendLayout();
+            this.tabPage9.SuspendLayout();
             this.tabPage10.SuspendLayout();
             this.tabPage15.SuspendLayout();
             this.SuspendLayout();
@@ -910,9 +933,9 @@
             this.lbApellidoAM.AutoSize = true;
             this.lbApellidoAM.Location = new System.Drawing.Point(23, 101);
             this.lbApellidoAM.Name = "lbApellidoAM";
-            this.lbApellidoAM.Size = new System.Drawing.Size(44, 13);
+            this.lbApellidoAM.Size = new System.Drawing.Size(49, 13);
             this.lbApellidoAM.TabIndex = 2;
-            this.lbApellidoAM.Text = "Apellido";
+            this.lbApellidoAM.Text = "Apellidos";
             // 
             // lbNombreAM
             // 
@@ -1255,6 +1278,28 @@
             // 
             // tabPage9
             // 
+            this.tabPage9.Controls.Add(this.label43);
+            this.tabPage9.Controls.Add(this.txtContraseña_AU);
+            this.tabPage9.Controls.Add(this.cbTipoUsuario_AU);
+            this.tabPage9.Controls.Add(this.label42);
+            this.tabPage9.Controls.Add(this.label41);
+            this.tabPage9.Controls.Add(this.dtpFecha_AU);
+            this.tabPage9.Controls.Add(this.txtEdad_AU);
+            this.tabPage9.Controls.Add(this.txtEmail_AU);
+            this.tabPage9.Controls.Add(this.txtNombre_AU);
+            this.tabPage9.Controls.Add(this.txtTelefono_AU);
+            this.tabPage9.Controls.Add(this.txtDireccion_AU);
+            this.tabPage9.Controls.Add(this.txtApellido_AU);
+            this.tabPage9.Controls.Add(this.label40);
+            this.tabPage9.Controls.Add(this.btAgregar_AU);
+            this.tabPage9.Controls.Add(this.chFemenino_AU);
+            this.tabPage9.Controls.Add(this.chMasculino_AU);
+            this.tabPage9.Controls.Add(this.label39);
+            this.tabPage9.Controls.Add(this.label38);
+            this.tabPage9.Controls.Add(this.label37);
+            this.tabPage9.Controls.Add(this.label36);
+            this.tabPage9.Controls.Add(this.label35);
+            this.tabPage9.Controls.Add(this.label34);
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
@@ -1262,6 +1307,157 @@
             this.tabPage9.TabIndex = 0;
             this.tabPage9.Text = "Agregar";
             this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(347, 118);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(90, 13);
+            this.label41.TabIndex = 17;
+            this.label41.Text = "Fecha de Ingreso";
+            // 
+            // dtpFecha_AU
+            // 
+            this.dtpFecha_AU.Location = new System.Drawing.Point(291, 154);
+            this.dtpFecha_AU.Name = "dtpFecha_AU";
+            this.dtpFecha_AU.Size = new System.Drawing.Size(200, 20);
+            this.dtpFecha_AU.TabIndex = 16;
+            // 
+            // txtEdad_AU
+            // 
+            this.txtEdad_AU.Location = new System.Drawing.Point(105, 111);
+            this.txtEdad_AU.Name = "txtEdad_AU";
+            this.txtEdad_AU.Size = new System.Drawing.Size(100, 20);
+            this.txtEdad_AU.TabIndex = 15;
+            // 
+            // txtEmail_AU
+            // 
+            this.txtEmail_AU.Location = new System.Drawing.Point(105, 247);
+            this.txtEmail_AU.Name = "txtEmail_AU";
+            this.txtEmail_AU.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail_AU.TabIndex = 14;
+            // 
+            // txtNombre_AU
+            // 
+            this.txtNombre_AU.Location = new System.Drawing.Point(105, 28);
+            this.txtNombre_AU.Name = "txtNombre_AU";
+            this.txtNombre_AU.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre_AU.TabIndex = 13;
+            // 
+            // txtTelefono_AU
+            // 
+            this.txtTelefono_AU.Location = new System.Drawing.Point(105, 208);
+            this.txtTelefono_AU.Name = "txtTelefono_AU";
+            this.txtTelefono_AU.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefono_AU.TabIndex = 12;
+            // 
+            // txtDireccion_AU
+            // 
+            this.txtDireccion_AU.Location = new System.Drawing.Point(105, 154);
+            this.txtDireccion_AU.Name = "txtDireccion_AU";
+            this.txtDireccion_AU.Size = new System.Drawing.Size(100, 20);
+            this.txtDireccion_AU.TabIndex = 11;
+            // 
+            // txtApellido_AU
+            // 
+            this.txtApellido_AU.Location = new System.Drawing.Point(105, 70);
+            this.txtApellido_AU.Name = "txtApellido_AU";
+            this.txtApellido_AU.Size = new System.Drawing.Size(100, 20);
+            this.txtApellido_AU.TabIndex = 10;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(389, 184);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(31, 13);
+            this.label40.TabIndex = 9;
+            this.label40.Text = "Sexo";
+            // 
+            // btAgregar_AU
+            // 
+            this.btAgregar_AU.Location = new System.Drawing.Point(416, 267);
+            this.btAgregar_AU.Name = "btAgregar_AU";
+            this.btAgregar_AU.Size = new System.Drawing.Size(75, 23);
+            this.btAgregar_AU.TabIndex = 8;
+            this.btAgregar_AU.Text = "Agregar";
+            this.btAgregar_AU.UseVisualStyleBackColor = true;
+            this.btAgregar_AU.Click += new System.EventHandler(this.btAgregar_AU_Click);
+            // 
+            // chFemenino_AU
+            // 
+            this.chFemenino_AU.AutoSize = true;
+            this.chFemenino_AU.Location = new System.Drawing.Point(459, 215);
+            this.chFemenino_AU.Name = "chFemenino_AU";
+            this.chFemenino_AU.Size = new System.Drawing.Size(32, 17);
+            this.chFemenino_AU.TabIndex = 7;
+            this.chFemenino_AU.Text = "F";
+            this.chFemenino_AU.UseVisualStyleBackColor = true;
+            // 
+            // chMasculino_AU
+            // 
+            this.chMasculino_AU.AutoSize = true;
+            this.chMasculino_AU.Location = new System.Drawing.Point(392, 215);
+            this.chMasculino_AU.Name = "chMasculino_AU";
+            this.chMasculino_AU.Size = new System.Drawing.Size(35, 17);
+            this.chMasculino_AU.TabIndex = 6;
+            this.chMasculino_AU.Text = "M";
+            this.chMasculino_AU.UseVisualStyleBackColor = true;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(47, 118);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(32, 13);
+            this.label39.TabIndex = 5;
+            this.label39.Text = "Edad";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(47, 254);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(32, 13);
+            this.label38.TabIndex = 4;
+            this.label38.Text = "Email";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(47, 215);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(49, 13);
+            this.label37.TabIndex = 3;
+            this.label37.Text = "Teléfono";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(47, 161);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(52, 13);
+            this.label36.TabIndex = 2;
+            this.label36.Text = "Dirección";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(47, 74);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(49, 13);
+            this.label35.TabIndex = 1;
+            this.label35.Text = "Apellidos";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(47, 35);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(44, 13);
+            this.label34.TabIndex = 0;
+            this.label34.Text = "Nombre";
             // 
             // tabPage10
             // 
@@ -1500,11 +1696,44 @@
             // 
             this.fontDialog1.Color = System.Drawing.SystemColors.ControlText;
             // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(257, 35);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(80, 13);
+            this.label42.TabIndex = 19;
+            this.label42.Text = "Tipo de usuario";
+            // 
+            // cbTipoUsuario_AU
+            // 
+            this.cbTipoUsuario_AU.FormattingEnabled = true;
+            this.cbTipoUsuario_AU.Location = new System.Drawing.Point(337, 27);
+            this.cbTipoUsuario_AU.Name = "cbTipoUsuario_AU";
+            this.cbTipoUsuario_AU.Size = new System.Drawing.Size(121, 21);
+            this.cbTipoUsuario_AU.TabIndex = 20;
+            // 
+            // txtContraseña_AU
+            // 
+            this.txtContraseña_AU.Location = new System.Drawing.Point(337, 73);
+            this.txtContraseña_AU.Name = "txtContraseña_AU";
+            this.txtContraseña_AU.Size = new System.Drawing.Size(100, 20);
+            this.txtContraseña_AU.TabIndex = 21;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(270, 80);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(61, 13);
+            this.label43.TabIndex = 22;
+            this.label43.Text = "Contraseña";
+            // 
             // principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(586, 415);
+            this.ClientSize = new System.Drawing.Size(674, 373);
             this.Controls.Add(this.tcAgregarEspecialidad);
             this.Name = "principal";
             this.Text = "principal";
@@ -1538,6 +1767,8 @@
             this.tabPage4.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
+            this.tabPage9.ResumeLayout(false);
+            this.tabPage9.PerformLayout();
             this.tabPage10.ResumeLayout(false);
             this.tabPage10.PerformLayout();
             this.tabPage15.ResumeLayout(false);
@@ -1685,5 +1916,27 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Button btAgregar_AE;
         private System.Windows.Forms.FontDialog fontDialog1;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.DateTimePicker dtpFecha_AU;
+        private System.Windows.Forms.TextBox txtEdad_AU;
+        private System.Windows.Forms.TextBox txtEmail_AU;
+        private System.Windows.Forms.TextBox txtNombre_AU;
+        private System.Windows.Forms.TextBox txtTelefono_AU;
+        private System.Windows.Forms.TextBox txtDireccion_AU;
+        private System.Windows.Forms.TextBox txtApellido_AU;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Button btAgregar_AU;
+        private System.Windows.Forms.CheckBox chFemenino_AU;
+        private System.Windows.Forms.CheckBox chMasculino_AU;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.ComboBox cbTipoUsuario_AU;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.TextBox txtContraseña_AU;
     }
 }
