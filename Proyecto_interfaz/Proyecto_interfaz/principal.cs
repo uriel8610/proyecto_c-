@@ -509,6 +509,11 @@ namespace Proyecto_interfaz
 
         }
 
+        private void btAgregar_AU_Click(object sender, EventArgs e)
+        {
+
+        }
+
  
     }
 }

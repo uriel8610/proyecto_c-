@@ -139,6 +139,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.txtFecha_AU = new System.Windows.Forms.TextBox();
             this.label43 = new System.Windows.Forms.Label();
             this.txtContraseña_AU = new System.Windows.Forms.TextBox();
             this.cbTipoUsuario_AU = new System.Windows.Forms.ComboBox();
@@ -186,7 +187,6 @@
             this.label33 = new System.Windows.Forms.Label();
             this.btAgregar_AE = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.txtFecha_AU = new System.Windows.Forms.TextBox();
             this.tcAgregarEspecialidad.SuspendLayout();
             this.tpCita.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -1308,6 +1308,13 @@
             this.tabPage9.Text = "Agregar";
             this.tabPage9.UseVisualStyleBackColor = true;
             // 
+            // txtFecha_AU
+            // 
+            this.txtFecha_AU.Location = new System.Drawing.Point(337, 111);
+            this.txtFecha_AU.Name = "txtFecha_AU";
+            this.txtFecha_AU.Size = new System.Drawing.Size(100, 20);
+            this.txtFecha_AU.TabIndex = 23;
+            // 
             // label43
             // 
             this.label43.AutoSize = true;
@@ -1721,13 +1728,6 @@
             // fontDialog1
             // 
             this.fontDialog1.Color = System.Drawing.SystemColors.ControlText;
-            // 
-            // txtFecha_AU
-            // 
-            this.txtFecha_AU.Location = new System.Drawing.Point(337, 111);
-            this.txtFecha_AU.Name = "txtFecha_AU";
-            this.txtFecha_AU.Size = new System.Drawing.Size(100, 20);
-            this.txtFecha_AU.TabIndex = 23;
             // 
             // principal
             // 
