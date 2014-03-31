@@ -1307,10 +1307,11 @@
             this.tabPage9.TabIndex = 0;
             this.tabPage9.Text = "Agregar";
             this.tabPage9.UseVisualStyleBackColor = true;
+            this.tabPage9.Click += new System.EventHandler(this.tabPage9_Click);
             // 
             // txtFecha_AU
             // 
-            this.txtFecha_AU.Location = new System.Drawing.Point(337, 111);
+            this.txtFecha_AU.Location = new System.Drawing.Point(337, 114);
             this.txtFecha_AU.Name = "txtFecha_AU";
             this.txtFecha_AU.Size = new System.Drawing.Size(100, 20);
             this.txtFecha_AU.TabIndex = 23;
