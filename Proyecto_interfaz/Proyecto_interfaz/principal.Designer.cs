@@ -129,13 +129,9 @@
             this.btBajaM = new System.Windows.Forms.Button();
             this.btAltaM = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnReporteGral = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.dtpFinal = new System.Windows.Forms.DateTimePicker();
-            this.dtpInicio = new System.Windows.Forms.DateTimePicker();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage9 = new System.Windows.Forms.TabPage();
@@ -187,6 +183,11 @@
             this.label33 = new System.Windows.Forms.Label();
             this.btAgregar_AE = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.mtcInicio = new System.Windows.Forms.MonthCalendar();
+            this.mtcFinal = new System.Windows.Forms.MonthCalendar();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtInicio = new System.Windows.Forms.TextBox();
+            this.txtFinal = new System.Windows.Forms.TextBox();
             this.tcAgregarEspecialidad.SuspendLayout();
             this.tpCita.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -211,6 +212,7 @@
             this.tabPage9.SuspendLayout();
             this.tabPage10.SuspendLayout();
             this.tabPage15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tcAgregarEspecialidad
@@ -224,7 +226,7 @@
             this.tcAgregarEspecialidad.Location = new System.Drawing.Point(1, 1);
             this.tcAgregarEspecialidad.Name = "tcAgregarEspecialidad";
             this.tcAgregarEspecialidad.SelectedIndex = 0;
-            this.tcAgregarEspecialidad.Size = new System.Drawing.Size(587, 418);
+            this.tcAgregarEspecialidad.Size = new System.Drawing.Size(661, 418);
             this.tcAgregarEspecialidad.TabIndex = 0;
             // 
             // tpCita
@@ -1185,48 +1187,35 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.button1);
-            this.tabPage4.Controls.Add(this.textBox2);
-            this.tabPage4.Controls.Add(this.textBox1);
+            this.tabPage4.Controls.Add(this.txtFinal);
+            this.tabPage4.Controls.Add(this.txtInicio);
+            this.tabPage4.Controls.Add(this.dataGridView1);
+            this.tabPage4.Controls.Add(this.mtcFinal);
+            this.tabPage4.Controls.Add(this.mtcInicio);
+            this.tabPage4.Controls.Add(this.btnReporteGral);
             this.tabPage4.Controls.Add(this.label11);
             this.tabPage4.Controls.Add(this.label8);
-            this.tabPage4.Controls.Add(this.dtpFinal);
-            this.tabPage4.Controls.Add(this.dtpInicio);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(579, 392);
+            this.tabPage4.Size = new System.Drawing.Size(653, 392);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Reporte";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnReporteGral
             // 
-            this.button1.Location = new System.Drawing.Point(351, 127);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(379, 173);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 5;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(214, 173);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
+            this.btnReporteGral.Location = new System.Drawing.Point(389, 223);
+            this.btnReporteGral.Name = "btnReporteGral";
+            this.btnReporteGral.Size = new System.Drawing.Size(75, 23);
+            this.btnReporteGral.TabIndex = 6;
+            this.btnReporteGral.Text = "Buscar";
+            this.btnReporteGral.UseVisualStyleBackColor = true;
+            this.btnReporteGral.Click += new System.EventHandler(this.button1_Click);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(290, 50);
+            this.label11.Location = new System.Drawing.Point(290, 27);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(96, 13);
             this.label11.TabIndex = 3;
@@ -1235,25 +1224,11 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(55, 50);
+            this.label8.Location = new System.Drawing.Point(37, 27);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(83, 13);
             this.label8.TabIndex = 2;
             this.label8.Text = "Fecha de Inicio:";
-            // 
-            // dtpFinal
-            // 
-            this.dtpFinal.Location = new System.Drawing.Point(293, 76);
-            this.dtpFinal.Name = "dtpFinal";
-            this.dtpFinal.Size = new System.Drawing.Size(200, 20);
-            this.dtpFinal.TabIndex = 1;
-            // 
-            // dtpInicio
-            // 
-            this.dtpInicio.Location = new System.Drawing.Point(58, 76);
-            this.dtpInicio.Name = "dtpInicio";
-            this.dtpInicio.Size = new System.Drawing.Size(200, 20);
-            this.dtpInicio.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -1730,6 +1705,40 @@
             // 
             this.fontDialog1.Color = System.Drawing.SystemColors.ControlText;
             // 
+            // mtcInicio
+            // 
+            this.mtcInicio.Location = new System.Drawing.Point(13, 49);
+            this.mtcInicio.Name = "mtcInicio";
+            this.mtcInicio.TabIndex = 7;
+            // 
+            // mtcFinal
+            // 
+            this.mtcFinal.Location = new System.Drawing.Point(265, 49);
+            this.mtcFinal.Name = "mtcFinal";
+            this.mtcFinal.TabIndex = 8;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(31, 252);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(461, 100);
+            this.dataGridView1.TabIndex = 9;
+            // 
+            // txtInicio
+            // 
+            this.txtInicio.Location = new System.Drawing.Point(524, 72);
+            this.txtInicio.Name = "txtInicio";
+            this.txtInicio.Size = new System.Drawing.Size(100, 20);
+            this.txtInicio.TabIndex = 10;
+            // 
+            // txtFinal
+            // 
+            this.txtFinal.Location = new System.Drawing.Point(524, 98);
+            this.txtFinal.Name = "txtFinal";
+            this.txtFinal.Size = new System.Drawing.Size(100, 20);
+            this.txtFinal.TabIndex = 11;
+            // 
             // principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1774,6 +1783,7 @@
             this.tabPage10.PerformLayout();
             this.tabPage15.ResumeLayout(false);
             this.tabPage15.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1837,13 +1847,9 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txTelefonoEP;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnReporteGral;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DateTimePicker dtpFinal;
-        private System.Windows.Forms.DateTimePicker dtpInicio;
         private System.Windows.Forms.TabPage tabPage15;
         private System.Windows.Forms.Button btEditarEU;
         private System.Windows.Forms.TextBox txtEdadEU;
@@ -1939,5 +1945,10 @@
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.TextBox txtContraseña_AU;
         private System.Windows.Forms.TextBox txtFecha_AU;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.MonthCalendar mtcFinal;
+        private System.Windows.Forms.MonthCalendar mtcInicio;
+        private System.Windows.Forms.TextBox txtFinal;
+        private System.Windows.Forms.TextBox txtInicio;
     }
 }
