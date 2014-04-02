@@ -48,17 +48,8 @@
             this.M1 = new System.Windows.Forms.RadioButton();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.Guardar = new System.Windows.Forms.Button();
-            this.horaActual = new System.Windows.Forms.TextBox();
-            this.cbHorario = new System.Windows.Forms.ComboBox();
-            this.fechaActual = new System.Windows.Forms.DateTimePicker();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
             this.cita = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.cbMedicos = new System.Windows.Forms.ComboBox();
-            this.cbPacientes = new System.Windows.Forms.ComboBox();
             this.tabPage12 = new System.Windows.Forms.TabPage();
             this.tabControl4 = new System.Windows.Forms.TabControl();
             this.tabPage13 = new System.Windows.Forms.TabPage();
@@ -183,14 +174,29 @@
             this.txtTelefonoEU = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.dgvAltaBajaU = new System.Windows.Forms.DataGridView();
+            this.btBajaU = new System.Windows.Forms.Button();
+            this.btAltaU = new System.Windows.Forms.Button();
             this.tabPage15 = new System.Windows.Forms.TabPage();
             this.txtEspecialida_AE = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.btAgregar_AE = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.btAltaU = new System.Windows.Forms.Button();
-            this.btBajaU = new System.Windows.Forms.Button();
-            this.dgvAltaBajaU = new System.Windows.Forms.DataGridView();
+            this.cbHorario = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbNomPac = new System.Windows.Forms.TextBox();
+            this.tbApePac = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tbNomMed = new System.Windows.Forms.TextBox();
+            this.tbApeMed = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.dTP1 = new System.Windows.Forms.DateTimePicker();
+            this.label32 = new System.Windows.Forms.Label();
+            this.Horarios = new System.Windows.Forms.ListBox();
             this.tcAgregarEspecialidad.SuspendLayout();
             this.tpCita.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -216,8 +222,10 @@
             this.tabPage9.SuspendLayout();
             this.tabPage10.SuspendLayout();
             this.tabPage11.SuspendLayout();
-            this.tabPage15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAltaBajaU)).BeginInit();
+            this.tabPage15.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcAgregarEspecialidad
@@ -253,7 +261,7 @@
             this.tabControl1.Location = new System.Drawing.Point(6, 67);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(563, 329);
+            this.tabControl1.Size = new System.Drawing.Size(627, 329);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage3
@@ -272,7 +280,7 @@
             this.tabPage16.Controls.Add(this.groupBox5);
             this.tabPage16.Location = new System.Drawing.Point(4, 22);
             this.tabPage16.Name = "tabPage16";
-            this.tabPage16.Size = new System.Drawing.Size(555, 303);
+            this.tabPage16.Size = new System.Drawing.Size(619, 303);
             this.tabPage16.TabIndex = 2;
             this.tabPage16.Text = "Ver";
             this.tabPage16.UseVisualStyleBackColor = true;
@@ -405,93 +413,42 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.Guardar);
-            this.tabPage5.Controls.Add(this.horaActual);
-            this.tabPage5.Controls.Add(this.cbHorario);
-            this.tabPage5.Controls.Add(this.fechaActual);
+            this.tabPage5.Controls.Add(this.Horarios);
             this.tabPage5.Controls.Add(this.label32);
+            this.tabPage5.Controls.Add(this.dTP1);
             this.tabPage5.Controls.Add(this.label31);
+            this.tabPage5.Controls.Add(this.groupBox3);
+            this.tabPage5.Controls.Add(this.groupBox1);
+            this.tabPage5.Controls.Add(this.cbHorario);
+            this.tabPage5.Controls.Add(this.Guardar);
             this.tabPage5.Controls.Add(this.label30);
-            this.tabPage5.Controls.Add(this.label29);
             this.tabPage5.Controls.Add(this.cita);
-            this.tabPage5.Controls.Add(this.label27);
-            this.tabPage5.Controls.Add(this.cbMedicos);
-            this.tabPage5.Controls.Add(this.cbPacientes);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(555, 303);
+            this.tabPage5.Size = new System.Drawing.Size(619, 303);
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "Editar";
             this.tabPage5.UseVisualStyleBackColor = true;
+            this.tabPage5.Click += new System.EventHandler(this.tabPage5_Click);
             // 
             // Guardar
             // 
-            this.Guardar.Location = new System.Drawing.Point(423, 245);
+            this.Guardar.Location = new System.Drawing.Point(537, 277);
             this.Guardar.Name = "Guardar";
             this.Guardar.Size = new System.Drawing.Size(64, 20);
             this.Guardar.TabIndex = 11;
-            this.Guardar.Text = "Guardar";
+            this.Guardar.Text = "Modificar";
             this.Guardar.UseVisualStyleBackColor = true;
-            // 
-            // horaActual
-            // 
-            this.horaActual.Location = new System.Drawing.Point(87, 169);
-            this.horaActual.Name = "horaActual";
-            this.horaActual.Size = new System.Drawing.Size(213, 20);
-            this.horaActual.TabIndex = 10;
-            // 
-            // cbHorario
-            // 
-            this.cbHorario.FormattingEnabled = true;
-            this.cbHorario.Location = new System.Drawing.Point(87, 115);
-            this.cbHorario.Name = "cbHorario";
-            this.cbHorario.Size = new System.Drawing.Size(213, 21);
-            this.cbHorario.TabIndex = 9;
-            // 
-            // fechaActual
-            // 
-            this.fechaActual.Location = new System.Drawing.Point(87, 143);
-            this.fechaActual.Name = "fechaActual";
-            this.fechaActual.Size = new System.Drawing.Size(213, 20);
-            this.fechaActual.TabIndex = 8;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(6, 170);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(63, 13);
-            this.label32.TabIndex = 7;
-            this.label32.Text = "Hora Actual";
-            this.label32.Click += new System.EventHandler(this.label32_Click);
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(6, 143);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(70, 13);
-            this.label31.TabIndex = 6;
-            this.label31.Text = "Fecha Actual";
             // 
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(6, 118);
+            this.label30.Location = new System.Drawing.Point(6, 69);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(41, 13);
             this.label30.TabIndex = 5;
             this.label30.Text = "Horario";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(6, 91);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(49, 13);
-            this.label29.TabIndex = 4;
-            this.label29.Text = "Paciente";
             // 
             // cita
             // 
@@ -501,31 +458,6 @@
             this.cita.Name = "cita";
             this.cita.Size = new System.Drawing.Size(0, 30);
             this.cita.TabIndex = 3;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(6, 64);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(42, 13);
-            this.label27.TabIndex = 2;
-            this.label27.Text = "Medico";
-            // 
-            // cbMedicos
-            // 
-            this.cbMedicos.FormattingEnabled = true;
-            this.cbMedicos.Location = new System.Drawing.Point(87, 64);
-            this.cbMedicos.Name = "cbMedicos";
-            this.cbMedicos.Size = new System.Drawing.Size(213, 21);
-            this.cbMedicos.TabIndex = 1;
-            // 
-            // cbPacientes
-            // 
-            this.cbPacientes.FormattingEnabled = true;
-            this.cbPacientes.Location = new System.Drawing.Point(87, 91);
-            this.cbPacientes.Name = "cbPacientes";
-            this.cbPacientes.Size = new System.Drawing.Size(213, 21);
-            this.cbPacientes.TabIndex = 0;
             // 
             // tabPage12
             // 
@@ -1706,6 +1638,34 @@
             this.tabPage11.Text = "Alta/Baja";
             this.tabPage11.UseVisualStyleBackColor = true;
             // 
+            // dgvAltaBajaU
+            // 
+            this.dgvAltaBajaU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAltaBajaU.Location = new System.Drawing.Point(62, 111);
+            this.dgvAltaBajaU.Name = "dgvAltaBajaU";
+            this.dgvAltaBajaU.Size = new System.Drawing.Size(372, 152);
+            this.dgvAltaBajaU.TabIndex = 2;
+            // 
+            // btBajaU
+            // 
+            this.btBajaU.Location = new System.Drawing.Point(350, 33);
+            this.btBajaU.Name = "btBajaU";
+            this.btBajaU.Size = new System.Drawing.Size(70, 24);
+            this.btBajaU.TabIndex = 1;
+            this.btBajaU.Text = "Inactivo";
+            this.btBajaU.UseVisualStyleBackColor = true;
+            this.btBajaU.Click += new System.EventHandler(this.btBajaU_Click);
+            // 
+            // btAltaU
+            // 
+            this.btAltaU.Location = new System.Drawing.Point(62, 33);
+            this.btAltaU.Name = "btAltaU";
+            this.btAltaU.Size = new System.Drawing.Size(70, 24);
+            this.btAltaU.TabIndex = 0;
+            this.btAltaU.Text = "Activo";
+            this.btAltaU.UseVisualStyleBackColor = true;
+            this.btAltaU.Click += new System.EventHandler(this.btAltaU_Click);
+            // 
             // tabPage15
             // 
             this.tabPage15.Controls.Add(this.txtEspecialida_AE);
@@ -1748,39 +1708,142 @@
             // 
             this.fontDialog1.Color = System.Drawing.SystemColors.ControlText;
             // 
-            // btAltaU
+            // cbHorario
             // 
-            this.btAltaU.Location = new System.Drawing.Point(62, 33);
-            this.btAltaU.Name = "btAltaU";
-            this.btAltaU.Size = new System.Drawing.Size(70, 24);
-            this.btAltaU.TabIndex = 0;
-            this.btAltaU.Text = "Activo";
-            this.btAltaU.UseVisualStyleBackColor = true;
-            this.btAltaU.Click += new System.EventHandler(this.btAltaU_Click);
+            this.cbHorario.FormattingEnabled = true;
+            this.cbHorario.Location = new System.Drawing.Point(88, 61);
+            this.cbHorario.Name = "cbHorario";
+            this.cbHorario.Size = new System.Drawing.Size(210, 21);
+            this.cbHorario.TabIndex = 13;
             // 
-            // btBajaU
+            // groupBox1
             // 
-            this.btBajaU.Location = new System.Drawing.Point(350, 33);
-            this.btBajaU.Name = "btBajaU";
-            this.btBajaU.Size = new System.Drawing.Size(70, 24);
-            this.btBajaU.TabIndex = 1;
-            this.btBajaU.Text = "Inactivo";
-            this.btBajaU.UseVisualStyleBackColor = true;
-            this.btBajaU.Click += new System.EventHandler(this.btBajaU_Click);
+            this.groupBox1.Controls.Add(this.label45);
+            this.groupBox1.Controls.Add(this.label44);
+            this.groupBox1.Controls.Add(this.tbApePac);
+            this.groupBox1.Controls.Add(this.tbNomPac);
+            this.groupBox1.Location = new System.Drawing.Point(326, 54);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(275, 115);
+            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Paciente";
             // 
-            // dgvAltaBajaU
+            // tbNomPac
             // 
-            this.dgvAltaBajaU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAltaBajaU.Location = new System.Drawing.Point(62, 111);
-            this.dgvAltaBajaU.Name = "dgvAltaBajaU";
-            this.dgvAltaBajaU.Size = new System.Drawing.Size(372, 152);
-            this.dgvAltaBajaU.TabIndex = 2;
+            this.tbNomPac.Location = new System.Drawing.Point(11, 36);
+            this.tbNomPac.Name = "tbNomPac";
+            this.tbNomPac.Size = new System.Drawing.Size(249, 20);
+            this.tbNomPac.TabIndex = 0;
+            // 
+            // tbApePac
+            // 
+            this.tbApePac.Location = new System.Drawing.Point(12, 81);
+            this.tbApePac.Name = "tbApePac";
+            this.tbApePac.Size = new System.Drawing.Size(247, 20);
+            this.tbApePac.TabIndex = 1;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(9, 20);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(44, 13);
+            this.label44.TabIndex = 2;
+            this.label44.Text = "Nombre";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(12, 65);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(49, 13);
+            this.label45.TabIndex = 3;
+            this.label45.Text = "Apellidos";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label29);
+            this.groupBox3.Controls.Add(this.label27);
+            this.groupBox3.Controls.Add(this.tbApeMed);
+            this.groupBox3.Controls.Add(this.tbNomMed);
+            this.groupBox3.Location = new System.Drawing.Point(9, 100);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(294, 112);
+            this.groupBox3.TabIndex = 15;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Medicos";
+            // 
+            // tbNomMed
+            // 
+            this.tbNomMed.Location = new System.Drawing.Point(6, 39);
+            this.tbNomMed.Name = "tbNomMed";
+            this.tbNomMed.Size = new System.Drawing.Size(249, 20);
+            this.tbNomMed.TabIndex = 4;
+            // 
+            // tbApeMed
+            // 
+            this.tbApeMed.Location = new System.Drawing.Point(6, 79);
+            this.tbApeMed.Name = "tbApeMed";
+            this.tbApeMed.Size = new System.Drawing.Size(247, 20);
+            this.tbApeMed.TabIndex = 4;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(6, 23);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(44, 13);
+            this.label27.TabIndex = 4;
+            this.label27.Text = "Nombre";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(6, 62);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(49, 13);
+            this.label29.TabIndex = 4;
+            this.label29.Text = "Apellidos";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(6, 223);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(104, 13);
+            this.label31.TabIndex = 16;
+            this.label31.Text = "Nueva fecha de cita";
+            // 
+            // dTP1
+            // 
+            this.dTP1.Location = new System.Drawing.Point(9, 239);
+            this.dTP1.Name = "dTP1";
+            this.dTP1.Size = new System.Drawing.Size(213, 20);
+            this.dTP1.TabIndex = 17;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(262, 223);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(76, 13);
+            this.label32.TabIndex = 18;
+            this.label32.Text = "Nuevo Horario";
+            // 
+            // Horarios
+            // 
+            this.Horarios.FormattingEnabled = true;
+            this.Horarios.Location = new System.Drawing.Point(266, 243);
+            this.Horarios.Name = "Horarios";
+            this.Horarios.Size = new System.Drawing.Size(182, 17);
+            this.Horarios.TabIndex = 19;
             // 
             // principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(674, 373);
+            this.ClientSize = new System.Drawing.Size(663, 426);
             this.Controls.Add(this.tcAgregarEspecialidad);
             this.Name = "principal";
             this.Text = "principal";
@@ -1820,9 +1883,13 @@
             this.tabPage10.ResumeLayout(false);
             this.tabPage10.PerformLayout();
             this.tabPage11.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAltaBajaU)).EndInit();
             this.tabPage15.ResumeLayout(false);
             this.tabPage15.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAltaBajaU)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1943,18 +2010,9 @@
         private System.Windows.Forms.RadioButton M3;
         private System.Windows.Forms.RadioButton M2;
         private System.Windows.Forms.RadioButton M1;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label cita;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.ComboBox cbMedicos;
-        private System.Windows.Forms.ComboBox cbPacientes;
         private System.Windows.Forms.Button Guardar;
-        private System.Windows.Forms.TextBox horaActual;
-        private System.Windows.Forms.ComboBox cbHorario;
-        private System.Windows.Forms.DateTimePicker fechaActual;
         private System.Windows.Forms.DataGridView dgvAltaBajaM;
         private System.Windows.Forms.Button btBajaM;
         private System.Windows.Forms.Button btAltaM;
@@ -1992,5 +2050,20 @@
         private System.Windows.Forms.DataGridView dgvAltaBajaU;
         private System.Windows.Forms.Button btBajaU;
         private System.Windows.Forms.Button btAltaU;
+        private System.Windows.Forms.ComboBox cbHorario;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox tbApeMed;
+        private System.Windows.Forms.TextBox tbNomMed;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.TextBox tbApePac;
+        private System.Windows.Forms.TextBox tbNomPac;
+        private System.Windows.Forms.ListBox Horarios;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.DateTimePicker dTP1;
+        private System.Windows.Forms.Label label31;
     }
 }

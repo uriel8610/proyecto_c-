@@ -36,6 +36,8 @@ namespace Proyecto_interfaz
             llenar_campos();
             llenar_camposEP();
             llenar_camposEU();
+            llenar_camposEC();
+
         }
 
         //MODULO DE AGRGAR MEDICO
@@ -611,6 +613,48 @@ namespace Proyecto_interfaz
             }
             datos.cerrar();
         }
+
+        private void cbPacientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BaseDeDatos bd = new BaseDeDatos();
+            int i = cbHorario.SelectedIndex;
+
+            datos.Abrir();
+            consulta = "SELECT p.Nombre, p.Apellido FROM Paciente pa, Persona p WHERE p.idPersona = pa.idPersona" + cbHorario.Text + "';";
+            datos.leer(consulta);
+            while (datos.cnLeerConsulta.Read())
+            {
+                id = Convert.ToInt32(datos.cnLeerConsulta[0].ToString());
+                cbHorario.Text = datos.cnLeerConsulta[1].ToString();
+                //tbMedico.Text = datos.cnLeerConsulta[2].ToString();
+                //tbHorario.Text = datos.cnLeerConsulta[3].ToString();
+                //tbFecha.Text = fecha;
+                //tbHora.Text = hora;
+            }
+            datos.cerrar();
+        }
+
+        //llena el combobox de los nombres de los pacientes que se pueden Editar en las citas
+        public void llenar_camposEC()
+        {
+            BaseDeDatos bd = new BaseDeDatos();
+            datos.Abrir();
+
+            consulta = "SELECT p.nombre from persona p, paciente pa WHERE p.idPersona=pa.idPersona";
+            datos.leer(consulta);
+            while (datos.cnLeerConsulta.Read())
+            {
+                cbHorario.Items.Add(datos.cnLeerConsulta[0]);
+            }
+
+            datos.cerrar();
+        }
+
+        private void tabPage5_Click(object sender, EventArgs e)
+        {
+
+        }
+
         }
     }
 
