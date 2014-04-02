@@ -84,7 +84,7 @@ namespace Proyecto_interfaz
         {
 
         }
-        
+
 
         private void btEditar_Click(object sender, EventArgs e) //Accion del boton Editar Médico (Envía las actualizaciones a la BD)
         {
@@ -144,7 +144,7 @@ namespace Proyecto_interfaz
         private void btEditarEP_Click(object sender, EventArgs e)
         {
             string sexo;
-             BaseDeDatos bd = new BaseDeDatos();
+            BaseDeDatos bd = new BaseDeDatos();
             datos.Abrir();
 
             //Verificar Sexo
@@ -152,9 +152,9 @@ namespace Proyecto_interfaz
                 sexo = "F";
             else
                 sexo = "M";
-          
-            consulta = "UPDATE persona p, paciente pa SET p.Nombre='" + cbNombreEP.Text + "',p.Apellido='" + txApellidoEP.Text + "',p.Direccion='" + txDireccionEP.Text + "',p.Telefono='" + txTelefonoEP.Text + "',p.eMail='" + txeMailEP.Text + "',p.Edad=" + Convert.ToInt32(txEdadEP.Text) + ",p.Sexo='" + sexo + "',p.FechaRegistro='" + txfechaRegistroEP.Text + "' WHERE p.nombre='" + cbNombreEP.Text + "' AND pa.idPersona=p.idPersona;";            
-            
+
+            consulta = "UPDATE persona p, paciente pa SET p.Nombre='" + cbNombreEP.Text + "',p.Apellido='" + txApellidoEP.Text + "',p.Direccion='" + txDireccionEP.Text + "',p.Telefono='" + txTelefonoEP.Text + "',p.eMail='" + txeMailEP.Text + "',p.Edad=" + Convert.ToInt32(txEdadEP.Text) + ",p.Sexo='" + sexo + "',p.FechaRegistro='" + txfechaRegistroEP.Text + "' WHERE p.nombre='" + cbNombreEP.Text + "' AND pa.idPersona=p.idPersona;";
+
             datos.leer(consulta);
             datos.cerrar();
             MessageBox.Show("Paciente Editado");
@@ -164,11 +164,11 @@ namespace Proyecto_interfaz
 
 
         //llena el combobox de los nombres de los pacientes que se pueden Editar
-        public void llenar_camposEP() 
+        public void llenar_camposEP()
         {
             BaseDeDatos bd = new BaseDeDatos();
             datos.Abrir();
-            
+
             consulta = "SELECT p.nombre from persona p, paciente pa WHERE p.idPersona=pa.idPersona";
             datos.leer(consulta);
             while (datos.cnLeerConsulta.Read())
@@ -181,7 +181,7 @@ namespace Proyecto_interfaz
 
 
         //COMBO DE EDITAR PACIENTES (Muestra los datos del usuario elegido en el ComboBox)
-        private void cbNombreEP_SelectedIndexChanged(object sender, EventArgs e) 
+        private void cbNombreEP_SelectedIndexChanged(object sender, EventArgs e)
         {
             BaseDeDatos bd = new BaseDeDatos();
             int i = cbNombreEP.SelectedIndex;
@@ -194,10 +194,10 @@ namespace Proyecto_interfaz
             {
                 id = Convert.ToInt32(datos.cnLeerConsulta[0].ToString());
                 cbNombreEP.Text = datos.cnLeerConsulta[1].ToString();
-                txApellidoEP.Text = datos.cnLeerConsulta[2].ToString();                
+                txApellidoEP.Text = datos.cnLeerConsulta[2].ToString();
                 txDireccionEP.Text = datos.cnLeerConsulta[3].ToString();
                 txTelefonoEP.Text = datos.cnLeerConsulta[4].ToString();
-                txeMailEP.Text = datos.cnLeerConsulta[5].ToString();                
+                txeMailEP.Text = datos.cnLeerConsulta[5].ToString();
                 txEdadEP.Text = datos.cnLeerConsulta[6].ToString();
                 txfechaRegistroEP.Text = datos.cnLeerConsulta[8].ToString();
 
@@ -229,7 +229,7 @@ namespace Proyecto_interfaz
 
 
         //Llena el ComboBox de Nombre de los Usuarios
-        public void llenar_camposEU()   
+        public void llenar_camposEU()
         {
             BaseDeDatos bd = new BaseDeDatos();
             datos.Abrir();
@@ -255,7 +255,7 @@ namespace Proyecto_interfaz
         private void cbNombreEU_SelectedIndexChanged(object sender, EventArgs e) //Llena el ComboBox de los nombres de Usuarios que se pueden editar
         {
             BaseDeDatos bd = new BaseDeDatos();
-           // int i = cbNombre.SelectedIndex;
+            // int i = cbNombre.SelectedIndex;
 
             datos.Abrir();
             consulta = "SELECT * FROM Persona WHERE Nombre='" + cbNombreEU.Text + "';";
@@ -281,7 +281,7 @@ namespace Proyecto_interfaz
                 cbTipoEU.Text = datos.cnLeerConsulta[2].ToString();
             }
 
-            datos.cerrar();      
+            datos.cerrar();
         }
 
 
@@ -353,12 +353,12 @@ namespace Proyecto_interfaz
         private void btAgregarAM_Click(object sender, EventArgs e)
         {
 
-            
+
             ///estancia de la clase ConexionBDD 
             ///<remarks>
             /// clase ConexionBDD en donde se realiza la conexion ODBC
             /// </remarks>   
-           BaseDeDatos c1 = new BaseDeDatos();
+            BaseDeDatos c1 = new BaseDeDatos();
 
             ///Los siguientes strings son para realizar consultas a la base de datos 
             string consulta, consulta2, consulta3, consulta4;
@@ -496,8 +496,8 @@ namespace Proyecto_interfaz
                 dgvAltaBajaM.Rows[renglon].Cells["Cedula"].Value = datos.cnLeerConsulta[3].ToString();
                 dgvAltaBajaM.Rows[renglon].Cells["Estado"].Value = datos.cnLeerConsulta[4].ToString();
             }
-           
 
+            datos.cerrar();
 
         }
 
@@ -512,7 +512,7 @@ namespace Proyecto_interfaz
         }
 
         private void btAgregar_AE_Click(object sender, EventArgs e)
-        {  
+        {
             //Instancia base de datos
             BaseDeDatos c = new BaseDeDatos();
             //Agregar especilida del campo text box
@@ -538,6 +538,79 @@ namespace Proyecto_interfaz
 
         }
 
- 
+        private void btBajaM_Click(object sender, EventArgs e)
+        {
+            string consulta = "SELECT  p.Nombre, p.Apellido, p.Direccion, m.Cedula, m.Estado FROM Medico m, Persona p WHERE p.idPersona = m.idPersona && Estado='Baja'";
+            datos.Abrir();
+            datos.leer(consulta);
+
+            // DataRow dr;
+            dgvAltaBajaM.Columns.Add("Nombre", "Nombre");
+            dgvAltaBajaM.Columns.Add("Apellido", "Apellido");
+            dgvAltaBajaM.Columns.Add("Direccion", "Direccion");
+            dgvAltaBajaM.Columns.Add("Cedula", "Cedula");
+            dgvAltaBajaM.Columns.Add("Estado", "Estado");
+            while (datos.cnLeerConsulta.Read())
+            {
+                int renglon = dgvAltaBajaM.Rows.Add();
+
+                dgvAltaBajaM.Rows[renglon].Cells["Nombre"].Value = datos.cnLeerConsulta[0].ToString();
+                dgvAltaBajaM.Rows[renglon].Cells["Apellido"].Value = datos.cnLeerConsulta[1].ToString();
+                dgvAltaBajaM.Rows[renglon].Cells["Direccion"].Value = datos.cnLeerConsulta[2].ToString();
+                dgvAltaBajaM.Rows[renglon].Cells["Cedula"].Value = datos.cnLeerConsulta[3].ToString();
+                dgvAltaBajaM.Rows[renglon].Cells["Estado"].Value = datos.cnLeerConsulta[4].ToString();
+            }
+            datos.cerrar();
+
+        }
+
+        private void btAltaU_Click(object sender, EventArgs e)
+        {
+                string consulta = "SELECT  p.Nombre, p.Apellido, p.Direccion, u.Estado FROM Usuario u, Persona p WHERE p.idPersona= u.idPersona && Estado='Alta'";
+            datos.Abrir();
+            datos.leer(consulta);
+
+
+            // DataRow dr;
+            dgvAltaBajaU.Columns.Add("Nombre", "Nombre");
+            dgvAltaBajaU.Columns.Add("Apellido", "Apellido");
+            dgvAltaBajaU.Columns.Add("Direccion", "Direccion");
+            dgvAltaBajaU.Columns.Add("Estado", "Estado");
+            while (datos.cnLeerConsulta.Read())
+            {
+                int renglon = dgvAltaBajaU.Rows.Add();
+
+                dgvAltaBajaU.Rows[renglon].Cells["Nombre"].Value = datos.cnLeerConsulta[0].ToString();
+                dgvAltaBajaU.Rows[renglon].Cells["Apellido"].Value = datos.cnLeerConsulta[1].ToString();
+                dgvAltaBajaU.Rows[renglon].Cells["Direccion"].Value = datos.cnLeerConsulta[2].ToString();
+                dgvAltaBajaU.Rows[renglon].Cells["Estado"].Value = datos.cnLeerConsulta[3].ToString();
+            }
+            datos.cerrar();
+        }
+
+        private void btBajaU_Click(object sender, EventArgs e)
+        {
+            string consulta = "SELECT  p.Nombre, p.Apellido, p.Direccion, u.Estado FROM Usuario u, Persona p WHERE p.idPersona= u.idPersona && Estado='Baja'";
+            datos.Abrir();
+            datos.leer(consulta);
+
+
+            // DataRow dr;
+            dgvAltaBajaU.Columns.Add("Nombre", "Nombre");
+            dgvAltaBajaU.Columns.Add("Apellido", "Apellido");
+            dgvAltaBajaU.Columns.Add("Direccion", "Direccion");
+            dgvAltaBajaU.Columns.Add("Estado", "Estado");
+            while (datos.cnLeerConsulta.Read())
+            {
+                int renglon = dgvAltaBajaU.Rows.Add();
+
+                dgvAltaBajaU.Rows[renglon].Cells["Nombre"].Value = datos.cnLeerConsulta[0].ToString();
+                dgvAltaBajaU.Rows[renglon].Cells["Apellido"].Value = datos.cnLeerConsulta[1].ToString();
+                dgvAltaBajaU.Rows[renglon].Cells["Direccion"].Value = datos.cnLeerConsulta[2].ToString();
+                dgvAltaBajaU.Rows[renglon].Cells["Estado"].Value = datos.cnLeerConsulta[3].ToString();
+            }
+            datos.cerrar();
+        }
+        }
     }
-}
+

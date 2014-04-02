@@ -129,6 +129,11 @@
             this.btBajaM = new System.Windows.Forms.Button();
             this.btAltaM = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.txtFinal = new System.Windows.Forms.TextBox();
+            this.txtInicio = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.mtcFinal = new System.Windows.Forms.MonthCalendar();
+            this.mtcInicio = new System.Windows.Forms.MonthCalendar();
             this.btnReporteGral = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -183,11 +188,9 @@
             this.label33 = new System.Windows.Forms.Label();
             this.btAgregar_AE = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.mtcInicio = new System.Windows.Forms.MonthCalendar();
-            this.mtcFinal = new System.Windows.Forms.MonthCalendar();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtInicio = new System.Windows.Forms.TextBox();
-            this.txtFinal = new System.Windows.Forms.TextBox();
+            this.btAltaU = new System.Windows.Forms.Button();
+            this.btBajaU = new System.Windows.Forms.Button();
+            this.dgvAltaBajaU = new System.Windows.Forms.DataGridView();
             this.tcAgregarEspecialidad.SuspendLayout();
             this.tpCita.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -207,12 +210,14 @@
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAltaBajaM)).BeginInit();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage9.SuspendLayout();
             this.tabPage10.SuspendLayout();
+            this.tabPage11.SuspendLayout();
             this.tabPage15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAltaBajaU)).BeginInit();
             this.SuspendLayout();
             // 
             // tcAgregarEspecialidad
@@ -235,7 +240,7 @@
             this.tpCita.Location = new System.Drawing.Point(4, 22);
             this.tpCita.Name = "tpCita";
             this.tpCita.Padding = new System.Windows.Forms.Padding(3);
-            this.tpCita.Size = new System.Drawing.Size(579, 392);
+            this.tpCita.Size = new System.Drawing.Size(653, 392);
             this.tpCita.TabIndex = 0;
             this.tpCita.Text = "Cita";
             this.tpCita.UseVisualStyleBackColor = true;
@@ -527,7 +532,7 @@
             this.tabPage12.Controls.Add(this.tabControl4);
             this.tabPage12.Location = new System.Drawing.Point(4, 22);
             this.tabPage12.Name = "tabPage12";
-            this.tabPage12.Size = new System.Drawing.Size(579, 392);
+            this.tabPage12.Size = new System.Drawing.Size(653, 392);
             this.tabPage12.TabIndex = 6;
             this.tabPage12.Text = "Paciente";
             this.tabPage12.UseVisualStyleBackColor = true;
@@ -743,7 +748,7 @@
             this.tabPage2.Controls.Add(this.tabControl2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(579, 392);
+            this.tabPage2.Size = new System.Drawing.Size(653, 392);
             this.tabPage2.TabIndex = 5;
             this.tabPage2.Text = "Medico";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1172,8 +1177,9 @@
             this.btBajaM.Name = "btBajaM";
             this.btBajaM.Size = new System.Drawing.Size(75, 23);
             this.btBajaM.TabIndex = 1;
-            this.btBajaM.Text = "Baja";
+            this.btBajaM.Text = "Inactivo";
             this.btBajaM.UseVisualStyleBackColor = true;
+            this.btBajaM.Click += new System.EventHandler(this.btBajaM_Click);
             // 
             // btAltaM
             // 
@@ -1181,7 +1187,7 @@
             this.btAltaM.Name = "btAltaM";
             this.btAltaM.Size = new System.Drawing.Size(75, 23);
             this.btAltaM.TabIndex = 0;
-            this.btAltaM.Text = "Alta";
+            this.btAltaM.Text = "Activo";
             this.btAltaM.UseVisualStyleBackColor = true;
             this.btAltaM.Click += new System.EventHandler(this.btAltaM_Click);
             // 
@@ -1201,6 +1207,40 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Reporte";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // txtFinal
+            // 
+            this.txtFinal.Location = new System.Drawing.Point(524, 98);
+            this.txtFinal.Name = "txtFinal";
+            this.txtFinal.Size = new System.Drawing.Size(100, 20);
+            this.txtFinal.TabIndex = 11;
+            // 
+            // txtInicio
+            // 
+            this.txtInicio.Location = new System.Drawing.Point(524, 72);
+            this.txtInicio.Name = "txtInicio";
+            this.txtInicio.Size = new System.Drawing.Size(100, 20);
+            this.txtInicio.TabIndex = 10;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(31, 252);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(461, 100);
+            this.dataGridView1.TabIndex = 9;
+            // 
+            // mtcFinal
+            // 
+            this.mtcFinal.Location = new System.Drawing.Point(265, 49);
+            this.mtcFinal.Name = "mtcFinal";
+            this.mtcFinal.TabIndex = 8;
+            // 
+            // mtcInicio
+            // 
+            this.mtcInicio.Location = new System.Drawing.Point(13, 49);
+            this.mtcInicio.Name = "mtcInicio";
+            this.mtcInicio.TabIndex = 7;
             // 
             // btnReporteGral
             // 
@@ -1235,7 +1275,7 @@
             this.tabPage1.Controls.Add(this.tabControl3);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(579, 392);
+            this.tabPage1.Size = new System.Drawing.Size(653, 392);
             this.tabPage1.TabIndex = 4;
             this.tabPage1.Text = "Usuario";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1656,6 +1696,9 @@
             // 
             // tabPage11
             // 
+            this.tabPage11.Controls.Add(this.dgvAltaBajaU);
+            this.tabPage11.Controls.Add(this.btBajaU);
+            this.tabPage11.Controls.Add(this.btAltaU);
             this.tabPage11.Location = new System.Drawing.Point(4, 22);
             this.tabPage11.Name = "tabPage11";
             this.tabPage11.Size = new System.Drawing.Size(517, 310);
@@ -1670,7 +1713,7 @@
             this.tabPage15.Controls.Add(this.btAgregar_AE);
             this.tabPage15.Location = new System.Drawing.Point(4, 22);
             this.tabPage15.Name = "tabPage15";
-            this.tabPage15.Size = new System.Drawing.Size(579, 392);
+            this.tabPage15.Size = new System.Drawing.Size(653, 392);
             this.tabPage15.TabIndex = 7;
             this.tabPage15.Text = "Especialidad";
             this.tabPage15.UseVisualStyleBackColor = true;
@@ -1705,39 +1748,33 @@
             // 
             this.fontDialog1.Color = System.Drawing.SystemColors.ControlText;
             // 
-            // mtcInicio
+            // btAltaU
             // 
-            this.mtcInicio.Location = new System.Drawing.Point(13, 49);
-            this.mtcInicio.Name = "mtcInicio";
-            this.mtcInicio.TabIndex = 7;
+            this.btAltaU.Location = new System.Drawing.Point(62, 33);
+            this.btAltaU.Name = "btAltaU";
+            this.btAltaU.Size = new System.Drawing.Size(70, 24);
+            this.btAltaU.TabIndex = 0;
+            this.btAltaU.Text = "Activo";
+            this.btAltaU.UseVisualStyleBackColor = true;
+            this.btAltaU.Click += new System.EventHandler(this.btAltaU_Click);
             // 
-            // mtcFinal
+            // btBajaU
             // 
-            this.mtcFinal.Location = new System.Drawing.Point(265, 49);
-            this.mtcFinal.Name = "mtcFinal";
-            this.mtcFinal.TabIndex = 8;
+            this.btBajaU.Location = new System.Drawing.Point(350, 33);
+            this.btBajaU.Name = "btBajaU";
+            this.btBajaU.Size = new System.Drawing.Size(70, 24);
+            this.btBajaU.TabIndex = 1;
+            this.btBajaU.Text = "Inactivo";
+            this.btBajaU.UseVisualStyleBackColor = true;
+            this.btBajaU.Click += new System.EventHandler(this.btBajaU_Click);
             // 
-            // dataGridView1
+            // dgvAltaBajaU
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(31, 252);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(461, 100);
-            this.dataGridView1.TabIndex = 9;
-            // 
-            // txtInicio
-            // 
-            this.txtInicio.Location = new System.Drawing.Point(524, 72);
-            this.txtInicio.Name = "txtInicio";
-            this.txtInicio.Size = new System.Drawing.Size(100, 20);
-            this.txtInicio.TabIndex = 10;
-            // 
-            // txtFinal
-            // 
-            this.txtFinal.Location = new System.Drawing.Point(524, 98);
-            this.txtFinal.Name = "txtFinal";
-            this.txtFinal.Size = new System.Drawing.Size(100, 20);
-            this.txtFinal.TabIndex = 11;
+            this.dgvAltaBajaU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAltaBajaU.Location = new System.Drawing.Point(62, 111);
+            this.dgvAltaBajaU.Name = "dgvAltaBajaU";
+            this.dgvAltaBajaU.Size = new System.Drawing.Size(372, 152);
+            this.dgvAltaBajaU.TabIndex = 2;
             // 
             // principal
             // 
@@ -1775,15 +1812,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAltaBajaM)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
             this.tabPage9.ResumeLayout(false);
             this.tabPage9.PerformLayout();
             this.tabPage10.ResumeLayout(false);
             this.tabPage10.PerformLayout();
+            this.tabPage11.ResumeLayout(false);
             this.tabPage15.ResumeLayout(false);
             this.tabPage15.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAltaBajaU)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1950,5 +1989,8 @@
         private System.Windows.Forms.MonthCalendar mtcInicio;
         private System.Windows.Forms.TextBox txtFinal;
         private System.Windows.Forms.TextBox txtInicio;
+        private System.Windows.Forms.DataGridView dgvAltaBajaU;
+        private System.Windows.Forms.Button btBajaU;
+        private System.Windows.Forms.Button btAltaU;
     }
 }
