@@ -216,12 +216,12 @@ namespace Proyecto_interfaz
         //Hace la consulta del reporte usando solo fechas
         private void button1_Click(object sender, EventArgs e)
         {
-            txtInicio.Text = mtcInicio.SelectionEnd.ToShortDateString();
-            txtFinal.Text = mtcFinal.SelectionEnd.ToShortDateString();
+            txtInicio.Text = mtcInicio.SelectionEnd.ToString("yyyy/MM/dd");
+            txtFinal.Text = mtcFinal.SelectionEnd.ToString("yyyy/MM/dd");
             BaseDeDatos bd = new BaseDeDatos();
             datos.Abrir();
 
-            consulta = "SELECT vm.Nombre AS Nombre_Medico, vm.Apellido AS Apellido_Medico, vpa.Nombre AS Nombre_Paciente, vpa.Apellido AS Apellido_Paciente, vu.Nombre AS Nombre_Usuario, vu.Apellido as Apellido_Usuario, h.Descripcion AS Horario_Cita FROM vista_medico vm, vista_paciente vpa, vista_usuario vu, cita c, Horario h WHERE vpa.idPaciente = c.idPaciente AND vm.idMedico = c.idMedico AND vu.idUsuario = c.idUsuario AND h.idHorario = c.idHorario;";
+            consulta = "SELECT DATE_FORMAT(c.Fecha,'%d/%m/%Y') AS Fecha, h.Descripcion AS Horario_Cita, c.Estado, vm.Nombre AS Medico_Nombre, vm.Apellido AS Medico_Apellido, vpa.Nombre AS Paciente_Nombre, vpa.Apellido AS Paciente_Apellido, vu.Nombre AS Usuario_Nombre, vu.Apellido as Usuario_Apellido FROM vista_medico vm, vista_paciente vpa, vista_usuario vu, cita c, Horario h WHERE vpa.idPaciente = c.idPaciente AND vm.idMedico = c.idMedico AND vu.idUsuario = c.idUsuario AND h.idHorario = c.idHorario AND c.Fecha BETWEEN '"+ txtInicio +"' AND '"+  txtFinal +"'  AND c.Fecha ORDER BY c.Fecha ASC;";
             datos.leer(consulta);
 
 
