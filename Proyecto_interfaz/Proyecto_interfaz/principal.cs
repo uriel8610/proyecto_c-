@@ -655,6 +655,51 @@ namespace Proyecto_interfaz
 
         }
 
+        private void btAgregarCitaB_Click(object sender, EventArgs e)
+        {
+
+            string  consulta1;
+            txtAgregarCitaN.Text.ElementAt(0);
+            txtAgregarCitaA.Text.ElementAt(0);
+            MessageBox.Show(txtAgregarCitaN.Text.ElementAt(0).ToString());
+            consulta1 = "SELECT Nombre, Apellido, Direccion, Edad FROM Persona WHERE Nombre LIKE '" + txtAgregarCitaN.Text.ElementAt(0).ToString() + "%' AND  Apellido LIKE '" +txtAgregarCitaA.Text.ElementAt(0).ToString()+"%'";
+
+            BaseDeDatos C1 = new BaseDeDatos();
+            C1.Abrir();
+            C1.leer(consulta1);
+
+            dgwAgregarCitaVP.Columns.Add("Nombre", "Nombre");
+            dgwAgregarCitaVP.Columns.Add("Apellido", "Apellido");
+            dgwAgregarCitaVP.Columns.Add("Direccion", "Direccion");
+            dgwAgregarCitaVP.Columns.Add("Edad", "Edad");
+
+            while (C1.cnLeerConsulta.Read())
+            {
+                int renglon = dgwAgregarCitaVP.Rows.Add();
+
+            dgwAgregarCitaVP.Rows[renglon].Cells["Nombre"].Value = C1.cnLeerConsulta[0].ToString();
+            dgwAgregarCitaVP.Rows[renglon].Cells["Apellido"].Value = C1.cnLeerConsulta[1].ToString();
+            dgwAgregarCitaVP.Rows[renglon].Cells["Direccion"].Value = C1.cnLeerConsulta[2].ToString();
+            dgwAgregarCitaVP.Rows[renglon].Cells["Edad"].Value = C1.cnLeerConsulta[3].ToString();
+          
+            
+            }
+            C1.cerrar();
+
+
+            //Falta tomar el valor de la de la persona que selecciona 
+
+
+        
+        }
+
+        private void btAgregarCita_Click(object sender, EventArgs e)
+        {
+            string consulta1;
+            consulta1 = "INSERT INTO Cita( idMedico, idPaciente, idHorario, idUsuario, Fecha, FechaActual, HoraActual, Estado) VALUES(0001, 0001, 0001, 0001, 0001, '17/03/2014','15/03/2014', '10:00', 'realizada');";
+
+        }
+
         }
     }
 

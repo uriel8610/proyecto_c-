@@ -197,21 +197,21 @@
             this.label33 = new System.Windows.Forms.Label();
             this.btAgregar_AE = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.mcCitas = new System.Windows.Forms.MonthCalendar();
-            this.label46 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label47 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.mcAgregarCitas = new System.Windows.Forms.MonthCalendar();
+            this.lbAgregarCitaN = new System.Windows.Forms.Label();
+            this.txtAgregarCitaN = new System.Windows.Forms.TextBox();
+            this.txtAgregarCitaA = new System.Windows.Forms.TextBox();
+            this.lbAgregarCitaA = new System.Windows.Forms.Label();
+            this.dgwAgregarCitaVP = new System.Windows.Forms.DataGridView();
             this.lbAgregarCita = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.btBuscarPC = new System.Windows.Forms.Button();
-            this.lbVerPacientesAC = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.btAgregarCitaB = new System.Windows.Forms.Button();
+            this.lbAgregarCitaVP = new System.Windows.Forms.Label();
+            this.cbAgragarCitaM = new System.Windows.Forms.ComboBox();
+            this.cbAgregarCitaH = new System.Windows.Forms.ComboBox();
             this.lbAgregarCitaM = new System.Windows.Forms.Label();
             this.lbAgregarCitaH = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btAgregarCita = new System.Windows.Forms.Button();
             this.tcAgregarEspecialidad.SuspendLayout();
             this.tpCita.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -242,7 +242,7 @@
             this.tabPage11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAltaBajaU)).BeginInit();
             this.tabPage15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwAgregarCitaVP)).BeginInit();
             this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -284,16 +284,16 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.button1);
+            this.tabPage3.Controls.Add(this.btAgregarCita);
             this.tabPage3.Controls.Add(this.lbAgregarCitaH);
             this.tabPage3.Controls.Add(this.lbAgregarCitaM);
-            this.tabPage3.Controls.Add(this.comboBox2);
-            this.tabPage3.Controls.Add(this.comboBox1);
-            this.tabPage3.Controls.Add(this.lbVerPacientesAC);
+            this.tabPage3.Controls.Add(this.cbAgregarCitaH);
+            this.tabPage3.Controls.Add(this.cbAgragarCitaM);
+            this.tabPage3.Controls.Add(this.lbAgregarCitaVP);
             this.tabPage3.Controls.Add(this.groupBox7);
             this.tabPage3.Controls.Add(this.lbAgregarCita);
-            this.tabPage3.Controls.Add(this.dataGridView2);
-            this.tabPage3.Controls.Add(this.mcCitas);
+            this.tabPage3.Controls.Add(this.dgwAgregarCitaVP);
+            this.tabPage3.Controls.Add(this.mcAgregarCitas);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -1867,51 +1867,51 @@
             // 
             this.fontDialog1.Color = System.Drawing.SystemColors.ControlText;
             // 
-            // mcCitas
+            // mcAgregarCitas
             // 
-            this.mcCitas.Location = new System.Drawing.Point(342, 37);
-            this.mcCitas.Name = "mcCitas";
-            this.mcCitas.TabIndex = 0;
+            this.mcAgregarCitas.Location = new System.Drawing.Point(342, 37);
+            this.mcAgregarCitas.Name = "mcAgregarCitas";
+            this.mcAgregarCitas.TabIndex = 0;
             // 
-            // label46
+            // lbAgregarCitaN
             // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(27, 42);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(41, 13);
-            this.label46.TabIndex = 1;
-            this.label46.Text = "label46";
+            this.lbAgregarCitaN.AutoSize = true;
+            this.lbAgregarCitaN.Location = new System.Drawing.Point(27, 42);
+            this.lbAgregarCitaN.Name = "lbAgregarCitaN";
+            this.lbAgregarCitaN.Size = new System.Drawing.Size(44, 13);
+            this.lbAgregarCitaN.TabIndex = 1;
+            this.lbAgregarCitaN.Text = "Nombre";
             // 
-            // textBox1
+            // txtAgregarCitaN
             // 
-            this.textBox1.Location = new System.Drawing.Point(91, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(184, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtAgregarCitaN.Location = new System.Drawing.Point(91, 35);
+            this.txtAgregarCitaN.Name = "txtAgregarCitaN";
+            this.txtAgregarCitaN.Size = new System.Drawing.Size(184, 20);
+            this.txtAgregarCitaN.TabIndex = 2;
             // 
-            // textBox2
+            // txtAgregarCitaA
             // 
-            this.textBox2.Location = new System.Drawing.Point(91, 74);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(184, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtAgregarCitaA.Location = new System.Drawing.Point(91, 74);
+            this.txtAgregarCitaA.Name = "txtAgregarCitaA";
+            this.txtAgregarCitaA.Size = new System.Drawing.Size(184, 20);
+            this.txtAgregarCitaA.TabIndex = 3;
             // 
-            // label47
+            // lbAgregarCitaA
             // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(27, 81);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(41, 13);
-            this.label47.TabIndex = 4;
-            this.label47.Text = "label47";
+            this.lbAgregarCitaA.AutoSize = true;
+            this.lbAgregarCitaA.Location = new System.Drawing.Point(27, 81);
+            this.lbAgregarCitaA.Name = "lbAgregarCitaA";
+            this.lbAgregarCitaA.Size = new System.Drawing.Size(44, 13);
+            this.lbAgregarCitaA.TabIndex = 4;
+            this.lbAgregarCitaA.Text = "Apellido";
             // 
-            // dataGridView2
+            // dgwAgregarCitaVP
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 176);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(324, 98);
-            this.dataGridView2.TabIndex = 5;
+            this.dgwAgregarCitaVP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgwAgregarCitaVP.Location = new System.Drawing.Point(6, 176);
+            this.dgwAgregarCitaVP.Name = "dgwAgregarCitaVP";
+            this.dgwAgregarCitaVP.Size = new System.Drawing.Size(324, 98);
+            this.dgwAgregarCitaVP.TabIndex = 5;
             // 
             // lbAgregarCita
             // 
@@ -1924,11 +1924,11 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.btBuscarPC);
-            this.groupBox7.Controls.Add(this.textBox1);
-            this.groupBox7.Controls.Add(this.label46);
-            this.groupBox7.Controls.Add(this.label47);
-            this.groupBox7.Controls.Add(this.textBox2);
+            this.groupBox7.Controls.Add(this.btAgregarCitaB);
+            this.groupBox7.Controls.Add(this.txtAgregarCitaN);
+            this.groupBox7.Controls.Add(this.lbAgregarCitaN);
+            this.groupBox7.Controls.Add(this.lbAgregarCitaA);
+            this.groupBox7.Controls.Add(this.txtAgregarCitaA);
             this.groupBox7.Location = new System.Drawing.Point(20, 6);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(295, 136);
@@ -1936,39 +1936,40 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Paciente";
             // 
-            // btBuscarPC
+            // btAgregarCitaB
             // 
-            this.btBuscarPC.Location = new System.Drawing.Point(200, 100);
-            this.btBuscarPC.Name = "btBuscarPC";
-            this.btBuscarPC.Size = new System.Drawing.Size(75, 23);
-            this.btBuscarPC.TabIndex = 5;
-            this.btBuscarPC.Text = "Buscar";
-            this.btBuscarPC.UseVisualStyleBackColor = true;
+            this.btAgregarCitaB.Location = new System.Drawing.Point(200, 100);
+            this.btAgregarCitaB.Name = "btAgregarCitaB";
+            this.btAgregarCitaB.Size = new System.Drawing.Size(75, 23);
+            this.btAgregarCitaB.TabIndex = 5;
+            this.btAgregarCitaB.Text = "Buscar";
+            this.btAgregarCitaB.UseVisualStyleBackColor = true;
+            this.btAgregarCitaB.Click += new System.EventHandler(this.btAgregarCitaB_Click);
             // 
-            // lbVerPacientesAC
+            // lbAgregarCitaVP
             // 
-            this.lbVerPacientesAC.AutoSize = true;
-            this.lbVerPacientesAC.Location = new System.Drawing.Point(39, 157);
-            this.lbVerPacientesAC.Name = "lbVerPacientesAC";
-            this.lbVerPacientesAC.Size = new System.Drawing.Size(122, 13);
-            this.lbVerPacientesAC.TabIndex = 8;
-            this.lbVerPacientesAC.Text = "Seleccion de Pacientes ";
+            this.lbAgregarCitaVP.AutoSize = true;
+            this.lbAgregarCitaVP.Location = new System.Drawing.Point(39, 157);
+            this.lbAgregarCitaVP.Name = "lbAgregarCitaVP";
+            this.lbAgregarCitaVP.Size = new System.Drawing.Size(122, 13);
+            this.lbAgregarCitaVP.TabIndex = 8;
+            this.lbAgregarCitaVP.Text = "Seleccion de Pacientes ";
             // 
-            // comboBox1
+            // cbAgragarCitaM
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(405, 212);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(185, 21);
-            this.comboBox1.TabIndex = 9;
+            this.cbAgragarCitaM.FormattingEnabled = true;
+            this.cbAgragarCitaM.Location = new System.Drawing.Point(405, 212);
+            this.cbAgragarCitaM.Name = "cbAgragarCitaM";
+            this.cbAgragarCitaM.Size = new System.Drawing.Size(185, 21);
+            this.cbAgragarCitaM.TabIndex = 9;
             // 
-            // comboBox2
+            // cbAgregarCitaH
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(407, 239);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(183, 21);
-            this.comboBox2.TabIndex = 10;
+            this.cbAgregarCitaH.FormattingEnabled = true;
+            this.cbAgregarCitaH.Location = new System.Drawing.Point(407, 239);
+            this.cbAgregarCitaH.Name = "cbAgregarCitaH";
+            this.cbAgregarCitaH.Size = new System.Drawing.Size(183, 21);
+            this.cbAgregarCitaH.TabIndex = 10;
             // 
             // lbAgregarCitaM
             // 
@@ -1988,14 +1989,15 @@
             this.lbAgregarCitaH.TabIndex = 12;
             this.lbAgregarCitaH.Text = "Horario";
             // 
-            // button1
+            // btAgregarCita
             // 
-            this.button1.Location = new System.Drawing.Point(515, 266);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Ingresar Cita";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btAgregarCita.Location = new System.Drawing.Point(515, 266);
+            this.btAgregarCita.Name = "btAgregarCita";
+            this.btAgregarCita.Size = new System.Drawing.Size(75, 23);
+            this.btAgregarCita.TabIndex = 13;
+            this.btAgregarCita.Text = "Ingresar Cita";
+            this.btAgregarCita.UseVisualStyleBackColor = true;
+            this.btAgregarCita.Click += new System.EventHandler(this.btAgregarCita_Click);
             // 
             // principal
             // 
@@ -2050,7 +2052,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAltaBajaU)).EndInit();
             this.tabPage15.ResumeLayout(false);
             this.tabPage15.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwAgregarCitaVP)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
@@ -2228,20 +2230,20 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.DateTimePicker dTP1;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.MonthCalendar mcCitas;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.MonthCalendar mcAgregarCitas;
+        private System.Windows.Forms.Button btAgregarCita;
         private System.Windows.Forms.Label lbAgregarCitaH;
         private System.Windows.Forms.Label lbAgregarCitaM;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label lbVerPacientesAC;
+        private System.Windows.Forms.ComboBox cbAgregarCitaH;
+        private System.Windows.Forms.ComboBox cbAgragarCitaM;
+        private System.Windows.Forms.Label lbAgregarCitaVP;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Button btBuscarPC;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button btAgregarCitaB;
+        private System.Windows.Forms.TextBox txtAgregarCitaN;
+        private System.Windows.Forms.Label lbAgregarCitaN;
+        private System.Windows.Forms.Label lbAgregarCitaA;
+        private System.Windows.Forms.TextBox txtAgregarCitaA;
         private System.Windows.Forms.Label lbAgregarCita;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgwAgregarCitaVP;
     }
 }
