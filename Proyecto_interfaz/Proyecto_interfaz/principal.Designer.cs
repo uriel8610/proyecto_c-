@@ -47,6 +47,21 @@
             this.M2 = new System.Windows.Forms.RadioButton();
             this.M1 = new System.Windows.Forms.RadioButton();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.Horarios = new System.Windows.Forms.ListBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.dTP1 = new System.Windows.Forms.DateTimePicker();
+            this.label31 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.tbApeMed = new System.Windows.Forms.TextBox();
+            this.tbNomMed = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.tbApePac = new System.Windows.Forms.TextBox();
+            this.tbNomPac = new System.Windows.Forms.TextBox();
+            this.cbHorario = new System.Windows.Forms.ComboBox();
             this.Guardar = new System.Windows.Forms.Button();
             this.label30 = new System.Windows.Forms.Label();
             this.cita = new System.Windows.Forms.Label();
@@ -182,28 +197,31 @@
             this.label33 = new System.Windows.Forms.Label();
             this.btAgregar_AE = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.cbHorario = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tbNomPac = new System.Windows.Forms.TextBox();
-            this.tbApePac = new System.Windows.Forms.TextBox();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.tbNomMed = new System.Windows.Forms.TextBox();
-            this.tbApeMed = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.dTP1 = new System.Windows.Forms.DateTimePicker();
-            this.label32 = new System.Windows.Forms.Label();
-            this.Horarios = new System.Windows.Forms.ListBox();
+            this.mcCitas = new System.Windows.Forms.MonthCalendar();
+            this.label46 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label47 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.lbAgregarCita = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.btBuscarPC = new System.Windows.Forms.Button();
+            this.lbVerPacientesAC = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.lbAgregarCitaM = new System.Windows.Forms.Label();
+            this.lbAgregarCitaH = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.tcAgregarEspecialidad.SuspendLayout();
             this.tpCita.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.tabPage16.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.tabPage12.SuspendLayout();
             this.tabControl4.SuspendLayout();
             this.tabPage14.SuspendLayout();
@@ -224,8 +242,8 @@
             this.tabPage11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAltaBajaU)).BeginInit();
             this.tabPage15.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcAgregarEspecialidad
@@ -266,10 +284,20 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.button1);
+            this.tabPage3.Controls.Add(this.lbAgregarCitaH);
+            this.tabPage3.Controls.Add(this.lbAgregarCitaM);
+            this.tabPage3.Controls.Add(this.comboBox2);
+            this.tabPage3.Controls.Add(this.comboBox1);
+            this.tabPage3.Controls.Add(this.lbVerPacientesAC);
+            this.tabPage3.Controls.Add(this.groupBox7);
+            this.tabPage3.Controls.Add(this.lbAgregarCita);
+            this.tabPage3.Controls.Add(this.dataGridView2);
+            this.tabPage3.Controls.Add(this.mcCitas);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(555, 303);
+            this.tabPage3.Size = new System.Drawing.Size(619, 303);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Agregar";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -431,6 +459,137 @@
             this.tabPage5.Text = "Editar";
             this.tabPage5.UseVisualStyleBackColor = true;
             this.tabPage5.Click += new System.EventHandler(this.tabPage5_Click);
+            // 
+            // Horarios
+            // 
+            this.Horarios.FormattingEnabled = true;
+            this.Horarios.Location = new System.Drawing.Point(266, 243);
+            this.Horarios.Name = "Horarios";
+            this.Horarios.Size = new System.Drawing.Size(182, 17);
+            this.Horarios.TabIndex = 19;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(262, 223);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(76, 13);
+            this.label32.TabIndex = 18;
+            this.label32.Text = "Nuevo Horario";
+            // 
+            // dTP1
+            // 
+            this.dTP1.Location = new System.Drawing.Point(9, 239);
+            this.dTP1.Name = "dTP1";
+            this.dTP1.Size = new System.Drawing.Size(213, 20);
+            this.dTP1.TabIndex = 17;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(6, 223);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(104, 13);
+            this.label31.TabIndex = 16;
+            this.label31.Text = "Nueva fecha de cita";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label29);
+            this.groupBox3.Controls.Add(this.label27);
+            this.groupBox3.Controls.Add(this.tbApeMed);
+            this.groupBox3.Controls.Add(this.tbNomMed);
+            this.groupBox3.Location = new System.Drawing.Point(9, 100);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(294, 112);
+            this.groupBox3.TabIndex = 15;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Medicos";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(6, 62);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(49, 13);
+            this.label29.TabIndex = 4;
+            this.label29.Text = "Apellidos";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(6, 23);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(44, 13);
+            this.label27.TabIndex = 4;
+            this.label27.Text = "Nombre";
+            // 
+            // tbApeMed
+            // 
+            this.tbApeMed.Location = new System.Drawing.Point(6, 79);
+            this.tbApeMed.Name = "tbApeMed";
+            this.tbApeMed.Size = new System.Drawing.Size(247, 20);
+            this.tbApeMed.TabIndex = 4;
+            // 
+            // tbNomMed
+            // 
+            this.tbNomMed.Location = new System.Drawing.Point(6, 39);
+            this.tbNomMed.Name = "tbNomMed";
+            this.tbNomMed.Size = new System.Drawing.Size(249, 20);
+            this.tbNomMed.TabIndex = 4;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label45);
+            this.groupBox1.Controls.Add(this.label44);
+            this.groupBox1.Controls.Add(this.tbApePac);
+            this.groupBox1.Controls.Add(this.tbNomPac);
+            this.groupBox1.Location = new System.Drawing.Point(326, 54);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(275, 115);
+            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Paciente";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(12, 65);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(49, 13);
+            this.label45.TabIndex = 3;
+            this.label45.Text = "Apellidos";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(9, 20);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(44, 13);
+            this.label44.TabIndex = 2;
+            this.label44.Text = "Nombre";
+            // 
+            // tbApePac
+            // 
+            this.tbApePac.Location = new System.Drawing.Point(12, 81);
+            this.tbApePac.Name = "tbApePac";
+            this.tbApePac.Size = new System.Drawing.Size(247, 20);
+            this.tbApePac.TabIndex = 1;
+            // 
+            // tbNomPac
+            // 
+            this.tbNomPac.Location = new System.Drawing.Point(11, 36);
+            this.tbNomPac.Name = "tbNomPac";
+            this.tbNomPac.Size = new System.Drawing.Size(249, 20);
+            this.tbNomPac.TabIndex = 0;
+            // 
+            // cbHorario
+            // 
+            this.cbHorario.FormattingEnabled = true;
+            this.cbHorario.Location = new System.Drawing.Point(88, 61);
+            this.cbHorario.Name = "cbHorario";
+            this.cbHorario.Size = new System.Drawing.Size(210, 21);
+            this.cbHorario.TabIndex = 13;
             // 
             // Guardar
             // 
@@ -1708,136 +1867,135 @@
             // 
             this.fontDialog1.Color = System.Drawing.SystemColors.ControlText;
             // 
-            // cbHorario
+            // mcCitas
             // 
-            this.cbHorario.FormattingEnabled = true;
-            this.cbHorario.Location = new System.Drawing.Point(88, 61);
-            this.cbHorario.Name = "cbHorario";
-            this.cbHorario.Size = new System.Drawing.Size(210, 21);
-            this.cbHorario.TabIndex = 13;
+            this.mcCitas.Location = new System.Drawing.Point(342, 37);
+            this.mcCitas.Name = "mcCitas";
+            this.mcCitas.TabIndex = 0;
             // 
-            // groupBox1
+            // label46
             // 
-            this.groupBox1.Controls.Add(this.label45);
-            this.groupBox1.Controls.Add(this.label44);
-            this.groupBox1.Controls.Add(this.tbApePac);
-            this.groupBox1.Controls.Add(this.tbNomPac);
-            this.groupBox1.Location = new System.Drawing.Point(326, 54);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(275, 115);
-            this.groupBox1.TabIndex = 14;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Paciente";
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(27, 42);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(41, 13);
+            this.label46.TabIndex = 1;
+            this.label46.Text = "label46";
             // 
-            // tbNomPac
+            // textBox1
             // 
-            this.tbNomPac.Location = new System.Drawing.Point(11, 36);
-            this.tbNomPac.Name = "tbNomPac";
-            this.tbNomPac.Size = new System.Drawing.Size(249, 20);
-            this.tbNomPac.TabIndex = 0;
+            this.textBox1.Location = new System.Drawing.Point(91, 35);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(184, 20);
+            this.textBox1.TabIndex = 2;
             // 
-            // tbApePac
+            // textBox2
             // 
-            this.tbApePac.Location = new System.Drawing.Point(12, 81);
-            this.tbApePac.Name = "tbApePac";
-            this.tbApePac.Size = new System.Drawing.Size(247, 20);
-            this.tbApePac.TabIndex = 1;
+            this.textBox2.Location = new System.Drawing.Point(91, 74);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(184, 20);
+            this.textBox2.TabIndex = 3;
             // 
-            // label44
+            // label47
             // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(9, 20);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(44, 13);
-            this.label44.TabIndex = 2;
-            this.label44.Text = "Nombre";
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(27, 81);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(41, 13);
+            this.label47.TabIndex = 4;
+            this.label47.Text = "label47";
             // 
-            // label45
+            // dataGridView2
             // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(12, 65);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(49, 13);
-            this.label45.TabIndex = 3;
-            this.label45.Text = "Apellidos";
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(6, 176);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(324, 98);
+            this.dataGridView2.TabIndex = 5;
             // 
-            // groupBox3
+            // lbAgregarCita
             // 
-            this.groupBox3.Controls.Add(this.label29);
-            this.groupBox3.Controls.Add(this.label27);
-            this.groupBox3.Controls.Add(this.tbApeMed);
-            this.groupBox3.Controls.Add(this.tbNomMed);
-            this.groupBox3.Location = new System.Drawing.Point(9, 100);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(294, 112);
-            this.groupBox3.TabIndex = 15;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Medicos";
+            this.lbAgregarCita.AutoSize = true;
+            this.lbAgregarCita.Location = new System.Drawing.Point(420, 15);
+            this.lbAgregarCita.Name = "lbAgregarCita";
+            this.lbAgregarCita.Size = new System.Drawing.Size(73, 13);
+            this.lbAgregarCita.TabIndex = 6;
+            this.lbAgregarCita.Text = "Fecha de Cita";
             // 
-            // tbNomMed
+            // groupBox7
             // 
-            this.tbNomMed.Location = new System.Drawing.Point(6, 39);
-            this.tbNomMed.Name = "tbNomMed";
-            this.tbNomMed.Size = new System.Drawing.Size(249, 20);
-            this.tbNomMed.TabIndex = 4;
+            this.groupBox7.Controls.Add(this.btBuscarPC);
+            this.groupBox7.Controls.Add(this.textBox1);
+            this.groupBox7.Controls.Add(this.label46);
+            this.groupBox7.Controls.Add(this.label47);
+            this.groupBox7.Controls.Add(this.textBox2);
+            this.groupBox7.Location = new System.Drawing.Point(20, 6);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(295, 136);
+            this.groupBox7.TabIndex = 7;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Paciente";
             // 
-            // tbApeMed
+            // btBuscarPC
             // 
-            this.tbApeMed.Location = new System.Drawing.Point(6, 79);
-            this.tbApeMed.Name = "tbApeMed";
-            this.tbApeMed.Size = new System.Drawing.Size(247, 20);
-            this.tbApeMed.TabIndex = 4;
+            this.btBuscarPC.Location = new System.Drawing.Point(200, 100);
+            this.btBuscarPC.Name = "btBuscarPC";
+            this.btBuscarPC.Size = new System.Drawing.Size(75, 23);
+            this.btBuscarPC.TabIndex = 5;
+            this.btBuscarPC.Text = "Buscar";
+            this.btBuscarPC.UseVisualStyleBackColor = true;
             // 
-            // label27
+            // lbVerPacientesAC
             // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(6, 23);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(44, 13);
-            this.label27.TabIndex = 4;
-            this.label27.Text = "Nombre";
+            this.lbVerPacientesAC.AutoSize = true;
+            this.lbVerPacientesAC.Location = new System.Drawing.Point(39, 157);
+            this.lbVerPacientesAC.Name = "lbVerPacientesAC";
+            this.lbVerPacientesAC.Size = new System.Drawing.Size(122, 13);
+            this.lbVerPacientesAC.TabIndex = 8;
+            this.lbVerPacientesAC.Text = "Seleccion de Pacientes ";
             // 
-            // label29
+            // comboBox1
             // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(6, 62);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(49, 13);
-            this.label29.TabIndex = 4;
-            this.label29.Text = "Apellidos";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(405, 212);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(185, 21);
+            this.comboBox1.TabIndex = 9;
             // 
-            // label31
+            // comboBox2
             // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(6, 223);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(104, 13);
-            this.label31.TabIndex = 16;
-            this.label31.Text = "Nueva fecha de cita";
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(407, 239);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(183, 21);
+            this.comboBox2.TabIndex = 10;
             // 
-            // dTP1
+            // lbAgregarCitaM
             // 
-            this.dTP1.Location = new System.Drawing.Point(9, 239);
-            this.dTP1.Name = "dTP1";
-            this.dTP1.Size = new System.Drawing.Size(213, 20);
-            this.dTP1.TabIndex = 17;
+            this.lbAgregarCitaM.AutoSize = true;
+            this.lbAgregarCitaM.Location = new System.Drawing.Point(357, 212);
+            this.lbAgregarCitaM.Name = "lbAgregarCitaM";
+            this.lbAgregarCitaM.Size = new System.Drawing.Size(42, 13);
+            this.lbAgregarCitaM.TabIndex = 11;
+            this.lbAgregarCitaM.Text = "Medico";
             // 
-            // label32
+            // lbAgregarCitaH
             // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(262, 223);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(76, 13);
-            this.label32.TabIndex = 18;
-            this.label32.Text = "Nuevo Horario";
+            this.lbAgregarCitaH.AutoSize = true;
+            this.lbAgregarCitaH.Location = new System.Drawing.Point(360, 239);
+            this.lbAgregarCitaH.Name = "lbAgregarCitaH";
+            this.lbAgregarCitaH.Size = new System.Drawing.Size(41, 13);
+            this.lbAgregarCitaH.TabIndex = 12;
+            this.lbAgregarCitaH.Text = "Horario";
             // 
-            // Horarios
+            // button1
             // 
-            this.Horarios.FormattingEnabled = true;
-            this.Horarios.Location = new System.Drawing.Point(266, 243);
-            this.Horarios.Name = "Horarios";
-            this.Horarios.Size = new System.Drawing.Size(182, 17);
-            this.Horarios.TabIndex = 19;
+            this.button1.Location = new System.Drawing.Point(515, 266);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Ingresar Cita";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // principal
             // 
@@ -1851,12 +2009,18 @@
             this.tcAgregarEspecialidad.ResumeLayout(false);
             this.tpCita.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.tabPage16.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.tabPage12.ResumeLayout(false);
             this.tabControl4.ResumeLayout(false);
             this.tabPage14.ResumeLayout(false);
@@ -1886,10 +2050,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAltaBajaU)).EndInit();
             this.tabPage15.ResumeLayout(false);
             this.tabPage15.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2065,5 +2228,20 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.DateTimePicker dTP1;
         private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.MonthCalendar mcCitas;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lbAgregarCitaH;
+        private System.Windows.Forms.Label lbAgregarCitaM;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lbVerPacientesAC;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Button btBuscarPC;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label lbAgregarCita;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }
