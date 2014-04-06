@@ -1912,6 +1912,7 @@
             this.dgwAgregarCitaVP.Name = "dgwAgregarCitaVP";
             this.dgwAgregarCitaVP.Size = new System.Drawing.Size(324, 98);
             this.dgwAgregarCitaVP.TabIndex = 5;
+            this.dgwAgregarCitaVP.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwAgregarCitaVP_CellContentClick);
             // 
             // lbAgregarCita
             // 

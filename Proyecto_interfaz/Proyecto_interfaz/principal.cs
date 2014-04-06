@@ -687,7 +687,7 @@ namespace Proyecto_interfaz
             C1.cerrar();
 
 
-            //Falta tomar el valor de la de la persona que selecciona 
+            //Falta tomar el valor de la de la persona que selecciona en el datagridview
 
 
         
@@ -698,6 +698,14 @@ namespace Proyecto_interfaz
             string consulta1;
             consulta1 = "INSERT INTO Cita( idMedico, idPaciente, idHorario, idUsuario, Fecha, FechaActual, HoraActual, Estado) VALUES(0001, 0001, 0001, 0001, 0001, '17/03/2014','15/03/2014', '10:00', 'realizada');";
 
+        }
+
+        private void dgwAgregarCitaVP_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+           
+            MessageBox.Show(dgwAgregarCitaVP.RowCount.ToString());
+            
         }
 
         }
