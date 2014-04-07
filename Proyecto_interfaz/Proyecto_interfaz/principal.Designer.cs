@@ -32,6 +32,21 @@
             this.tpCita = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btAgregarCita = new System.Windows.Forms.Button();
+            this.lbAgregarCitaH = new System.Windows.Forms.Label();
+            this.lbAgregarCitaM = new System.Windows.Forms.Label();
+            this.cbAgregarCitaH = new System.Windows.Forms.ComboBox();
+            this.cbAgragarCitaM = new System.Windows.Forms.ComboBox();
+            this.lbAgregarCitaVP = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.btAgregarCitaB = new System.Windows.Forms.Button();
+            this.txtAgregarCitaN = new System.Windows.Forms.TextBox();
+            this.lbAgregarCitaN = new System.Windows.Forms.Label();
+            this.lbAgregarCitaA = new System.Windows.Forms.Label();
+            this.txtAgregarCitaA = new System.Windows.Forms.TextBox();
+            this.lbAgregarCita = new System.Windows.Forms.Label();
+            this.dgwAgregarCitaVP = new System.Windows.Forms.DataGridView();
+            this.mcAgregarCitas = new System.Windows.Forms.MonthCalendar();
             this.tabPage16 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
@@ -135,9 +150,6 @@
             this.btBajaM = new System.Windows.Forms.Button();
             this.btAltaM = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.txtFinal = new System.Windows.Forms.TextBox();
-            this.txtInicio = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.mtcFinal = new System.Windows.Forms.MonthCalendar();
             this.mtcInicio = new System.Windows.Forms.MonthCalendar();
             this.btnReporteGral = new System.Windows.Forms.Button();
@@ -197,25 +209,21 @@
             this.label33 = new System.Windows.Forms.Label();
             this.btAgregar_AE = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.mcAgregarCitas = new System.Windows.Forms.MonthCalendar();
-            this.lbAgregarCitaN = new System.Windows.Forms.Label();
-            this.txtAgregarCitaN = new System.Windows.Forms.TextBox();
-            this.txtAgregarCitaA = new System.Windows.Forms.TextBox();
-            this.lbAgregarCitaA = new System.Windows.Forms.Label();
-            this.dgwAgregarCitaVP = new System.Windows.Forms.DataGridView();
-            this.lbAgregarCita = new System.Windows.Forms.Label();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.btAgregarCitaB = new System.Windows.Forms.Button();
-            this.lbAgregarCitaVP = new System.Windows.Forms.Label();
-            this.cbAgragarCitaM = new System.Windows.Forms.ComboBox();
-            this.cbAgregarCitaH = new System.Windows.Forms.ComboBox();
-            this.lbAgregarCitaM = new System.Windows.Forms.Label();
-            this.lbAgregarCitaH = new System.Windows.Forms.Label();
-            this.btAgregarCita = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.txtFinal = new System.Windows.Forms.TextBox();
+            this.txtInicio = new System.Windows.Forms.TextBox();
+            this.dgvReporte = new System.Windows.Forms.DataGridView();
             this.tcAgregarEspecialidad.SuspendLayout();
             this.tpCita.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwAgregarCitaVP)).BeginInit();
             this.tabPage16.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -234,7 +242,6 @@
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAltaBajaM)).BeginInit();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage9.SuspendLayout();
@@ -242,8 +249,7 @@
             this.tabPage11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAltaBajaU)).BeginInit();
             this.tabPage15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgwAgregarCitaVP)).BeginInit();
-            this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReporte)).BeginInit();
             this.SuspendLayout();
             // 
             // tcAgregarEspecialidad
@@ -301,6 +307,139 @@
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Agregar";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btAgregarCita
+            // 
+            this.btAgregarCita.Location = new System.Drawing.Point(515, 266);
+            this.btAgregarCita.Name = "btAgregarCita";
+            this.btAgregarCita.Size = new System.Drawing.Size(75, 23);
+            this.btAgregarCita.TabIndex = 13;
+            this.btAgregarCita.Text = "Ingresar Cita";
+            this.btAgregarCita.UseVisualStyleBackColor = true;
+            this.btAgregarCita.Click += new System.EventHandler(this.btAgregarCita_Click);
+            // 
+            // lbAgregarCitaH
+            // 
+            this.lbAgregarCitaH.AutoSize = true;
+            this.lbAgregarCitaH.Location = new System.Drawing.Point(360, 239);
+            this.lbAgregarCitaH.Name = "lbAgregarCitaH";
+            this.lbAgregarCitaH.Size = new System.Drawing.Size(41, 13);
+            this.lbAgregarCitaH.TabIndex = 12;
+            this.lbAgregarCitaH.Text = "Horario";
+            // 
+            // lbAgregarCitaM
+            // 
+            this.lbAgregarCitaM.AutoSize = true;
+            this.lbAgregarCitaM.Location = new System.Drawing.Point(357, 212);
+            this.lbAgregarCitaM.Name = "lbAgregarCitaM";
+            this.lbAgregarCitaM.Size = new System.Drawing.Size(42, 13);
+            this.lbAgregarCitaM.TabIndex = 11;
+            this.lbAgregarCitaM.Text = "Medico";
+            // 
+            // cbAgregarCitaH
+            // 
+            this.cbAgregarCitaH.FormattingEnabled = true;
+            this.cbAgregarCitaH.Location = new System.Drawing.Point(407, 239);
+            this.cbAgregarCitaH.Name = "cbAgregarCitaH";
+            this.cbAgregarCitaH.Size = new System.Drawing.Size(183, 21);
+            this.cbAgregarCitaH.TabIndex = 10;
+            // 
+            // cbAgragarCitaM
+            // 
+            this.cbAgragarCitaM.FormattingEnabled = true;
+            this.cbAgragarCitaM.Location = new System.Drawing.Point(405, 212);
+            this.cbAgragarCitaM.Name = "cbAgragarCitaM";
+            this.cbAgragarCitaM.Size = new System.Drawing.Size(185, 21);
+            this.cbAgragarCitaM.TabIndex = 9;
+            // 
+            // lbAgregarCitaVP
+            // 
+            this.lbAgregarCitaVP.AutoSize = true;
+            this.lbAgregarCitaVP.Location = new System.Drawing.Point(39, 157);
+            this.lbAgregarCitaVP.Name = "lbAgregarCitaVP";
+            this.lbAgregarCitaVP.Size = new System.Drawing.Size(122, 13);
+            this.lbAgregarCitaVP.TabIndex = 8;
+            this.lbAgregarCitaVP.Text = "Seleccion de Pacientes ";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.btAgregarCitaB);
+            this.groupBox7.Controls.Add(this.txtAgregarCitaN);
+            this.groupBox7.Controls.Add(this.lbAgregarCitaN);
+            this.groupBox7.Controls.Add(this.lbAgregarCitaA);
+            this.groupBox7.Controls.Add(this.txtAgregarCitaA);
+            this.groupBox7.Location = new System.Drawing.Point(20, 6);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(295, 136);
+            this.groupBox7.TabIndex = 7;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Paciente";
+            // 
+            // btAgregarCitaB
+            // 
+            this.btAgregarCitaB.Location = new System.Drawing.Point(200, 100);
+            this.btAgregarCitaB.Name = "btAgregarCitaB";
+            this.btAgregarCitaB.Size = new System.Drawing.Size(75, 23);
+            this.btAgregarCitaB.TabIndex = 5;
+            this.btAgregarCitaB.Text = "Buscar";
+            this.btAgregarCitaB.UseVisualStyleBackColor = true;
+            this.btAgregarCitaB.Click += new System.EventHandler(this.btAgregarCitaB_Click);
+            // 
+            // txtAgregarCitaN
+            // 
+            this.txtAgregarCitaN.Location = new System.Drawing.Point(91, 35);
+            this.txtAgregarCitaN.Name = "txtAgregarCitaN";
+            this.txtAgregarCitaN.Size = new System.Drawing.Size(184, 20);
+            this.txtAgregarCitaN.TabIndex = 2;
+            // 
+            // lbAgregarCitaN
+            // 
+            this.lbAgregarCitaN.AutoSize = true;
+            this.lbAgregarCitaN.Location = new System.Drawing.Point(27, 42);
+            this.lbAgregarCitaN.Name = "lbAgregarCitaN";
+            this.lbAgregarCitaN.Size = new System.Drawing.Size(44, 13);
+            this.lbAgregarCitaN.TabIndex = 1;
+            this.lbAgregarCitaN.Text = "Nombre";
+            // 
+            // lbAgregarCitaA
+            // 
+            this.lbAgregarCitaA.AutoSize = true;
+            this.lbAgregarCitaA.Location = new System.Drawing.Point(27, 81);
+            this.lbAgregarCitaA.Name = "lbAgregarCitaA";
+            this.lbAgregarCitaA.Size = new System.Drawing.Size(44, 13);
+            this.lbAgregarCitaA.TabIndex = 4;
+            this.lbAgregarCitaA.Text = "Apellido";
+            // 
+            // txtAgregarCitaA
+            // 
+            this.txtAgregarCitaA.Location = new System.Drawing.Point(91, 74);
+            this.txtAgregarCitaA.Name = "txtAgregarCitaA";
+            this.txtAgregarCitaA.Size = new System.Drawing.Size(184, 20);
+            this.txtAgregarCitaA.TabIndex = 3;
+            // 
+            // lbAgregarCita
+            // 
+            this.lbAgregarCita.AutoSize = true;
+            this.lbAgregarCita.Location = new System.Drawing.Point(420, 15);
+            this.lbAgregarCita.Name = "lbAgregarCita";
+            this.lbAgregarCita.Size = new System.Drawing.Size(73, 13);
+            this.lbAgregarCita.TabIndex = 6;
+            this.lbAgregarCita.Text = "Fecha de Cita";
+            // 
+            // dgwAgregarCitaVP
+            // 
+            this.dgwAgregarCitaVP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgwAgregarCitaVP.Location = new System.Drawing.Point(6, 176);
+            this.dgwAgregarCitaVP.Name = "dgwAgregarCitaVP";
+            this.dgwAgregarCitaVP.Size = new System.Drawing.Size(324, 98);
+            this.dgwAgregarCitaVP.TabIndex = 5;
+            this.dgwAgregarCitaVP.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwAgregarCitaVP_CellContentClick);
+            // 
+            // mcAgregarCitas
+            // 
+            this.mcAgregarCitas.Location = new System.Drawing.Point(342, 37);
+            this.mcAgregarCitas.Name = "mcAgregarCitas";
+            this.mcAgregarCitas.TabIndex = 0;
             // 
             // tabPage16
             // 
@@ -1284,9 +1423,15 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.txtFinal);
+            this.tabPage4.Controls.Add(this.dgvReporte);
             this.tabPage4.Controls.Add(this.txtInicio);
-            this.tabPage4.Controls.Add(this.dataGridView1);
+            this.tabPage4.Controls.Add(this.txtFinal);
+            this.tabPage4.Controls.Add(this.label48);
+            this.tabPage4.Controls.Add(this.label47);
+            this.tabPage4.Controls.Add(this.label46);
+            this.tabPage4.Controls.Add(this.comboBox3);
+            this.tabPage4.Controls.Add(this.comboBox2);
+            this.tabPage4.Controls.Add(this.comboBox1);
             this.tabPage4.Controls.Add(this.mtcFinal);
             this.tabPage4.Controls.Add(this.mtcInicio);
             this.tabPage4.Controls.Add(this.btnReporteGral);
@@ -1299,43 +1444,22 @@
             this.tabPage4.Text = "Reporte";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // txtFinal
-            // 
-            this.txtFinal.Location = new System.Drawing.Point(524, 98);
-            this.txtFinal.Name = "txtFinal";
-            this.txtFinal.Size = new System.Drawing.Size(100, 20);
-            this.txtFinal.TabIndex = 11;
-            // 
-            // txtInicio
-            // 
-            this.txtInicio.Location = new System.Drawing.Point(524, 72);
-            this.txtInicio.Name = "txtInicio";
-            this.txtInicio.Size = new System.Drawing.Size(100, 20);
-            this.txtInicio.TabIndex = 10;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(31, 252);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(461, 100);
-            this.dataGridView1.TabIndex = 9;
-            // 
             // mtcFinal
             // 
-            this.mtcFinal.Location = new System.Drawing.Point(265, 49);
+            this.mtcFinal.Location = new System.Drawing.Point(304, 30);
             this.mtcFinal.Name = "mtcFinal";
             this.mtcFinal.TabIndex = 8;
             // 
             // mtcInicio
             // 
-            this.mtcInicio.Location = new System.Drawing.Point(13, 49);
+            this.mtcInicio.Location = new System.Drawing.Point(46, 30);
             this.mtcInicio.Name = "mtcInicio";
             this.mtcInicio.TabIndex = 7;
+            this.mtcInicio.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.mtcInicio_DateChanged);
             // 
             // btnReporteGral
             // 
-            this.btnReporteGral.Location = new System.Drawing.Point(389, 223);
+            this.btnReporteGral.Location = new System.Drawing.Point(543, 169);
             this.btnReporteGral.Name = "btnReporteGral";
             this.btnReporteGral.Size = new System.Drawing.Size(75, 23);
             this.btnReporteGral.TabIndex = 6;
@@ -1346,20 +1470,22 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(290, 27);
+            this.label11.Location = new System.Drawing.Point(329, 8);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(96, 13);
             this.label11.TabIndex = 3;
             this.label11.Text = "Fecha de Termino:";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(37, 27);
+            this.label8.Location = new System.Drawing.Point(70, 8);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(83, 13);
             this.label8.TabIndex = 2;
             this.label8.Text = "Fecha de Inicio:";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // tabPage1
             // 
@@ -1867,138 +1993,78 @@
             // 
             this.fontDialog1.Color = System.Drawing.SystemColors.ControlText;
             // 
-            // mcAgregarCitas
+            // comboBox1
             // 
-            this.mcAgregarCitas.Location = new System.Drawing.Point(342, 37);
-            this.mcAgregarCitas.Name = "mcAgregarCitas";
-            this.mcAgregarCitas.TabIndex = 0;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(410, 214);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 9;
             // 
-            // lbAgregarCitaN
+            // comboBox2
             // 
-            this.lbAgregarCitaN.AutoSize = true;
-            this.lbAgregarCitaN.Location = new System.Drawing.Point(27, 42);
-            this.lbAgregarCitaN.Name = "lbAgregarCitaN";
-            this.lbAgregarCitaN.Size = new System.Drawing.Size(44, 13);
-            this.lbAgregarCitaN.TabIndex = 1;
-            this.lbAgregarCitaN.Text = "Nombre";
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(243, 214);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 10;
             // 
-            // txtAgregarCitaN
+            // comboBox3
             // 
-            this.txtAgregarCitaN.Location = new System.Drawing.Point(91, 35);
-            this.txtAgregarCitaN.Name = "txtAgregarCitaN";
-            this.txtAgregarCitaN.Size = new System.Drawing.Size(184, 20);
-            this.txtAgregarCitaN.TabIndex = 2;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(73, 214);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 21);
+            this.comboBox3.TabIndex = 11;
             // 
-            // txtAgregarCitaA
+            // label46
             // 
-            this.txtAgregarCitaA.Location = new System.Drawing.Point(91, 74);
-            this.txtAgregarCitaA.Name = "txtAgregarCitaA";
-            this.txtAgregarCitaA.Size = new System.Drawing.Size(184, 20);
-            this.txtAgregarCitaA.TabIndex = 3;
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(152, 198);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(42, 13);
+            this.label46.TabIndex = 12;
+            this.label46.Text = "Medico";
             // 
-            // lbAgregarCitaA
+            // label47
             // 
-            this.lbAgregarCitaA.AutoSize = true;
-            this.lbAgregarCitaA.Location = new System.Drawing.Point(27, 81);
-            this.lbAgregarCitaA.Name = "lbAgregarCitaA";
-            this.lbAgregarCitaA.Size = new System.Drawing.Size(44, 13);
-            this.lbAgregarCitaA.TabIndex = 4;
-            this.lbAgregarCitaA.Text = "Apellido";
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(322, 198);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(43, 13);
+            this.label47.TabIndex = 13;
+            this.label47.Text = "Usuario";
             // 
-            // dgwAgregarCitaVP
+            // label48
             // 
-            this.dgwAgregarCitaVP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwAgregarCitaVP.Location = new System.Drawing.Point(6, 176);
-            this.dgwAgregarCitaVP.Name = "dgwAgregarCitaVP";
-            this.dgwAgregarCitaVP.Size = new System.Drawing.Size(324, 98);
-            this.dgwAgregarCitaVP.TabIndex = 5;
-            this.dgwAgregarCitaVP.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwAgregarCitaVP_CellContentClick);
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(489, 198);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(49, 13);
+            this.label48.TabIndex = 14;
+            this.label48.Text = "Paciente";
             // 
-            // lbAgregarCita
+            // txtFinal
             // 
-            this.lbAgregarCita.AutoSize = true;
-            this.lbAgregarCita.Location = new System.Drawing.Point(420, 15);
-            this.lbAgregarCita.Name = "lbAgregarCita";
-            this.lbAgregarCita.Size = new System.Drawing.Size(73, 13);
-            this.lbAgregarCita.TabIndex = 6;
-            this.lbAgregarCita.Text = "Fecha de Cita";
+            this.txtFinal.Location = new System.Drawing.Point(444, 5);
+            this.txtFinal.Name = "txtFinal";
+            this.txtFinal.Size = new System.Drawing.Size(76, 20);
+            this.txtFinal.TabIndex = 15;
             // 
-            // groupBox7
+            // txtInicio
             // 
-            this.groupBox7.Controls.Add(this.btAgregarCitaB);
-            this.groupBox7.Controls.Add(this.txtAgregarCitaN);
-            this.groupBox7.Controls.Add(this.lbAgregarCitaN);
-            this.groupBox7.Controls.Add(this.lbAgregarCitaA);
-            this.groupBox7.Controls.Add(this.txtAgregarCitaA);
-            this.groupBox7.Location = new System.Drawing.Point(20, 6);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(295, 136);
-            this.groupBox7.TabIndex = 7;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Paciente";
+            this.txtInicio.Location = new System.Drawing.Point(197, 5);
+            this.txtInicio.Name = "txtInicio";
+            this.txtInicio.Size = new System.Drawing.Size(76, 20);
+            this.txtInicio.TabIndex = 16;
             // 
-            // btAgregarCitaB
+            // dgvReporte
             // 
-            this.btAgregarCitaB.Location = new System.Drawing.Point(200, 100);
-            this.btAgregarCitaB.Name = "btAgregarCitaB";
-            this.btAgregarCitaB.Size = new System.Drawing.Size(75, 23);
-            this.btAgregarCitaB.TabIndex = 5;
-            this.btAgregarCitaB.Text = "Buscar";
-            this.btAgregarCitaB.UseVisualStyleBackColor = true;
-            this.btAgregarCitaB.Click += new System.EventHandler(this.btAgregarCitaB_Click);
-            // 
-            // lbAgregarCitaVP
-            // 
-            this.lbAgregarCitaVP.AutoSize = true;
-            this.lbAgregarCitaVP.Location = new System.Drawing.Point(39, 157);
-            this.lbAgregarCitaVP.Name = "lbAgregarCitaVP";
-            this.lbAgregarCitaVP.Size = new System.Drawing.Size(122, 13);
-            this.lbAgregarCitaVP.TabIndex = 8;
-            this.lbAgregarCitaVP.Text = "Seleccion de Pacientes ";
-            // 
-            // cbAgragarCitaM
-            // 
-            this.cbAgragarCitaM.FormattingEnabled = true;
-            this.cbAgragarCitaM.Location = new System.Drawing.Point(405, 212);
-            this.cbAgragarCitaM.Name = "cbAgragarCitaM";
-            this.cbAgragarCitaM.Size = new System.Drawing.Size(185, 21);
-            this.cbAgragarCitaM.TabIndex = 9;
-            // 
-            // cbAgregarCitaH
-            // 
-            this.cbAgregarCitaH.FormattingEnabled = true;
-            this.cbAgregarCitaH.Location = new System.Drawing.Point(407, 239);
-            this.cbAgregarCitaH.Name = "cbAgregarCitaH";
-            this.cbAgregarCitaH.Size = new System.Drawing.Size(183, 21);
-            this.cbAgregarCitaH.TabIndex = 10;
-            // 
-            // lbAgregarCitaM
-            // 
-            this.lbAgregarCitaM.AutoSize = true;
-            this.lbAgregarCitaM.Location = new System.Drawing.Point(357, 212);
-            this.lbAgregarCitaM.Name = "lbAgregarCitaM";
-            this.lbAgregarCitaM.Size = new System.Drawing.Size(42, 13);
-            this.lbAgregarCitaM.TabIndex = 11;
-            this.lbAgregarCitaM.Text = "Medico";
-            // 
-            // lbAgregarCitaH
-            // 
-            this.lbAgregarCitaH.AutoSize = true;
-            this.lbAgregarCitaH.Location = new System.Drawing.Point(360, 239);
-            this.lbAgregarCitaH.Name = "lbAgregarCitaH";
-            this.lbAgregarCitaH.Size = new System.Drawing.Size(41, 13);
-            this.lbAgregarCitaH.TabIndex = 12;
-            this.lbAgregarCitaH.Text = "Horario";
-            // 
-            // btAgregarCita
-            // 
-            this.btAgregarCita.Location = new System.Drawing.Point(515, 266);
-            this.btAgregarCita.Name = "btAgregarCita";
-            this.btAgregarCita.Size = new System.Drawing.Size(75, 23);
-            this.btAgregarCita.TabIndex = 13;
-            this.btAgregarCita.Text = "Ingresar Cita";
-            this.btAgregarCita.UseVisualStyleBackColor = true;
-            this.btAgregarCita.Click += new System.EventHandler(this.btAgregarCita_Click);
+            this.dgvReporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReporte.Location = new System.Drawing.Point(17, 241);
+            this.dgvReporte.Name = "dgvReporte";
+            this.dgvReporte.Size = new System.Drawing.Size(613, 150);
+            this.dgvReporte.TabIndex = 17;
             // 
             // principal
             // 
@@ -2014,6 +2080,9 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwAgregarCitaVP)).EndInit();
             this.tabPage16.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
@@ -2042,7 +2111,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAltaBajaM)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
             this.tabPage9.ResumeLayout(false);
@@ -2053,9 +2121,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAltaBajaU)).EndInit();
             this.tabPage15.ResumeLayout(false);
             this.tabPage15.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgwAgregarCitaVP)).EndInit();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReporte)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2208,11 +2274,8 @@
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.TextBox txtContraseña_AU;
         private System.Windows.Forms.TextBox txtFecha_AU;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.MonthCalendar mtcFinal;
         private System.Windows.Forms.MonthCalendar mtcInicio;
-        private System.Windows.Forms.TextBox txtFinal;
-        private System.Windows.Forms.TextBox txtInicio;
         private System.Windows.Forms.DataGridView dgvAltaBajaU;
         private System.Windows.Forms.Button btBajaU;
         private System.Windows.Forms.Button btAltaU;
@@ -2246,5 +2309,14 @@
         private System.Windows.Forms.TextBox txtAgregarCitaA;
         private System.Windows.Forms.Label lbAgregarCita;
         private System.Windows.Forms.DataGridView dgwAgregarCitaVP;
+        private System.Windows.Forms.TextBox txtInicio;
+        private System.Windows.Forms.TextBox txtFinal;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DataGridView dgvReporte;
     }
 }

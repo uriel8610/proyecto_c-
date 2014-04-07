@@ -213,16 +213,49 @@ namespace Proyecto_interfaz
         }
 
 
-        //Hace la consulta del reporte usando solo fechas
+        //Hace la consulta del reporte usando solo fechas seleccionadas
         private void button1_Click(object sender, EventArgs e)
         {
+            //Obtiene los datos de los MonthCalendar
             txtInicio.Text = mtcInicio.SelectionEnd.ToString("yyyy/MM/dd");
             txtFinal.Text = mtcFinal.SelectionEnd.ToString("yyyy/MM/dd");
+            //Abre la conexion a la BD
             BaseDeDatos bd = new BaseDeDatos();
             datos.Abrir();
-
-            consulta = "SELECT DATE_FORMAT(c.Fecha,'%d/%m/%Y') AS Fecha, h.Descripcion AS Horario_Cita, c.Estado, vm.Nombre AS Medico_Nombre, vm.Apellido AS Medico_Apellido, vpa.Nombre AS Paciente_Nombre, vpa.Apellido AS Paciente_Apellido, vu.Nombre AS Usuario_Nombre, vu.Apellido as Usuario_Apellido FROM vista_medico vm, vista_paciente vpa, vista_usuario vu, cita c, Horario h WHERE vpa.idPaciente = c.idPaciente AND vm.idMedico = c.idMedico AND vu.idUsuario = c.idUsuario AND h.idHorario = c.idHorario AND c.Fecha BETWEEN '"+ txtInicio +"' AND '"+  txtFinal +"'  AND c.Fecha ORDER BY c.Fecha ASC;";
+            //Hace la consulta con filtro de las fechas deseadas
+            consulta = "SELECT DATE_FORMAT(c.Fecha,'%d/%m/%Y'), h.Descripcion, c.Estado,vm.Nombre AS Nombre_Medico, vm.Apellido AS Apellido_Medico, vpa.Nombre AS Nombre_Paciente, vpa.Apellido AS Apellido_Paciente, vu.Nombre AS Nombre_Usuario, vu.Apellido AS Apellido_Usuario FROM vista_medico vm, vista_paciente vpa, vista_usuario vu, cita c, Horario h WHERE vpa.idPaciente = c.idPaciente AND vm.idMedico = c.idMedico AND vu.idUsuario = c.idUsuario AND h.idHorario = c.idHorario AND c.Fecha BETWEEN '"+ txtInicio.Text +"' AND '"+  txtFinal.Text +"'  ORDER BY c.Fecha ASC;";
             datos.leer(consulta);
+
+            //Agrega las columnas al DataGridView;
+            dgvReporte.Columns.Add("Fecha", "Fecha");
+            dgvReporte.Columns.Add("Descripcion", "Descripcion");
+            dgvReporte.Columns.Add("Estado", "Estado");
+
+            dgvReporte.Columns.Add("Nombre_Medico", "Nombre_Medico");
+            dgvReporte.Columns.Add("Apellido_Medico", "Apellido_Medico");
+
+            dgvReporte.Columns.Add("Nombre_Paciente", "Nombre_Paciente");
+            dgvReporte.Columns.Add("Apellido_Paciente", "Apellido_Paciente");
+
+            dgvReporte.Columns.Add("Nombre_Usuario", "Nombre_Usuario");
+            dgvReporte.Columns.Add("Apellido_Usuario", "Apellido_Usuario");
+
+            while (datos.cnLeerConsulta.Read())
+            {
+                int renglon = dgvReporte.Rows.Add();
+
+                dgvReporte.Rows[renglon].Cells["Fecha"].Value = datos.cnLeerConsulta[0].ToString();
+                dgvReporte.Rows[renglon].Cells["Descripcion"].Value = datos.cnLeerConsulta[1].ToString();
+                dgvReporte.Rows[renglon].Cells["Estado"].Value = datos.cnLeerConsulta[2].ToString();
+                dgvReporte.Rows[renglon].Cells["Nombre_Medico"].Value = datos.cnLeerConsulta[3].ToString();
+                dgvReporte.Rows[renglon].Cells["Apellido_Medico"].Value = datos.cnLeerConsulta[4].ToString();
+                dgvReporte.Rows[renglon].Cells["Nombre_Paciente"].Value = datos.cnLeerConsulta[5].ToString();
+                dgvReporte.Rows[renglon].Cells["Apellido_Paciente"].Value = datos.cnLeerConsulta[6].ToString();
+                dgvReporte.Rows[renglon].Cells["Nombre_Usuario"].Value = datos.cnLeerConsulta[7].ToString();
+                dgvReporte.Rows[renglon].Cells["Apellido_Usuario"].Value = datos.cnLeerConsulta[8].ToString();
+            }
+
+            datos.cerrar();
 
 
         }
@@ -707,6 +740,23 @@ namespace Proyecto_interfaz
             MessageBox.Show(dgwAgregarCitaVP.RowCount.ToString());
             
         }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mtcInicio_DateChanged(object sender, DateRangeEventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
 
         }
     }
