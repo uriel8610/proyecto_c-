@@ -150,6 +150,15 @@
             this.btBajaM = new System.Windows.Forms.Button();
             this.btAltaM = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.dgvReporte = new System.Windows.Forms.DataGridView();
+            this.txtInicio = new System.Windows.Forms.TextBox();
+            this.txtFinal = new System.Windows.Forms.TextBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.mtcFinal = new System.Windows.Forms.MonthCalendar();
             this.mtcInicio = new System.Windows.Forms.MonthCalendar();
             this.btnReporteGral = new System.Windows.Forms.Button();
@@ -170,10 +179,7 @@
             this.txtTelefono_AU = new System.Windows.Forms.TextBox();
             this.txtDireccion_AU = new System.Windows.Forms.TextBox();
             this.txtApellido_AU = new System.Windows.Forms.TextBox();
-            this.label40 = new System.Windows.Forms.Label();
             this.btAgregar_AU = new System.Windows.Forms.Button();
-            this.chFemenino_AU = new System.Windows.Forms.CheckBox();
-            this.chMasculino_AU = new System.Windows.Forms.CheckBox();
             this.label39 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
@@ -209,15 +215,9 @@
             this.label33 = new System.Windows.Forms.Label();
             this.btAgregar_AE = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.txtFinal = new System.Windows.Forms.TextBox();
-            this.txtInicio = new System.Windows.Forms.TextBox();
-            this.dgvReporte = new System.Windows.Forms.DataGridView();
+            this.rbM = new System.Windows.Forms.RadioButton();
+            this.rbF = new System.Windows.Forms.RadioButton();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.tcAgregarEspecialidad.SuspendLayout();
             this.tpCita.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -242,6 +242,7 @@
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAltaBajaM)).BeginInit();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReporte)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage9.SuspendLayout();
@@ -249,7 +250,7 @@
             this.tabPage11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAltaBajaU)).BeginInit();
             this.tabPage15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvReporte)).BeginInit();
+            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcAgregarEspecialidad
@@ -1444,6 +1445,79 @@
             this.tabPage4.Text = "Reporte";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // dgvReporte
+            // 
+            this.dgvReporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReporte.Location = new System.Drawing.Point(17, 241);
+            this.dgvReporte.Name = "dgvReporte";
+            this.dgvReporte.Size = new System.Drawing.Size(613, 150);
+            this.dgvReporte.TabIndex = 17;
+            // 
+            // txtInicio
+            // 
+            this.txtInicio.Location = new System.Drawing.Point(197, 5);
+            this.txtInicio.Name = "txtInicio";
+            this.txtInicio.Size = new System.Drawing.Size(76, 20);
+            this.txtInicio.TabIndex = 16;
+            // 
+            // txtFinal
+            // 
+            this.txtFinal.Location = new System.Drawing.Point(444, 5);
+            this.txtFinal.Name = "txtFinal";
+            this.txtFinal.Size = new System.Drawing.Size(76, 20);
+            this.txtFinal.TabIndex = 15;
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(489, 198);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(49, 13);
+            this.label48.TabIndex = 14;
+            this.label48.Text = "Paciente";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(322, 198);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(43, 13);
+            this.label47.TabIndex = 13;
+            this.label47.Text = "Usuario";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(152, 198);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(42, 13);
+            this.label46.TabIndex = 12;
+            this.label46.Text = "Medico";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(73, 214);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 21);
+            this.comboBox3.TabIndex = 11;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(243, 214);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 10;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(410, 214);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 9;
+            // 
             // mtcFinal
             // 
             this.mtcFinal.Location = new System.Drawing.Point(304, 30);
@@ -1510,6 +1584,7 @@
             // 
             // tabPage9
             // 
+            this.tabPage9.Controls.Add(this.groupBox8);
             this.tabPage9.Controls.Add(this.txtFecha_AU);
             this.tabPage9.Controls.Add(this.label43);
             this.tabPage9.Controls.Add(this.txtContraseña_AU);
@@ -1522,10 +1597,7 @@
             this.tabPage9.Controls.Add(this.txtTelefono_AU);
             this.tabPage9.Controls.Add(this.txtDireccion_AU);
             this.tabPage9.Controls.Add(this.txtApellido_AU);
-            this.tabPage9.Controls.Add(this.label40);
             this.tabPage9.Controls.Add(this.btAgregar_AU);
-            this.tabPage9.Controls.Add(this.chFemenino_AU);
-            this.tabPage9.Controls.Add(this.chMasculino_AU);
             this.tabPage9.Controls.Add(this.label39);
             this.tabPage9.Controls.Add(this.label38);
             this.tabPage9.Controls.Add(this.label37);
@@ -1632,15 +1704,6 @@
             this.txtApellido_AU.Size = new System.Drawing.Size(100, 20);
             this.txtApellido_AU.TabIndex = 10;
             // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(334, 161);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(31, 13);
-            this.label40.TabIndex = 9;
-            this.label40.Text = "Sexo";
-            // 
             // btAgregar_AU
             // 
             this.btAgregar_AU.Location = new System.Drawing.Point(361, 244);
@@ -1650,26 +1713,6 @@
             this.btAgregar_AU.Text = "Agregar";
             this.btAgregar_AU.UseVisualStyleBackColor = true;
             this.btAgregar_AU.Click += new System.EventHandler(this.btAgregar_AU_Click);
-            // 
-            // chFemenino_AU
-            // 
-            this.chFemenino_AU.AutoSize = true;
-            this.chFemenino_AU.Location = new System.Drawing.Point(404, 192);
-            this.chFemenino_AU.Name = "chFemenino_AU";
-            this.chFemenino_AU.Size = new System.Drawing.Size(32, 17);
-            this.chFemenino_AU.TabIndex = 7;
-            this.chFemenino_AU.Text = "F";
-            this.chFemenino_AU.UseVisualStyleBackColor = true;
-            // 
-            // chMasculino_AU
-            // 
-            this.chMasculino_AU.AutoSize = true;
-            this.chMasculino_AU.Location = new System.Drawing.Point(337, 192);
-            this.chMasculino_AU.Name = "chMasculino_AU";
-            this.chMasculino_AU.Size = new System.Drawing.Size(35, 17);
-            this.chMasculino_AU.TabIndex = 6;
-            this.chMasculino_AU.Text = "M";
-            this.chMasculino_AU.UseVisualStyleBackColor = true;
             // 
             // label39
             // 
@@ -1993,78 +2036,39 @@
             // 
             this.fontDialog1.Color = System.Drawing.SystemColors.ControlText;
             // 
-            // comboBox1
+            // rbM
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(410, 214);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 9;
+            this.rbM.AutoSize = true;
+            this.rbM.Location = new System.Drawing.Point(15, 19);
+            this.rbM.Name = "rbM";
+            this.rbM.Size = new System.Drawing.Size(34, 17);
+            this.rbM.TabIndex = 24;
+            this.rbM.TabStop = true;
+            this.rbM.Text = "M";
+            this.rbM.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // rbF
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(243, 214);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 10;
+            this.rbF.AutoSize = true;
+            this.rbF.Location = new System.Drawing.Point(76, 19);
+            this.rbF.Name = "rbF";
+            this.rbF.Size = new System.Drawing.Size(31, 17);
+            this.rbF.TabIndex = 25;
+            this.rbF.TabStop = true;
+            this.rbF.Text = "F";
+            this.rbF.UseVisualStyleBackColor = true;
             // 
-            // comboBox3
+            // groupBox8
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(73, 214);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 11;
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(152, 198);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(42, 13);
-            this.label46.TabIndex = 12;
-            this.label46.Text = "Medico";
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(322, 198);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(43, 13);
-            this.label47.TabIndex = 13;
-            this.label47.Text = "Usuario";
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(489, 198);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(49, 13);
-            this.label48.TabIndex = 14;
-            this.label48.Text = "Paciente";
-            // 
-            // txtFinal
-            // 
-            this.txtFinal.Location = new System.Drawing.Point(444, 5);
-            this.txtFinal.Name = "txtFinal";
-            this.txtFinal.Size = new System.Drawing.Size(76, 20);
-            this.txtFinal.TabIndex = 15;
-            // 
-            // txtInicio
-            // 
-            this.txtInicio.Location = new System.Drawing.Point(197, 5);
-            this.txtInicio.Name = "txtInicio";
-            this.txtInicio.Size = new System.Drawing.Size(76, 20);
-            this.txtInicio.TabIndex = 16;
-            // 
-            // dgvReporte
-            // 
-            this.dgvReporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReporte.Location = new System.Drawing.Point(17, 241);
-            this.dgvReporte.Name = "dgvReporte";
-            this.dgvReporte.Size = new System.Drawing.Size(613, 150);
-            this.dgvReporte.TabIndex = 17;
+            this.groupBox8.Controls.Add(this.rbM);
+            this.groupBox8.Controls.Add(this.rbF);
+            this.groupBox8.Location = new System.Drawing.Point(310, 154);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(126, 39);
+            this.groupBox8.TabIndex = 26;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Sexo";
+            this.groupBox8.Enter += new System.EventHandler(this.groupBox8_Enter);
             // 
             // principal
             // 
@@ -2111,6 +2115,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAltaBajaM)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReporte)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
             this.tabPage9.ResumeLayout(false);
@@ -2121,7 +2126,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAltaBajaU)).EndInit();
             this.tabPage15.ResumeLayout(false);
             this.tabPage15.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvReporte)).EndInit();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2259,10 +2265,7 @@
         private System.Windows.Forms.TextBox txtTelefono_AU;
         private System.Windows.Forms.TextBox txtDireccion_AU;
         private System.Windows.Forms.TextBox txtApellido_AU;
-        private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Button btAgregar_AU;
-        private System.Windows.Forms.CheckBox chFemenino_AU;
-        private System.Windows.Forms.CheckBox chMasculino_AU;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label37;
@@ -2318,5 +2321,8 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridView dgvReporte;
+        private System.Windows.Forms.RadioButton rbF;
+        private System.Windows.Forms.RadioButton rbM;
+        private System.Windows.Forms.GroupBox groupBox8;
     }
 }
