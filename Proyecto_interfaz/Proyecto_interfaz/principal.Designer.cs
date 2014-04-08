@@ -167,6 +167,9 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.rbM = new System.Windows.Forms.RadioButton();
+            this.rbF = new System.Windows.Forms.RadioButton();
             this.txtFecha_AU = new System.Windows.Forms.TextBox();
             this.label43 = new System.Windows.Forms.Label();
             this.txtContraseña_AU = new System.Windows.Forms.TextBox();
@@ -215,9 +218,6 @@
             this.label33 = new System.Windows.Forms.Label();
             this.btAgregar_AE = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.rbM = new System.Windows.Forms.RadioButton();
-            this.rbF = new System.Windows.Forms.RadioButton();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.tcAgregarEspecialidad.SuspendLayout();
             this.tpCita.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -246,11 +246,11 @@
             this.tabPage1.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage9.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.tabPage10.SuspendLayout();
             this.tabPage11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAltaBajaU)).BeginInit();
             this.tabPage15.SuspendLayout();
-            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcAgregarEspecialidad
@@ -1613,6 +1613,40 @@
             this.tabPage9.UseVisualStyleBackColor = true;
             this.tabPage9.Click += new System.EventHandler(this.tabPage9_Click);
             // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.rbM);
+            this.groupBox8.Controls.Add(this.rbF);
+            this.groupBox8.Location = new System.Drawing.Point(310, 154);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(126, 39);
+            this.groupBox8.TabIndex = 26;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Sexo";
+            this.groupBox8.Enter += new System.EventHandler(this.groupBox8_Enter);
+            // 
+            // rbM
+            // 
+            this.rbM.AutoSize = true;
+            this.rbM.Location = new System.Drawing.Point(15, 19);
+            this.rbM.Name = "rbM";
+            this.rbM.Size = new System.Drawing.Size(34, 17);
+            this.rbM.TabIndex = 24;
+            this.rbM.TabStop = true;
+            this.rbM.Text = "M";
+            this.rbM.UseVisualStyleBackColor = true;
+            // 
+            // rbF
+            // 
+            this.rbF.AutoSize = true;
+            this.rbF.Location = new System.Drawing.Point(76, 19);
+            this.rbF.Name = "rbF";
+            this.rbF.Size = new System.Drawing.Size(31, 17);
+            this.rbF.TabIndex = 25;
+            this.rbF.TabStop = true;
+            this.rbF.Text = "F";
+            this.rbF.UseVisualStyleBackColor = true;
+            // 
             // txtFecha_AU
             // 
             this.txtFecha_AU.Location = new System.Drawing.Point(337, 114);
@@ -1969,9 +2003,9 @@
             // dgvAltaBajaU
             // 
             this.dgvAltaBajaU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAltaBajaU.Location = new System.Drawing.Point(62, 111);
+            this.dgvAltaBajaU.Location = new System.Drawing.Point(43, 111);
             this.dgvAltaBajaU.Name = "dgvAltaBajaU";
-            this.dgvAltaBajaU.Size = new System.Drawing.Size(372, 152);
+            this.dgvAltaBajaU.Size = new System.Drawing.Size(391, 152);
             this.dgvAltaBajaU.TabIndex = 2;
             // 
             // btBajaU
@@ -2036,40 +2070,6 @@
             // 
             this.fontDialog1.Color = System.Drawing.SystemColors.ControlText;
             // 
-            // rbM
-            // 
-            this.rbM.AutoSize = true;
-            this.rbM.Location = new System.Drawing.Point(15, 19);
-            this.rbM.Name = "rbM";
-            this.rbM.Size = new System.Drawing.Size(34, 17);
-            this.rbM.TabIndex = 24;
-            this.rbM.TabStop = true;
-            this.rbM.Text = "M";
-            this.rbM.UseVisualStyleBackColor = true;
-            // 
-            // rbF
-            // 
-            this.rbF.AutoSize = true;
-            this.rbF.Location = new System.Drawing.Point(76, 19);
-            this.rbF.Name = "rbF";
-            this.rbF.Size = new System.Drawing.Size(31, 17);
-            this.rbF.TabIndex = 25;
-            this.rbF.TabStop = true;
-            this.rbF.Text = "F";
-            this.rbF.UseVisualStyleBackColor = true;
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.rbM);
-            this.groupBox8.Controls.Add(this.rbF);
-            this.groupBox8.Location = new System.Drawing.Point(310, 154);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(126, 39);
-            this.groupBox8.TabIndex = 26;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Sexo";
-            this.groupBox8.Enter += new System.EventHandler(this.groupBox8_Enter);
-            // 
             // principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2120,14 +2120,14 @@
             this.tabControl3.ResumeLayout(false);
             this.tabPage9.ResumeLayout(false);
             this.tabPage9.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.tabPage10.ResumeLayout(false);
             this.tabPage10.PerformLayout();
             this.tabPage11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAltaBajaU)).EndInit();
             this.tabPage15.ResumeLayout(false);
             this.tabPage15.PerformLayout();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
             this.ResumeLayout(false);
 
         }

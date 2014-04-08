@@ -510,6 +510,9 @@ namespace Proyecto_interfaz
 
         private void btAltaM_Click(object sender, EventArgs e)
         {
+            dgvAltaBajaM.Rows.Clear();
+            dgvAltaBajaM.Columns.Clear();
+            dgvAltaBajaM.Refresh();
 
             string consulta = "SELECT  p.Nombre, p.Apellido, p.Direccion, m.Cedula, m.Estado FROM Medico m, Persona p WHERE p.idPersona = m.idPersona && Estado='Alta'";
             datos.Abrir();
@@ -677,6 +680,10 @@ namespace Proyecto_interfaz
 
         private void btBajaM_Click(object sender, EventArgs e)
         {
+            dgvAltaBajaM.Rows.Clear();
+            dgvAltaBajaM.Columns.Clear();
+            dgvAltaBajaM.Refresh();
+
             string consulta = "SELECT  p.Nombre, p.Apellido, p.Direccion, m.Cedula, m.Estado FROM Medico m, Persona p WHERE p.idPersona = m.idPersona && Estado='Baja'";
             datos.Abrir();
             datos.leer(consulta);
@@ -703,7 +710,12 @@ namespace Proyecto_interfaz
 
         private void btAltaU_Click(object sender, EventArgs e)
         {
-                string consulta = "SELECT  p.Nombre, p.Apellido, p.Direccion, u.Estado FROM Usuario u, Persona p WHERE p.idPersona= u.idPersona && Estado='Alta'";
+
+            dgvAltaBajaU.Rows.Clear();
+            dgvAltaBajaU.Columns.Clear();
+            dgvAltaBajaU.Refresh();
+            
+            string consulta = "SELECT  p.Nombre, p.Apellido, p.Direccion, u.Estado FROM Usuario u, Persona p WHERE p.idPersona= u.idPersona && Estado='Alta'";
             datos.Abrir();
             datos.leer(consulta);
 
@@ -727,6 +739,11 @@ namespace Proyecto_interfaz
 
         private void btBajaU_Click(object sender, EventArgs e)
         {
+            dgvAltaBajaU.Rows.Clear();
+            dgvAltaBajaU.Columns.Clear();
+            dgvAltaBajaU.Refresh();
+            
+            
             string consulta = "SELECT  p.Nombre, p.Apellido, p.Direccion, u.Estado FROM Usuario u, Persona p WHERE p.idPersona= u.idPersona && Estado='Baja'";
             datos.Abrir();
             datos.leer(consulta);
