@@ -28,10 +28,18 @@ namespace Proyecto_interfaz
         /// </summary>
         DateTime fechaSistema = DateTime.Now;
         string fecha;
+        public string nombre, apellido;
+        public int idUsuario;
 
-        public principal()
+        public principal(string nombre, int idusuario, string Apellido)
         {
+            this.idUsuario = idusuario;
+            this.nombre = nombre;
+            this.apellido = Apellido;
+
             InitializeComponent();
+
+            TipoUsuario();  //Inicializa el ambiente de trabajo segun si es Usuario Administrador o Usuario Normal
             fecha = DateTime.Now.ToString("yyyy-MM-dd");//modulo de agregar medico
             llenar_campos();
             llenar_camposEP();
@@ -880,8 +888,32 @@ namespace Proyecto_interfaz
 
         }
 
-        
+        public void TipoUsuario()
+        {
+            int id = Convert.ToInt32(idUsuario.ToString());
+           // MessageBox.Show(id.ToString());
+            user.Text = nombre+" "+apellido;
+            switch (id)
+            {
+                case 1:
+
+                    break;
+                case 2:
+                    btAgregar_AU.Enabled = false;
+                    cbTipoUsuario_AU.Enabled = false;
+                    cbNombreEU.Enabled = false;
+                    cbTipoEU.Enabled = false;
+                    btEditarEU.Enabled = false;
+                    btAltaU.Enabled = false;
+                    btBajaU.Enabled = false;
+                    break;
+
+                default:
+                    break;
+            }
 
         }
-    }
+
+     }
+   }
 

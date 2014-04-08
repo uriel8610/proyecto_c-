@@ -218,6 +218,7 @@
             this.label33 = new System.Windows.Forms.Label();
             this.btAgregar_AE = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.user = new System.Windows.Forms.TextBox();
             this.tcAgregarEspecialidad.SuspendLayout();
             this.tpCita.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -261,7 +262,7 @@
             this.tcAgregarEspecialidad.Controls.Add(this.tabPage4);
             this.tcAgregarEspecialidad.Controls.Add(this.tabPage1);
             this.tcAgregarEspecialidad.Controls.Add(this.tabPage15);
-            this.tcAgregarEspecialidad.Location = new System.Drawing.Point(1, 1);
+            this.tcAgregarEspecialidad.Location = new System.Drawing.Point(1, -1);
             this.tcAgregarEspecialidad.Name = "tcAgregarEspecialidad";
             this.tcAgregarEspecialidad.SelectedIndex = 0;
             this.tcAgregarEspecialidad.Size = new System.Drawing.Size(661, 418);
@@ -283,7 +284,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage16);
             this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Location = new System.Drawing.Point(6, 67);
+            this.tabControl1.Location = new System.Drawing.Point(19, 28);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(627, 329);
@@ -775,7 +776,7 @@
             this.tabControl4.Location = new System.Drawing.Point(30, 22);
             this.tabControl4.Name = "tabControl4";
             this.tabControl4.SelectedIndex = 0;
-            this.tabControl4.Size = new System.Drawing.Size(511, 347);
+            this.tabControl4.Size = new System.Drawing.Size(594, 347);
             this.tabControl4.TabIndex = 0;
             // 
             // tabPage13
@@ -783,7 +784,7 @@
             this.tabPage13.Location = new System.Drawing.Point(4, 22);
             this.tabPage13.Name = "tabPage13";
             this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage13.Size = new System.Drawing.Size(503, 321);
+            this.tabPage13.Size = new System.Drawing.Size(586, 321);
             this.tabPage13.TabIndex = 0;
             this.tabPage13.Text = "Agregar";
             this.tabPage13.UseVisualStyleBackColor = true;
@@ -809,7 +810,7 @@
             this.tabPage14.Location = new System.Drawing.Point(4, 22);
             this.tabPage14.Name = "tabPage14";
             this.tabPage14.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage14.Size = new System.Drawing.Size(503, 321);
+            this.tabPage14.Size = new System.Drawing.Size(586, 321);
             this.tabPage14.TabIndex = 1;
             this.tabPage14.Text = "Editar";
             this.tabPage14.UseVisualStyleBackColor = true;
@@ -989,7 +990,7 @@
             this.tabControl2.Controls.Add(this.tabPage6);
             this.tabControl2.Controls.Add(this.tabPage7);
             this.tabControl2.Controls.Add(this.tabPage8);
-            this.tabControl2.Location = new System.Drawing.Point(19, 22);
+            this.tabControl2.Location = new System.Drawing.Point(52, 23);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(534, 334);
@@ -1576,7 +1577,7 @@
             this.tabControl3.Controls.Add(this.tabPage9);
             this.tabControl3.Controls.Add(this.tabPage10);
             this.tabControl3.Controls.Add(this.tabPage11);
-            this.tabControl3.Location = new System.Drawing.Point(24, 29);
+            this.tabControl3.Location = new System.Drawing.Point(64, 34);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
             this.tabControl3.Size = new System.Drawing.Size(525, 336);
@@ -2070,11 +2071,20 @@
             // 
             this.fontDialog1.Color = System.Drawing.SystemColors.ControlText;
             // 
+            // user
+            // 
+            this.user.Enabled = false;
+            this.user.Location = new System.Drawing.Point(5, 419);
+            this.user.Name = "user";
+            this.user.Size = new System.Drawing.Size(653, 20);
+            this.user.TabIndex = 1;
+            // 
             // principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(663, 426);
+            this.ClientSize = new System.Drawing.Size(663, 443);
+            this.Controls.Add(this.user);
             this.Controls.Add(this.tcAgregarEspecialidad);
             this.Name = "principal";
             this.Text = "principal";
@@ -2129,6 +2139,7 @@
             this.tabPage15.ResumeLayout(false);
             this.tabPage15.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -2324,5 +2335,6 @@
         private System.Windows.Forms.RadioButton rbF;
         private System.Windows.Forms.RadioButton rbM;
         private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.TextBox user;
     }
 }
