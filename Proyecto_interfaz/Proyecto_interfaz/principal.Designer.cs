@@ -49,7 +49,6 @@
             this.mcAgregarCitas = new System.Windows.Forms.MonthCalendar();
             this.tabPage16 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.Horarios = new System.Windows.Forms.ListBox();
@@ -215,6 +214,8 @@
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.user = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.Visualizar = new System.Windows.Forms.Button();
             this.tcAgregarEspecialidad.SuspendLayout();
             this.tpCita.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -454,20 +455,14 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.monthCalendar1);
+            this.groupBox6.Controls.Add(this.Visualizar);
+            this.groupBox6.Controls.Add(this.dateTimePicker1);
             this.groupBox6.Location = new System.Drawing.Point(248, 29);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(288, 215);
             this.groupBox6.TabIndex = 1;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Informacion";
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(50, 41);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 0;
-            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // groupBox5
             // 
@@ -2040,6 +2035,22 @@
             this.comboBox1.Size = new System.Drawing.Size(169, 21);
             this.comboBox1.TabIndex = 0;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(20, 26);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(214, 20);
+            this.dateTimePicker1.TabIndex = 0;
+            // 
+            // Visualizar
+            // 
+            this.Visualizar.Location = new System.Drawing.Point(206, 185);
+            this.Visualizar.Name = "Visualizar";
+            this.Visualizar.Size = new System.Drawing.Size(63, 24);
+            this.Visualizar.TabIndex = 1;
+            this.Visualizar.Text = "Visualizar";
+            this.Visualizar.UseVisualStyleBackColor = true;
+            // 
             // principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2209,7 +2220,6 @@
         private System.Windows.Forms.TextBox txtNombreAM;
         private System.Windows.Forms.TabPage tabPage16;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label cita;
@@ -2294,5 +2304,7 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Button btnLimpiarBusqueda;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button Visualizar;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
