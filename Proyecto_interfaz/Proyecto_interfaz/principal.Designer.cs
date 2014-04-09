@@ -51,7 +51,6 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.Horarios = new System.Windows.Forms.ListBox();
             this.label32 = new System.Windows.Forms.Label();
             this.dTP1 = new System.Windows.Forms.DateTimePicker();
             this.label31 = new System.Windows.Forms.Label();
@@ -213,9 +212,10 @@
             this.btVerEspecialidad = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.user = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbmedicoscita = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.Visualizar = new System.Windows.Forms.Button();
+            this.cbNewHorario = new System.Windows.Forms.ComboBox();
             this.tcAgregarEspecialidad.SuspendLayout();
             this.tpCita.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -344,6 +344,7 @@
             this.cbAgregarCitaH.Name = "cbAgregarCitaH";
             this.cbAgregarCitaH.Size = new System.Drawing.Size(183, 21);
             this.cbAgregarCitaH.TabIndex = 10;
+            this.cbAgregarCitaH.SelectedIndexChanged += new System.EventHandler(this.cbAgregarCitaH_SelectedIndexChanged);
             // 
             // cbAgragarCitaM
             // 
@@ -466,7 +467,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.comboBox1);
+            this.groupBox5.Controls.Add(this.cbmedicoscita);
             this.groupBox5.Location = new System.Drawing.Point(3, 29);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(199, 192);
@@ -476,7 +477,7 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.Horarios);
+            this.tabPage5.Controls.Add(this.cbNewHorario);
             this.tabPage5.Controls.Add(this.label32);
             this.tabPage5.Controls.Add(this.dTP1);
             this.tabPage5.Controls.Add(this.label31);
@@ -494,14 +495,6 @@
             this.tabPage5.Text = "Editar";
             this.tabPage5.UseVisualStyleBackColor = true;
             this.tabPage5.Click += new System.EventHandler(this.tabPage5_Click);
-            // 
-            // Horarios
-            // 
-            this.Horarios.FormattingEnabled = true;
-            this.Horarios.Location = new System.Drawing.Point(266, 243);
-            this.Horarios.Name = "Horarios";
-            this.Horarios.Size = new System.Drawing.Size(182, 17);
-            this.Horarios.TabIndex = 19;
             // 
             // label32
             // 
@@ -625,6 +618,7 @@
             this.cbHorario.Name = "cbHorario";
             this.cbHorario.Size = new System.Drawing.Size(210, 21);
             this.cbHorario.TabIndex = 13;
+            this.cbHorario.SelectedIndexChanged += new System.EventHandler(this.cbHorario_SelectedIndexChanged);
             // 
             // Guardar
             // 
@@ -2027,13 +2021,14 @@
             this.user.Size = new System.Drawing.Size(653, 20);
             this.user.TabIndex = 1;
             // 
-            // comboBox1
+            // cbmedicoscita
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(15, 25);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(169, 21);
-            this.comboBox1.TabIndex = 0;
+            this.cbmedicoscita.FormattingEnabled = true;
+            this.cbmedicoscita.Location = new System.Drawing.Point(15, 25);
+            this.cbmedicoscita.Name = "cbmedicoscita";
+            this.cbmedicoscita.Size = new System.Drawing.Size(169, 21);
+            this.cbmedicoscita.TabIndex = 0;
+            this.cbmedicoscita.SelectedIndexChanged += new System.EventHandler(this.cbmedicoscita_SelectedIndexChanged);
             // 
             // dateTimePicker1
             // 
@@ -2050,6 +2045,14 @@
             this.Visualizar.TabIndex = 1;
             this.Visualizar.Text = "Visualizar";
             this.Visualizar.UseVisualStyleBackColor = true;
+            // 
+            // cbNewHorario
+            // 
+            this.cbNewHorario.FormattingEnabled = true;
+            this.cbNewHorario.Location = new System.Drawing.Point(265, 238);
+            this.cbNewHorario.Name = "cbNewHorario";
+            this.cbNewHorario.Size = new System.Drawing.Size(182, 21);
+            this.cbNewHorario.TabIndex = 19;
             // 
             // principal
             // 
@@ -2265,7 +2268,6 @@
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.TextBox tbApePac;
         private System.Windows.Forms.TextBox tbNomPac;
-        private System.Windows.Forms.ListBox Horarios;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.DateTimePicker dTP1;
         private System.Windows.Forms.Label label31;
@@ -2303,8 +2305,9 @@
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Button btnLimpiarBusqueda;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbmedicoscita;
         private System.Windows.Forms.Button Visualizar;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox cbNewHorario;
     }
 }

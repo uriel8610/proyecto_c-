@@ -60,6 +60,7 @@ namespace Proyecto_interfaz
             llenar_camposEU();
             llenar_camposEC();
             llenar_camposAU();
+            //llenar_camposmedEC();
 
         }
 
@@ -450,6 +451,8 @@ namespace Proyecto_interfaz
             foreach (string nombres in nombre)
             {
                 cbAgragarCitaM.Items.Add(nombres);
+                cbmedicoscita.Items.Add(nombres);
+
             }
 
 
@@ -470,7 +473,8 @@ namespace Proyecto_interfaz
             {
 
                 cbAgregarCitaH.Items.Add(horario);
-
+                cbHorario.Items.Add(horario);
+                cbNewHorario.Items.Add(horario);
             }
 
 
@@ -833,38 +837,38 @@ namespace Proyecto_interfaz
 
         private void cbPacientes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            BaseDeDatos bd = new BaseDeDatos();
-            int i = cbHorario.SelectedIndex;
+            //BaseDeDatos bd = new BaseDeDatos();
+            //int i = cbHorario.SelectedIndex;
 
-            datos.Abrir();
-            consulta = "SELECT p.Nombre, p.Apellido FROM Paciente pa, Persona p WHERE p.idPersona = pa.idPersona" + cbHorario.Text + "';";
-            datos.leer(consulta);
-            while (datos.cnLeerConsulta.Read())
-            {
-                id = Convert.ToInt32(datos.cnLeerConsulta[0].ToString());
-                cbHorario.Text = datos.cnLeerConsulta[1].ToString();
-                //tbMedico.Text = datos.cnLeerConsulta[2].ToString();
-                //tbHorario.Text = datos.cnLeerConsulta[3].ToString();
-                //tbFecha.Text = fecha;
-                //tbHora.Text = hora;
-            }
-            datos.cerrar();
+            //datos.Abrir();
+            //consulta = "SELECT p.Nombre, p.Apellido FROM Paciente pa, Persona p WHERE p.idPersona = pa.idPersona" + cbHorario.Text + "';";
+            //datos.leer(consulta);
+            //while (datos.cnLeerConsulta.Read())
+            //{
+            //    id = Convert.ToInt32(datos.cnLeerConsulta[0].ToString());
+            //    cbHorario.Text = datos.cnLeerConsulta[1].ToString();
+            //    //tbMedico.Text = datos.cnLeerConsulta[2].ToString();
+            //    //tbHorario.Text = datos.cnLeerConsulta[3].ToString();
+            //    //tbFecha.Text = fecha;
+            //    //tbHora.Text = hora;
+            //}
+            //datos.cerrar();
         }
 
         //llena el combobox de los nombres de los pacientes que se pueden Editar en las citas
         public void llenar_camposEC()
         {
-            BaseDeDatos bd = new BaseDeDatos();
-            datos.Abrir();
+        //    BaseDeDatos bd = new BaseDeDatos();
+        //    datos.Abrir();
 
-            consulta = "SELECT p.nombre from persona p, paciente pa WHERE p.idPersona=pa.idPersona";
-            datos.leer(consulta);
-            while (datos.cnLeerConsulta.Read())
-            {
-                cbHorario.Items.Add(datos.cnLeerConsulta[0]);
-            }
+        //    consulta = "SELECT p.nombre from persona p, paciente pa WHERE p.idPersona=pa.idPersona";
+        //    datos.leer(consulta);
+        //    while (datos.cnLeerConsulta.Read())
+        //    {
+        //        cbHorario.Items.Add(datos.cnLeerConsulta[0]);
+        //    }
 
-            datos.cerrar();
+        //    datos.cerrar();
         }
 
         private void tabPage5_Click(object sender, EventArgs e)
@@ -1069,6 +1073,64 @@ namespace Proyecto_interfaz
             cbPacienteReporte.SelectedIndex = -1;
             txtInicio.Text = "";
             txtFinal.Text = "";
+        }
+
+        private void cbmedicoscita_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //BaseDeDatos bd = new BaseDeDatos();
+            //int i = cbmedicoscita.SelectedIndex;
+
+            //datos.Abrir();
+            //consulta = "SELECT p.Nombre FROM Medico m, Persona p WHERE p.idPersona = m.idMedico" + cbmedicoscita.Text + "';";
+            //datos.leer(consulta);
+            //while (datos.cnLeerConsulta.Read())
+            //{
+            //   // id = Convert.ToInt32(datos.cnLeerConsulta[0].ToString());
+            //    cbmedicoscita.Text = datos.cnLeerConsulta[0].ToString();
+            //}
+            //datos.cerrar();
+        }
+
+        //llena el combobox de los nombres de los pacientes que se pueden Editar en las citas
+        public void llenar_camposmedEC()
+        {
+            //BaseDeDatos bd = new BaseDeDatos();
+            //datos.Abrir();
+
+            //consulta = "SELECT p.Nombre FROM Medico m, Persona p WHERE p.idPersona = m.idMedico";
+            //datos.leer(consulta);
+            //while (datos.cnLeerConsulta.Read())
+            //{
+            //    cbmedicoscita.Items.Add(datos.cnLeerConsulta[0]);
+            //}
+
+            //datos.cerrar();
+        
+        }
+
+        private void cbHorario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //BaseDeDatos bd = new BaseDeDatos();
+            //int i = cbHorario.SelectedIndex;
+
+            //datos.Abrir();
+            //consulta = "SELECT p.Nombre, p.Apellido FROM Paciente pa, Persona p WHERE p.idPersona = pa.idPersona" + cbHorario.Text + "';";
+            //datos.leer(consulta);
+            //while (datos.cnLeerConsulta.Read())
+            //{
+            //    id = Convert.ToInt32(datos.cnLeerConsulta[0].ToString());
+            //    cbHorario.Text = datos.cnLeerConsulta[1].ToString();
+            //   //tbMedico.Text = datos.cnLeerConsulta[2].ToString();
+            //    //tbHorario.Text = datos.cnLeerConsulta[3].ToString();
+            //    //tbFecha.Text = fecha;
+            //    //tbHora.Text = hora;
+            //}
+            //datos.cerrar();
+        }
+
+        private void cbAgregarCitaH_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
      }
