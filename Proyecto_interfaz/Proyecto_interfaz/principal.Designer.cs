@@ -150,14 +150,16 @@
             this.btBajaM = new System.Windows.Forms.Button();
             this.btAltaM = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.txtInicio = new System.Windows.Forms.TextBox();
             this.txtFinal = new System.Windows.Forms.TextBox();
             this.label48 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbMedicoReporte = new System.Windows.Forms.ComboBox();
+            this.cbUsuarioReporte = new System.Windows.Forms.ComboBox();
+            this.cbPacienteReporte = new System.Windows.Forms.ComboBox();
             this.mtcFinal = new System.Windows.Forms.MonthCalendar();
             this.mtcInicio = new System.Windows.Forms.MonthCalendar();
             this.btnReporteGral = new System.Windows.Forms.Button();
@@ -221,6 +223,7 @@
             this.btVerEspecialidad = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.user = new System.Windows.Forms.TextBox();
+            this.btnLimpiarBusqueda = new System.Windows.Forms.Button();
             this.tcAgregarEspecialidad.SuspendLayout();
             this.tpCita.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -1429,14 +1432,17 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.btnLimpiarBusqueda);
+            this.tabPage4.Controls.Add(this.label40);
+            this.tabPage4.Controls.Add(this.label33);
             this.tabPage4.Controls.Add(this.txtInicio);
             this.tabPage4.Controls.Add(this.txtFinal);
             this.tabPage4.Controls.Add(this.label48);
             this.tabPage4.Controls.Add(this.label47);
             this.tabPage4.Controls.Add(this.label46);
-            this.tabPage4.Controls.Add(this.comboBox3);
-            this.tabPage4.Controls.Add(this.comboBox2);
-            this.tabPage4.Controls.Add(this.comboBox1);
+            this.tabPage4.Controls.Add(this.cbMedicoReporte);
+            this.tabPage4.Controls.Add(this.cbUsuarioReporte);
+            this.tabPage4.Controls.Add(this.cbPacienteReporte);
             this.tabPage4.Controls.Add(this.mtcFinal);
             this.tabPage4.Controls.Add(this.mtcInicio);
             this.tabPage4.Controls.Add(this.btnReporteGral);
@@ -1448,6 +1454,24 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Reporte";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(220, 254);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(231, 13);
+            this.label40.TabIndex = 19;
+            this.label40.Text = "Seleccione algun(os) filtro(s) extra -OPCIONAL-:";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(206, 20);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(205, 13);
+            this.label33.TabIndex = 18;
+            this.label33.Text = "Seleccione el periodo de tiempo deseado:";
             // 
             // txtInicio
             // 
@@ -1492,29 +1516,29 @@
             this.label46.TabIndex = 12;
             this.label46.Text = "Medico";
             // 
-            // comboBox3
+            // cbMedicoReporte
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(85, 305);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 11;
+            this.cbMedicoReporte.FormattingEnabled = true;
+            this.cbMedicoReporte.Location = new System.Drawing.Point(85, 305);
+            this.cbMedicoReporte.Name = "cbMedicoReporte";
+            this.cbMedicoReporte.Size = new System.Drawing.Size(121, 21);
+            this.cbMedicoReporte.TabIndex = 11;
             // 
-            // comboBox2
+            // cbUsuarioReporte
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(255, 305);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 10;
+            this.cbUsuarioReporte.FormattingEnabled = true;
+            this.cbUsuarioReporte.Location = new System.Drawing.Point(255, 305);
+            this.cbUsuarioReporte.Name = "cbUsuarioReporte";
+            this.cbUsuarioReporte.Size = new System.Drawing.Size(121, 21);
+            this.cbUsuarioReporte.TabIndex = 10;
             // 
-            // comboBox1
+            // cbPacienteReporte
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(422, 305);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 9;
+            this.cbPacienteReporte.FormattingEnabled = true;
+            this.cbPacienteReporte.Location = new System.Drawing.Point(422, 305);
+            this.cbPacienteReporte.Name = "cbPacienteReporte";
+            this.cbPacienteReporte.Size = new System.Drawing.Size(121, 21);
+            this.cbPacienteReporte.TabIndex = 9;
             // 
             // mtcFinal
             // 
@@ -1531,11 +1555,11 @@
             // 
             // btnReporteGral
             // 
-            this.btnReporteGral.Location = new System.Drawing.Point(282, 351);
+            this.btnReporteGral.Location = new System.Drawing.Point(223, 350);
             this.btnReporteGral.Name = "btnReporteGral";
             this.btnReporteGral.Size = new System.Drawing.Size(75, 23);
             this.btnReporteGral.TabIndex = 6;
-            this.btnReporteGral.Text = "Buscar";
+            this.btnReporteGral.Text = "Generar";
             this.btnReporteGral.UseVisualStyleBackColor = true;
             this.btnReporteGral.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -2106,6 +2130,16 @@
             this.user.Size = new System.Drawing.Size(653, 20);
             this.user.TabIndex = 1;
             // 
+            // btnLimpiarBusqueda
+            // 
+            this.btnLimpiarBusqueda.Location = new System.Drawing.Point(404, 350);
+            this.btnLimpiarBusqueda.Name = "btnLimpiarBusqueda";
+            this.btnLimpiarBusqueda.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiarBusqueda.TabIndex = 20;
+            this.btnLimpiarBusqueda.Text = "Limpiar Busqueda";
+            this.btnLimpiarBusqueda.UseVisualStyleBackColor = true;
+            this.btnLimpiarBusqueda.Click += new System.EventHandler(this.btnLimpiarBusqueda_Click);
+            // 
             // principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2356,9 +2390,9 @@
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbMedicoReporte;
+        private System.Windows.Forms.ComboBox cbUsuarioReporte;
+        private System.Windows.Forms.ComboBox cbPacienteReporte;
         private System.Windows.Forms.RadioButton rbF;
         private System.Windows.Forms.RadioButton rbM;
         private System.Windows.Forms.GroupBox groupBox8;
@@ -2367,5 +2401,8 @@
         private System.Windows.Forms.DataGridView gridEspecialidad;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Button btVerEspecialidad;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Button btnLimpiarBusqueda;
     }
 }

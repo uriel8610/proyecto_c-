@@ -29,7 +29,7 @@ namespace Proyecto_interfaz
         DateTime fechaSistema = DateTime.Now;
         string fecha;
         //Strings para juardar los datos de seleccion para el reporte
-        String TInicio, TFinal;
+        String TInicio, TFinal, RMedico, RPaciente, RUsuario;
         public string nombre, apellido;
         public int idUsuario;
 
@@ -276,7 +276,10 @@ namespace Proyecto_interfaz
             txtFinal.Text = mtcFinal.SelectionEnd.ToString("yyyy/MM/dd");
             TInicio = txtInicio.Text;
             TFinal = txtFinal.Text;
-            Reporte repo = new Reporte(TInicio, TFinal);
+            RMedico = (cbMedicoReporte.SelectedIndex+1).ToString();
+            RUsuario = (cbUsuarioReporte.SelectedIndex+1).ToString();
+            RPaciente = (cbPacienteReporte.SelectedIndex+1).ToString();
+            Reporte repo = new Reporte(TInicio, TFinal, RMedico, RPaciente, RUsuario);
             repo.Show();
 }
 
@@ -963,8 +966,37 @@ namespace Proyecto_interfaz
 
         }
 
+        //para llenar los combobox con para los filtros de busqueda
         private void mtcInicio_DateChanged(object sender, DateRangeEventArgs e)
         {
+            cbMedicoReporte.Items.Clear();
+            cbUsuarioReporte.Items.Clear();
+            cbPacienteReporte.Items.Clear();
+            BaseDeDatos bd = new BaseDeDatos();
+            datos.Abrir();
+            //para llenar el cb de Medicos
+            consulta = "SELECT Apellido FROM vista_Medico";
+            datos.leer(consulta);
+            while (datos.cnLeerConsulta.Read())
+            {
+                cbMedicoReporte.Items.Add(datos.cnLeerConsulta[0]);
+            }
+            //para llenar el cb de Usuarios
+            consulta = "SELECT Apellido FROM vista_Usuario";
+            datos.leer(consulta);
+            while (datos.cnLeerConsulta.Read())
+            {
+                cbUsuarioReporte.Items.Add(datos.cnLeerConsulta[0]);
+            }
+            //para llenar el cb de Pacientes
+            consulta = "SELECT Apellido FROM vista_Paciente";
+            datos.leer(consulta);
+            while (datos.cnLeerConsulta.Read())
+            {
+                cbPacienteReporte.Items.Add(datos.cnLeerConsulta[0]);
+            }
+               datos.cerrar();
+
 
         }
 
@@ -1025,6 +1057,18 @@ namespace Proyecto_interfaz
                 gridEspecialidad.Rows[renglon].Cells["Descripcion"].Value = datos.cnLeerConsulta[1].ToString();
             }
             datos.cerrar();
+        }
+
+        private void btnLimpiarBusqueda_Click(object sender, EventArgs e)
+        {
+            cbMedicoReporte.Text = "";
+            cbMedicoReporte.SelectedIndex = -1;
+            cbUsuarioReporte.Text = "";
+            cbUsuarioReporte.SelectedIndex = -1;
+            cbPacienteReporte.Text = "";
+            cbPacienteReporte.SelectedIndex = -1;
+            txtInicio.Text = "";
+            txtFinal.Text = "";
         }
 
      }

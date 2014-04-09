@@ -13,11 +13,17 @@ namespace Proyecto_interfaz
     {
         BaseDeDatos datos = new BaseDeDatos();
         string consulta;
-        public Reporte(String Inicio, String Final)
+        public Reporte(String Inicio, String Final, String RMedico, String RUsuario, String RPaciente)
         {
             InitializeComponent();
             RtxtInicio.Text = Inicio;
             RtxtFinal.Text = Final;
+            //RtxtMedico.Text = RMedico;
+            //RtxtUsuario.Text = RUsuario;
+            //RtxtPaciente.Text = RPaciente;
+            lbMedico.Text = RMedico;
+            lbUsuario.Text = RUsuario;
+            lbPaciente.Text = RPaciente;
         }
 
         private void Reporte_Load(object sender, EventArgs e)
@@ -62,7 +68,43 @@ namespace Proyecto_interfaz
                 dgvReporte.Rows[renglon].Cells["Apellido_Usuario"].Value = datos.cnLeerConsulta[8].ToString();
             }
 
+            //para dar el nombre del medico
+            consulta = "SELECT Apellido FROM vista_medico WHERE idMedico ="+lbMedico.Text;
+            datos.leer(consulta);
+            while (datos.cnLeerConsulta.Read())
+            {
+                RtxtMedico.Text = datos.cnLeerConsulta[0].ToString();
+            }
+            //para dar el nombre del Usuario
+            consulta = "SELECT Apellido FROM vista_usuario WHERE idUsuario =" + lbUsuario.Text;
+            datos.leer(consulta);
+            while (datos.cnLeerConsulta.Read())
+            {
+                RtxtUsuario.Text = datos.cnLeerConsulta[0].ToString();
+            }
+            //para dar el nombre del paciente
+            consulta = "SELECT Apellido FROM vista_paciente WHERE idPaciente =" + lbPaciente.Text;
+            datos.leer(consulta);
+            while (datos.cnLeerConsulta.Read())
+            {
+                RtxtPaciente.Text = datos.cnLeerConsulta[0].ToString();
+            }
             datos.cerrar();
+            if (lbPaciente.Text == "0")
+            {
+                lbPaciente.Visible = false;
+                RtxtPaciente.Visible = false;
+            }
+            if (lbMedico.Text == "0")
+            {
+                lbMedico.Visible = false;
+                RtxtMedico.Visible = false;
+            }
+            if (lbUsuario.Text == "0")
+            {
+                lbUsuario.Visible = false;
+                RtxtUsuario.Visible = false;
+            }
         }
     }
 }

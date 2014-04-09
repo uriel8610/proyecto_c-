@@ -35,6 +35,12 @@
             this.RtxtFinal = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.RtxtMedico = new System.Windows.Forms.TextBox();
+            this.RtxtUsuario = new System.Windows.Forms.TextBox();
+            this.RtxtPaciente = new System.Windows.Forms.TextBox();
+            this.lbMedico = new System.Windows.Forms.Label();
+            this.lbPaciente = new System.Windows.Forms.Label();
+            this.lbUsuario = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReporte)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +57,7 @@
             // dgvReporte
             // 
             this.dgvReporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReporte.Location = new System.Drawing.Point(16, 144);
+            this.dgvReporte.Location = new System.Drawing.Point(12, 205);
             this.dgvReporte.Name = "dgvReporte";
             this.dgvReporte.Size = new System.Drawing.Size(944, 165);
             this.dgvReporte.TabIndex = 34;
@@ -100,11 +106,68 @@
             this.label8.TabIndex = 29;
             this.label8.Text = "Fecha de Inicio:";
             // 
+            // RtxtMedico
+            // 
+            this.RtxtMedico.Enabled = false;
+            this.RtxtMedico.Location = new System.Drawing.Point(295, 176);
+            this.RtxtMedico.Name = "RtxtMedico";
+            this.RtxtMedico.Size = new System.Drawing.Size(76, 20);
+            this.RtxtMedico.TabIndex = 36;
+            // 
+            // RtxtUsuario
+            // 
+            this.RtxtUsuario.Enabled = false;
+            this.RtxtUsuario.Location = new System.Drawing.Point(445, 176);
+            this.RtxtUsuario.Name = "RtxtUsuario";
+            this.RtxtUsuario.Size = new System.Drawing.Size(76, 20);
+            this.RtxtUsuario.TabIndex = 37;
+            // 
+            // RtxtPaciente
+            // 
+            this.RtxtPaciente.Enabled = false;
+            this.RtxtPaciente.Location = new System.Drawing.Point(612, 176);
+            this.RtxtPaciente.Name = "RtxtPaciente";
+            this.RtxtPaciente.Size = new System.Drawing.Size(76, 20);
+            this.RtxtPaciente.TabIndex = 38;
+            // 
+            // lbMedico
+            // 
+            this.lbMedico.AutoSize = true;
+            this.lbMedico.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbMedico.Location = new System.Drawing.Point(22, 9);
+            this.lbMedico.Name = "lbMedico";
+            this.lbMedico.Size = new System.Drawing.Size(2, 15);
+            this.lbMedico.TabIndex = 39;
+            // 
+            // lbPaciente
+            // 
+            this.lbPaciente.AutoSize = true;
+            this.lbPaciente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbPaciente.Location = new System.Drawing.Point(46, 9);
+            this.lbPaciente.Name = "lbPaciente";
+            this.lbPaciente.Size = new System.Drawing.Size(2, 15);
+            this.lbPaciente.TabIndex = 40;
+            // 
+            // lbUsuario
+            // 
+            this.lbUsuario.AutoSize = true;
+            this.lbUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbUsuario.Location = new System.Drawing.Point(69, 9);
+            this.lbUsuario.Name = "lbUsuario";
+            this.lbUsuario.Size = new System.Drawing.Size(2, 15);
+            this.lbUsuario.TabIndex = 41;
+            // 
             // Reporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(976, 331);
+            this.ClientSize = new System.Drawing.Size(976, 373);
+            this.Controls.Add(this.lbUsuario);
+            this.Controls.Add(this.lbPaciente);
+            this.Controls.Add(this.lbMedico);
+            this.Controls.Add(this.RtxtPaciente);
+            this.Controls.Add(this.RtxtUsuario);
+            this.Controls.Add(this.RtxtMedico);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvReporte);
             this.Controls.Add(this.label1);
@@ -130,5 +193,11 @@
         private System.Windows.Forms.TextBox RtxtFinal;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox RtxtMedico;
+        private System.Windows.Forms.TextBox RtxtUsuario;
+        private System.Windows.Forms.TextBox RtxtPaciente;
+        private System.Windows.Forms.Label lbMedico;
+        private System.Windows.Forms.Label lbPaciente;
+        private System.Windows.Forms.Label lbUsuario;
     }
 }
