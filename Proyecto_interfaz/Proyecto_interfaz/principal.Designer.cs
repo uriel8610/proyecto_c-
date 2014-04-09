@@ -49,8 +49,12 @@
             this.mcAgregarCitas = new System.Windows.Forms.MonthCalendar();
             this.tabPage16 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.Visualizar = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.cbmedicoscita = new System.Windows.Forms.ComboBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.cbNewHorario = new System.Windows.Forms.ComboBox();
             this.label32 = new System.Windows.Forms.Label();
             this.dTP1 = new System.Windows.Forms.DateTimePicker();
             this.label31 = new System.Windows.Forms.Label();
@@ -212,10 +216,22 @@
             this.btVerEspecialidad = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.user = new System.Windows.Forms.TextBox();
-            this.cbmedicoscita = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.Visualizar = new System.Windows.Forms.Button();
-            this.cbNewHorario = new System.Windows.Forms.ComboBox();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.chAgregarPacienteF = new System.Windows.Forms.CheckBox();
+            this.chAgregarPacienteM = new System.Windows.Forms.CheckBox();
+            this.txtAgregarPacienteN = new System.Windows.Forms.TextBox();
+            this.txtAgregarPacienteA = new System.Windows.Forms.TextBox();
+            this.txtAgregarPacienteD = new System.Windows.Forms.TextBox();
+            this.txtAgregarPacienteT = new System.Windows.Forms.TextBox();
+            this.txtAgregarPacienteEm = new System.Windows.Forms.TextBox();
+            this.txtAgregarPacienteE = new System.Windows.Forms.TextBox();
+            this.btAgregarPaciente = new System.Windows.Forms.Button();
             this.tcAgregarEspecialidad.SuspendLayout();
             this.tpCita.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -230,6 +246,7 @@
             this.groupBox1.SuspendLayout();
             this.tabPage12.SuspendLayout();
             this.tabControl4.SuspendLayout();
+            this.tabPage13.SuspendLayout();
             this.tabPage14.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -251,6 +268,7 @@
             this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEspecialidad)).BeginInit();
             this.groupBox9.SuspendLayout();
+            this.groupBox11.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcAgregarEspecialidad
@@ -465,6 +483,22 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Informacion";
             // 
+            // Visualizar
+            // 
+            this.Visualizar.Location = new System.Drawing.Point(206, 185);
+            this.Visualizar.Name = "Visualizar";
+            this.Visualizar.Size = new System.Drawing.Size(63, 24);
+            this.Visualizar.TabIndex = 1;
+            this.Visualizar.Text = "Visualizar";
+            this.Visualizar.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(20, 26);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(214, 20);
+            this.dateTimePicker1.TabIndex = 0;
+            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.cbmedicoscita);
@@ -474,6 +508,15 @@
             this.groupBox5.TabIndex = 0;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Medicos";
+            // 
+            // cbmedicoscita
+            // 
+            this.cbmedicoscita.FormattingEnabled = true;
+            this.cbmedicoscita.Location = new System.Drawing.Point(15, 25);
+            this.cbmedicoscita.Name = "cbmedicoscita";
+            this.cbmedicoscita.Size = new System.Drawing.Size(169, 21);
+            this.cbmedicoscita.TabIndex = 0;
+            this.cbmedicoscita.SelectedIndexChanged += new System.EventHandler(this.cbmedicoscita_SelectedIndexChanged);
             // 
             // tabPage5
             // 
@@ -495,6 +538,14 @@
             this.tabPage5.Text = "Editar";
             this.tabPage5.UseVisualStyleBackColor = true;
             this.tabPage5.Click += new System.EventHandler(this.tabPage5_Click);
+            // 
+            // cbNewHorario
+            // 
+            this.cbNewHorario.FormattingEnabled = true;
+            this.cbNewHorario.Location = new System.Drawing.Point(265, 238);
+            this.cbNewHorario.Name = "cbNewHorario";
+            this.cbNewHorario.Size = new System.Drawing.Size(182, 21);
+            this.cbNewHorario.TabIndex = 19;
             // 
             // label32
             // 
@@ -669,6 +720,20 @@
             // 
             // tabPage13
             // 
+            this.tabPage13.Controls.Add(this.btAgregarPaciente);
+            this.tabPage13.Controls.Add(this.txtAgregarPacienteE);
+            this.tabPage13.Controls.Add(this.txtAgregarPacienteEm);
+            this.tabPage13.Controls.Add(this.txtAgregarPacienteT);
+            this.tabPage13.Controls.Add(this.txtAgregarPacienteD);
+            this.tabPage13.Controls.Add(this.txtAgregarPacienteA);
+            this.tabPage13.Controls.Add(this.txtAgregarPacienteN);
+            this.tabPage13.Controls.Add(this.groupBox11);
+            this.tabPage13.Controls.Add(this.label54);
+            this.tabPage13.Controls.Add(this.label53);
+            this.tabPage13.Controls.Add(this.label52);
+            this.tabPage13.Controls.Add(this.label51);
+            this.tabPage13.Controls.Add(this.label50);
+            this.tabPage13.Controls.Add(this.label49);
             this.tabPage13.Location = new System.Drawing.Point(4, 22);
             this.tabPage13.Name = "tabPage13";
             this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
@@ -2021,38 +2086,142 @@
             this.user.Size = new System.Drawing.Size(653, 20);
             this.user.TabIndex = 1;
             // 
-            // cbmedicoscita
+            // label49
             // 
-            this.cbmedicoscita.FormattingEnabled = true;
-            this.cbmedicoscita.Location = new System.Drawing.Point(15, 25);
-            this.cbmedicoscita.Name = "cbmedicoscita";
-            this.cbmedicoscita.Size = new System.Drawing.Size(169, 21);
-            this.cbmedicoscita.TabIndex = 0;
-            this.cbmedicoscita.SelectedIndexChanged += new System.EventHandler(this.cbmedicoscita_SelectedIndexChanged);
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(47, 66);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(44, 13);
+            this.label49.TabIndex = 0;
+            this.label49.Text = "Nombre";
             // 
-            // dateTimePicker1
+            // label50
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(20, 26);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(214, 20);
-            this.dateTimePicker1.TabIndex = 0;
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(47, 119);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(44, 13);
+            this.label50.TabIndex = 1;
+            this.label50.Text = "Apellido";
             // 
-            // Visualizar
+            // label51
             // 
-            this.Visualizar.Location = new System.Drawing.Point(206, 185);
-            this.Visualizar.Name = "Visualizar";
-            this.Visualizar.Size = new System.Drawing.Size(63, 24);
-            this.Visualizar.TabIndex = 1;
-            this.Visualizar.Text = "Visualizar";
-            this.Visualizar.UseVisualStyleBackColor = true;
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(47, 158);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(52, 13);
+            this.label51.TabIndex = 2;
+            this.label51.Text = "Direccion";
             // 
-            // cbNewHorario
+            // label52
             // 
-            this.cbNewHorario.FormattingEnabled = true;
-            this.cbNewHorario.Location = new System.Drawing.Point(265, 238);
-            this.cbNewHorario.Name = "cbNewHorario";
-            this.cbNewHorario.Size = new System.Drawing.Size(182, 21);
-            this.cbNewHorario.TabIndex = 19;
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(47, 204);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(49, 13);
+            this.label52.TabIndex = 3;
+            this.label52.Text = "Telefono";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(307, 66);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(32, 13);
+            this.label53.TabIndex = 4;
+            this.label53.Text = "Email";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(310, 118);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(32, 13);
+            this.label54.TabIndex = 5;
+            this.label54.Text = "Edad";
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.chAgregarPacienteM);
+            this.groupBox11.Controls.Add(this.chAgregarPacienteF);
+            this.groupBox11.Location = new System.Drawing.Point(313, 169);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(200, 64);
+            this.groupBox11.TabIndex = 6;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Sexo";
+            // 
+            // chAgregarPacienteF
+            // 
+            this.chAgregarPacienteF.AutoSize = true;
+            this.chAgregarPacienteF.Location = new System.Drawing.Point(25, 31);
+            this.chAgregarPacienteF.Name = "chAgregarPacienteF";
+            this.chAgregarPacienteF.Size = new System.Drawing.Size(32, 17);
+            this.chAgregarPacienteF.TabIndex = 0;
+            this.chAgregarPacienteF.Text = "F";
+            this.chAgregarPacienteF.UseVisualStyleBackColor = true;
+            // 
+            // chAgregarPacienteM
+            // 
+            this.chAgregarPacienteM.AutoSize = true;
+            this.chAgregarPacienteM.Location = new System.Drawing.Point(120, 31);
+            this.chAgregarPacienteM.Name = "chAgregarPacienteM";
+            this.chAgregarPacienteM.Size = new System.Drawing.Size(35, 17);
+            this.chAgregarPacienteM.TabIndex = 1;
+            this.chAgregarPacienteM.Text = "M";
+            this.chAgregarPacienteM.UseVisualStyleBackColor = true;
+            // 
+            // txtAgregarPacienteN
+            // 
+            this.txtAgregarPacienteN.Location = new System.Drawing.Point(111, 66);
+            this.txtAgregarPacienteN.Name = "txtAgregarPacienteN";
+            this.txtAgregarPacienteN.Size = new System.Drawing.Size(100, 20);
+            this.txtAgregarPacienteN.TabIndex = 7;
+            // 
+            // txtAgregarPacienteA
+            // 
+            this.txtAgregarPacienteA.Location = new System.Drawing.Point(111, 119);
+            this.txtAgregarPacienteA.Name = "txtAgregarPacienteA";
+            this.txtAgregarPacienteA.Size = new System.Drawing.Size(100, 20);
+            this.txtAgregarPacienteA.TabIndex = 8;
+            // 
+            // txtAgregarPacienteD
+            // 
+            this.txtAgregarPacienteD.Location = new System.Drawing.Point(111, 158);
+            this.txtAgregarPacienteD.Name = "txtAgregarPacienteD";
+            this.txtAgregarPacienteD.Size = new System.Drawing.Size(100, 20);
+            this.txtAgregarPacienteD.TabIndex = 9;
+            // 
+            // txtAgregarPacienteT
+            // 
+            this.txtAgregarPacienteT.Location = new System.Drawing.Point(111, 204);
+            this.txtAgregarPacienteT.Name = "txtAgregarPacienteT";
+            this.txtAgregarPacienteT.Size = new System.Drawing.Size(100, 20);
+            this.txtAgregarPacienteT.TabIndex = 10;
+            // 
+            // txtAgregarPacienteEm
+            // 
+            this.txtAgregarPacienteEm.Location = new System.Drawing.Point(368, 66);
+            this.txtAgregarPacienteEm.Name = "txtAgregarPacienteEm";
+            this.txtAgregarPacienteEm.Size = new System.Drawing.Size(100, 20);
+            this.txtAgregarPacienteEm.TabIndex = 11;
+            // 
+            // txtAgregarPacienteE
+            // 
+            this.txtAgregarPacienteE.Location = new System.Drawing.Point(368, 119);
+            this.txtAgregarPacienteE.Name = "txtAgregarPacienteE";
+            this.txtAgregarPacienteE.Size = new System.Drawing.Size(100, 20);
+            this.txtAgregarPacienteE.TabIndex = 12;
+            // 
+            // btAgregarPaciente
+            // 
+            this.btAgregarPaciente.Location = new System.Drawing.Point(407, 270);
+            this.btAgregarPaciente.Name = "btAgregarPaciente";
+            this.btAgregarPaciente.Size = new System.Drawing.Size(75, 23);
+            this.btAgregarPaciente.TabIndex = 13;
+            this.btAgregarPaciente.Text = "Registrar";
+            this.btAgregarPaciente.UseVisualStyleBackColor = true;
+            this.btAgregarPaciente.Click += new System.EventHandler(this.btAgregarPaciente_Click);
             // 
             // principal
             // 
@@ -2062,7 +2231,7 @@
             this.Controls.Add(this.user);
             this.Controls.Add(this.tcAgregarEspecialidad);
             this.Name = "principal";
-            this.Text = "principal";
+            this.Text = "Sysmed";
             this.Load += new System.EventHandler(this.principal_Load);
             this.tcAgregarEspecialidad.ResumeLayout(false);
             this.tpCita.ResumeLayout(false);
@@ -2083,6 +2252,8 @@
             this.groupBox1.PerformLayout();
             this.tabPage12.ResumeLayout(false);
             this.tabControl4.ResumeLayout(false);
+            this.tabPage13.ResumeLayout(false);
+            this.tabPage13.PerformLayout();
             this.tabPage14.ResumeLayout(false);
             this.tabPage14.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -2114,6 +2285,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridEspecialidad)).EndInit();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2309,5 +2482,21 @@
         private System.Windows.Forms.Button Visualizar;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox cbNewHorario;
+        private System.Windows.Forms.Button btAgregarPaciente;
+        private System.Windows.Forms.TextBox txtAgregarPacienteE;
+        private System.Windows.Forms.TextBox txtAgregarPacienteEm;
+        private System.Windows.Forms.TextBox txtAgregarPacienteT;
+        private System.Windows.Forms.TextBox txtAgregarPacienteD;
+        private System.Windows.Forms.TextBox txtAgregarPacienteA;
+        private System.Windows.Forms.TextBox txtAgregarPacienteN;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.CheckBox chAgregarPacienteM;
+        private System.Windows.Forms.CheckBox chAgregarPacienteF;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label label49;
     }
 }
