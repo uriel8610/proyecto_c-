@@ -951,7 +951,8 @@ namespace Proyecto_interfaz
             int idMedico, idHorario;
             idMedico = cbAgragarCitaM.SelectedIndex + 1;
             idHorario = cbAgregarCitaH.SelectedIndex + 1;
-            consulta2 = "INSERT INTO Cita(idCita, idMedico, idPaciente, idHorario, idUsuario, Fecha, FechaActual, HoraActual, Estado)VALUES(" + idMedico + "," + idPersonaAgregarCita + ", " + idHorario + ", " + idUsuario + ",  '" + mcAgregarCitas.SelectionEnd.ToString("yyyy-MM-dd") + "','" + fecha + "', '" + hora + "', 'realizada');";
+            string fechaCita = mcAgregarCitas.SelectionEnd.ToString("yyyy-MM-dd");
+            consulta2 = "INSERT INTO Cita( idMedico, idPaciente, idHorario, idUsuario, Fecha, FechaActual, HoraActual, Estado)VALUES(" + idMedico + "," + idPersonaAgregarCita + ", " + idHorario + ", " + idUsuario + ",  '" + fechaCita + "','" + fecha + "', '" + hora + "', 'realizada');";
             MessageBox.Show(consulta2);
 
             BaseDeDatos c1 = new BaseDeDatos();
