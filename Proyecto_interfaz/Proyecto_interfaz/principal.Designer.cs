@@ -150,7 +150,6 @@
             this.btBajaM = new System.Windows.Forms.Button();
             this.btAltaM = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.dgvReporte = new System.Windows.Forms.DataGridView();
             this.txtInicio = new System.Windows.Forms.TextBox();
             this.txtFinal = new System.Windows.Forms.TextBox();
             this.label48 = new System.Windows.Forms.Label();
@@ -214,14 +213,14 @@
             this.btBajaU = new System.Windows.Forms.Button();
             this.btAltaU = new System.Windows.Forms.Button();
             this.tabPage15 = new System.Windows.Forms.TabPage();
-            this.txtEspecialida_AE = new System.Windows.Forms.TextBox();
-            this.btAgregar_AE = new System.Windows.Forms.Button();
-            this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.user = new System.Windows.Forms.TextBox();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.gridEspecialidad = new System.Windows.Forms.DataGridView();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.txtEspecialida_AE = new System.Windows.Forms.TextBox();
+            this.btAgregar_AE = new System.Windows.Forms.Button();
             this.btVerEspecialidad = new System.Windows.Forms.Button();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.user = new System.Windows.Forms.TextBox();
             this.tcAgregarEspecialidad.SuspendLayout();
             this.tpCita.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -246,7 +245,6 @@
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAltaBajaM)).BeginInit();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvReporte)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage9.SuspendLayout();
@@ -255,9 +253,9 @@
             this.tabPage11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAltaBajaU)).BeginInit();
             this.tabPage15.SuspendLayout();
-            this.groupBox9.SuspendLayout();
             this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEspecialidad)).BeginInit();
+            this.groupBox9.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcAgregarEspecialidad
@@ -1431,7 +1429,6 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.dgvReporte);
             this.tabPage4.Controls.Add(this.txtInicio);
             this.tabPage4.Controls.Add(this.txtFinal);
             this.tabPage4.Controls.Add(this.label48);
@@ -1452,24 +1449,18 @@
             this.tabPage4.Text = "Reporte";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // dgvReporte
-            // 
-            this.dgvReporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReporte.Location = new System.Drawing.Point(17, 241);
-            this.dgvReporte.Name = "dgvReporte";
-            this.dgvReporte.Size = new System.Drawing.Size(613, 150);
-            this.dgvReporte.TabIndex = 17;
-            // 
             // txtInicio
             // 
-            this.txtInicio.Location = new System.Drawing.Point(197, 5);
+            this.txtInicio.Enabled = false;
+            this.txtInicio.Location = new System.Drawing.Point(209, 49);
             this.txtInicio.Name = "txtInicio";
             this.txtInicio.Size = new System.Drawing.Size(76, 20);
             this.txtInicio.TabIndex = 16;
             // 
             // txtFinal
             // 
-            this.txtFinal.Location = new System.Drawing.Point(444, 5);
+            this.txtFinal.Enabled = false;
+            this.txtFinal.Location = new System.Drawing.Point(456, 49);
             this.txtFinal.Name = "txtFinal";
             this.txtFinal.Size = new System.Drawing.Size(76, 20);
             this.txtFinal.TabIndex = 15;
@@ -1477,7 +1468,7 @@
             // label48
             // 
             this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(489, 198);
+            this.label48.Location = new System.Drawing.Point(453, 289);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(49, 13);
             this.label48.TabIndex = 14;
@@ -1486,7 +1477,7 @@
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(322, 198);
+            this.label47.Location = new System.Drawing.Point(295, 289);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(43, 13);
             this.label47.TabIndex = 13;
@@ -1495,7 +1486,7 @@
             // label46
             // 
             this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(152, 198);
+            this.label46.Location = new System.Drawing.Point(123, 289);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(42, 13);
             this.label46.TabIndex = 12;
@@ -1504,7 +1495,7 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(73, 214);
+            this.comboBox3.Location = new System.Drawing.Point(85, 305);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 21);
             this.comboBox3.TabIndex = 11;
@@ -1512,7 +1503,7 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(243, 214);
+            this.comboBox2.Location = new System.Drawing.Point(255, 305);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 10;
@@ -1520,27 +1511,27 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(410, 214);
+            this.comboBox1.Location = new System.Drawing.Point(422, 305);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 9;
             // 
             // mtcFinal
             // 
-            this.mtcFinal.Location = new System.Drawing.Point(304, 30);
+            this.mtcFinal.Location = new System.Drawing.Point(316, 74);
             this.mtcFinal.Name = "mtcFinal";
             this.mtcFinal.TabIndex = 8;
             // 
             // mtcInicio
             // 
-            this.mtcInicio.Location = new System.Drawing.Point(46, 30);
+            this.mtcInicio.Location = new System.Drawing.Point(58, 74);
             this.mtcInicio.Name = "mtcInicio";
             this.mtcInicio.TabIndex = 7;
             this.mtcInicio.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.mtcInicio_DateChanged);
             // 
             // btnReporteGral
             // 
-            this.btnReporteGral.Location = new System.Drawing.Point(543, 169);
+            this.btnReporteGral.Location = new System.Drawing.Point(282, 351);
             this.btnReporteGral.Name = "btnReporteGral";
             this.btnReporteGral.Size = new System.Drawing.Size(75, 23);
             this.btnReporteGral.TabIndex = 6;
@@ -1551,7 +1542,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(329, 8);
+            this.label11.Location = new System.Drawing.Point(341, 52);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(96, 13);
             this.label11.TabIndex = 3;
@@ -1561,7 +1552,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(70, 8);
+            this.label8.Location = new System.Drawing.Point(82, 52);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(83, 13);
             this.label8.TabIndex = 2;
@@ -2046,46 +2037,6 @@
             this.tabPage15.Text = "Especialidad";
             this.tabPage15.UseVisualStyleBackColor = true;
             // 
-            // txtEspecialida_AE
-            // 
-            this.txtEspecialida_AE.Location = new System.Drawing.Point(23, 32);
-            this.txtEspecialida_AE.Name = "txtEspecialida_AE";
-            this.txtEspecialida_AE.Size = new System.Drawing.Size(284, 20);
-            this.txtEspecialida_AE.TabIndex = 2;
-            // 
-            // btAgregar_AE
-            // 
-            this.btAgregar_AE.Location = new System.Drawing.Point(365, 30);
-            this.btAgregar_AE.Name = "btAgregar_AE";
-            this.btAgregar_AE.Size = new System.Drawing.Size(75, 23);
-            this.btAgregar_AE.TabIndex = 0;
-            this.btAgregar_AE.Text = "Agregar";
-            this.btAgregar_AE.UseVisualStyleBackColor = true;
-            this.btAgregar_AE.Click += new System.EventHandler(this.btAgregar_AE_Click);
-            // 
-            // fontDialog1
-            // 
-            this.fontDialog1.Color = System.Drawing.SystemColors.ControlText;
-            // 
-            // user
-            // 
-            this.user.Enabled = false;
-            this.user.Location = new System.Drawing.Point(5, 419);
-            this.user.Name = "user";
-            this.user.Size = new System.Drawing.Size(653, 20);
-            this.user.TabIndex = 1;
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.txtEspecialida_AE);
-            this.groupBox9.Controls.Add(this.btAgregar_AE);
-            this.groupBox9.Location = new System.Drawing.Point(41, 36);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(480, 78);
-            this.groupBox9.TabIndex = 6;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Especialidad";
-            // 
             // groupBox10
             // 
             this.groupBox10.Controls.Add(this.gridEspecialidad);
@@ -2105,6 +2056,34 @@
             this.gridEspecialidad.Size = new System.Drawing.Size(268, 152);
             this.gridEspecialidad.TabIndex = 3;
             // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.txtEspecialida_AE);
+            this.groupBox9.Controls.Add(this.btAgregar_AE);
+            this.groupBox9.Location = new System.Drawing.Point(41, 36);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(480, 78);
+            this.groupBox9.TabIndex = 6;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Especialidad";
+            // 
+            // txtEspecialida_AE
+            // 
+            this.txtEspecialida_AE.Location = new System.Drawing.Point(23, 32);
+            this.txtEspecialida_AE.Name = "txtEspecialida_AE";
+            this.txtEspecialida_AE.Size = new System.Drawing.Size(284, 20);
+            this.txtEspecialida_AE.TabIndex = 2;
+            // 
+            // btAgregar_AE
+            // 
+            this.btAgregar_AE.Location = new System.Drawing.Point(365, 30);
+            this.btAgregar_AE.Name = "btAgregar_AE";
+            this.btAgregar_AE.Size = new System.Drawing.Size(75, 23);
+            this.btAgregar_AE.TabIndex = 0;
+            this.btAgregar_AE.Text = "Agregar";
+            this.btAgregar_AE.UseVisualStyleBackColor = true;
+            this.btAgregar_AE.Click += new System.EventHandler(this.btAgregar_AE_Click);
+            // 
             // btVerEspecialidad
             // 
             this.btVerEspecialidad.Location = new System.Drawing.Point(129, 299);
@@ -2114,6 +2093,18 @@
             this.btVerEspecialidad.Text = "Ver Especialidades";
             this.btVerEspecialidad.UseVisualStyleBackColor = true;
             this.btVerEspecialidad.Click += new System.EventHandler(this.btVerEspecialidad_Click);
+            // 
+            // fontDialog1
+            // 
+            this.fontDialog1.Color = System.Drawing.SystemColors.ControlText;
+            // 
+            // user
+            // 
+            this.user.Enabled = false;
+            this.user.Location = new System.Drawing.Point(5, 419);
+            this.user.Name = "user";
+            this.user.Size = new System.Drawing.Size(653, 20);
+            this.user.TabIndex = 1;
             // 
             // principal
             // 
@@ -2161,7 +2152,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAltaBajaM)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvReporte)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
             this.tabPage9.ResumeLayout(false);
@@ -2173,10 +2163,10 @@
             this.tabPage11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAltaBajaU)).EndInit();
             this.tabPage15.ResumeLayout(false);
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
             this.groupBox10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridEspecialidad)).EndInit();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2369,7 +2359,6 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridView dgvReporte;
         private System.Windows.Forms.RadioButton rbF;
         private System.Windows.Forms.RadioButton rbM;
         private System.Windows.Forms.GroupBox groupBox8;
