@@ -51,16 +51,6 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.medico5 = new System.Windows.Forms.Label();
-            this.medico4 = new System.Windows.Forms.Label();
-            this.medico3 = new System.Windows.Forms.Label();
-            this.medico2 = new System.Windows.Forms.Label();
-            this.medico1 = new System.Windows.Forms.Label();
-            this.M5 = new System.Windows.Forms.RadioButton();
-            this.M4 = new System.Windows.Forms.RadioButton();
-            this.M3 = new System.Windows.Forms.RadioButton();
-            this.M2 = new System.Windows.Forms.RadioButton();
-            this.M1 = new System.Windows.Forms.RadioButton();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.Horarios = new System.Windows.Forms.ListBox();
             this.label32 = new System.Windows.Forms.Label();
@@ -150,6 +140,7 @@
             this.btBajaM = new System.Windows.Forms.Button();
             this.btAltaM = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnLimpiarBusqueda = new System.Windows.Forms.Button();
             this.label40 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.txtInicio = new System.Windows.Forms.TextBox();
@@ -223,7 +214,7 @@
             this.btVerEspecialidad = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.user = new System.Windows.Forms.TextBox();
-            this.btnLimpiarBusqueda = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tcAgregarEspecialidad.SuspendLayout();
             this.tpCita.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -480,112 +471,13 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.medico5);
-            this.groupBox5.Controls.Add(this.medico4);
-            this.groupBox5.Controls.Add(this.medico3);
-            this.groupBox5.Controls.Add(this.medico2);
-            this.groupBox5.Controls.Add(this.medico1);
-            this.groupBox5.Controls.Add(this.M5);
-            this.groupBox5.Controls.Add(this.M4);
-            this.groupBox5.Controls.Add(this.M3);
-            this.groupBox5.Controls.Add(this.M2);
-            this.groupBox5.Controls.Add(this.M1);
+            this.groupBox5.Controls.Add(this.comboBox1);
             this.groupBox5.Location = new System.Drawing.Point(3, 29);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(199, 192);
             this.groupBox5.TabIndex = 0;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Medicos";
-            // 
-            // medico5
-            // 
-            this.medico5.AutoSize = true;
-            this.medico5.Location = new System.Drawing.Point(38, 169);
-            this.medico5.Name = "medico5";
-            this.medico5.Size = new System.Drawing.Size(0, 13);
-            this.medico5.TabIndex = 9;
-            // 
-            // medico4
-            // 
-            this.medico4.AutoSize = true;
-            this.medico4.Location = new System.Drawing.Point(38, 137);
-            this.medico4.Name = "medico4";
-            this.medico4.Size = new System.Drawing.Size(0, 13);
-            this.medico4.TabIndex = 8;
-            // 
-            // medico3
-            // 
-            this.medico3.AutoSize = true;
-            this.medico3.Location = new System.Drawing.Point(38, 98);
-            this.medico3.Name = "medico3";
-            this.medico3.Size = new System.Drawing.Size(0, 13);
-            this.medico3.TabIndex = 7;
-            // 
-            // medico2
-            // 
-            this.medico2.AutoSize = true;
-            this.medico2.Location = new System.Drawing.Point(37, 58);
-            this.medico2.Name = "medico2";
-            this.medico2.Size = new System.Drawing.Size(0, 13);
-            this.medico2.TabIndex = 6;
-            // 
-            // medico1
-            // 
-            this.medico1.AutoSize = true;
-            this.medico1.Location = new System.Drawing.Point(38, 27);
-            this.medico1.Name = "medico1";
-            this.medico1.Size = new System.Drawing.Size(0, 13);
-            this.medico1.TabIndex = 5;
-            // 
-            // M5
-            // 
-            this.M5.AutoSize = true;
-            this.M5.Location = new System.Drawing.Point(14, 169);
-            this.M5.Name = "M5";
-            this.M5.Size = new System.Drawing.Size(14, 13);
-            this.M5.TabIndex = 4;
-            this.M5.TabStop = true;
-            this.M5.UseVisualStyleBackColor = true;
-            // 
-            // M4
-            // 
-            this.M4.AutoSize = true;
-            this.M4.Location = new System.Drawing.Point(14, 137);
-            this.M4.Name = "M4";
-            this.M4.Size = new System.Drawing.Size(14, 13);
-            this.M4.TabIndex = 3;
-            this.M4.TabStop = true;
-            this.M4.UseVisualStyleBackColor = true;
-            // 
-            // M3
-            // 
-            this.M3.AutoSize = true;
-            this.M3.Location = new System.Drawing.Point(14, 98);
-            this.M3.Name = "M3";
-            this.M3.Size = new System.Drawing.Size(14, 13);
-            this.M3.TabIndex = 2;
-            this.M3.TabStop = true;
-            this.M3.UseVisualStyleBackColor = true;
-            // 
-            // M2
-            // 
-            this.M2.AutoSize = true;
-            this.M2.Location = new System.Drawing.Point(14, 60);
-            this.M2.Name = "M2";
-            this.M2.Size = new System.Drawing.Size(14, 13);
-            this.M2.TabIndex = 1;
-            this.M2.TabStop = true;
-            this.M2.UseVisualStyleBackColor = true;
-            // 
-            // M1
-            // 
-            this.M1.AutoSize = true;
-            this.M1.Location = new System.Drawing.Point(14, 25);
-            this.M1.Name = "M1";
-            this.M1.Size = new System.Drawing.Size(14, 13);
-            this.M1.TabIndex = 0;
-            this.M1.TabStop = true;
-            this.M1.UseVisualStyleBackColor = true;
             // 
             // tabPage5
             // 
@@ -1455,6 +1347,16 @@
             this.tabPage4.Text = "Reporte";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // btnLimpiarBusqueda
+            // 
+            this.btnLimpiarBusqueda.Location = new System.Drawing.Point(404, 350);
+            this.btnLimpiarBusqueda.Name = "btnLimpiarBusqueda";
+            this.btnLimpiarBusqueda.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiarBusqueda.TabIndex = 20;
+            this.btnLimpiarBusqueda.Text = "Limpiar Busqueda";
+            this.btnLimpiarBusqueda.UseVisualStyleBackColor = true;
+            this.btnLimpiarBusqueda.Click += new System.EventHandler(this.btnLimpiarBusqueda_Click);
+            // 
             // label40
             // 
             this.label40.AutoSize = true;
@@ -2130,15 +2032,13 @@
             this.user.Size = new System.Drawing.Size(653, 20);
             this.user.TabIndex = 1;
             // 
-            // btnLimpiarBusqueda
+            // comboBox1
             // 
-            this.btnLimpiarBusqueda.Location = new System.Drawing.Point(404, 350);
-            this.btnLimpiarBusqueda.Name = "btnLimpiarBusqueda";
-            this.btnLimpiarBusqueda.Size = new System.Drawing.Size(75, 23);
-            this.btnLimpiarBusqueda.TabIndex = 20;
-            this.btnLimpiarBusqueda.Text = "Limpiar Busqueda";
-            this.btnLimpiarBusqueda.UseVisualStyleBackColor = true;
-            this.btnLimpiarBusqueda.Click += new System.EventHandler(this.btnLimpiarBusqueda_Click);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(15, 25);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(169, 21);
+            this.comboBox1.TabIndex = 0;
             // 
             // principal
             // 
@@ -2161,7 +2061,6 @@
             this.tabPage16.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -2312,16 +2211,6 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Label medico5;
-        private System.Windows.Forms.Label medico4;
-        private System.Windows.Forms.Label medico3;
-        private System.Windows.Forms.Label medico2;
-        private System.Windows.Forms.Label medico1;
-        private System.Windows.Forms.RadioButton M5;
-        private System.Windows.Forms.RadioButton M4;
-        private System.Windows.Forms.RadioButton M3;
-        private System.Windows.Forms.RadioButton M2;
-        private System.Windows.Forms.RadioButton M1;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label cita;
         private System.Windows.Forms.Button Guardar;
@@ -2404,5 +2293,6 @@
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Button btnLimpiarBusqueda;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
