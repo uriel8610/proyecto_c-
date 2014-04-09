@@ -575,90 +575,61 @@ namespace Proyecto_interfaz
 
         }
 
+
+
+
+        //Agrega un nuevo Usuario (Secretaria)
         private void btAgregar_AU_Click(object sender, EventArgs e)
         {
-            ///estancia de la clase ConexionBDD 
-            ///<remarks>
-            /// clase ConexionBDD en donde se realiza la conexion ODBC
-            /// </remarks>   
             BaseDeDatos c1 = new BaseDeDatos();
+            int idTipoUsuario;
 
-            ///Los siguientes strings son para realizar consultas a la base de datos 
-            string consulta, consulta2, consulta4;
-            ///con este char definimos el sexo de la persona 
-            char sexo = 'N';
-            /// es necesario para sacar los IDs de la base de datos
-            string idString = "NULL";
-
-            /// Se usa para sacar los IDs de las especialidades de la base de datos 
-            int idTipoUsuario = 0;
+            string sexo, idString = "NULL";
 
 
-
-            ///condiciones para asigar el sexo a la perosna 
-            if (rbF.Checked)
-                sexo = 'F';
+            if (cbTipoUsuario_AU.Text == "Administrador")
+            {
+                idTipoUsuario = 0001;
+            }
             else
-                sexo = 'M';
+                idTipoUsuario = 0002;
 
-            //condiciones para los checkbox
+
+            //condiciones para asigar el sexo a la perosna 
+            if (rbF.Checked)
+                sexo = "F";
+            else
+                sexo = "M";
+
             if (txtNombre_AU.Text == string.Empty || txtApellido_AU.Text == string.Empty || txtDireccion_AU.Text == string.Empty || txtTelefono_AU.Text == string.Empty || txtEmail_AU.Text == string.Empty || txtEdad_AU.Text == string.Empty)
             {
-
                 MessageBox.Show("Llene todos los campos por favor ");
             }
 
-
-                ///<summary>
-                /// Insercion a la Base de datos a la tabla Persona 
-                /// </summary> 
-                
-                consulta = " INSERT INTO Persona( Nombre, Apellido, Direccion, Telefono, eMail, Edad, Sexo, FechaRegistro )VALUES('" + txtNombre_AU.Text + "','" + txtApellido_AU.Text + "','" + txtDireccion_AU.Text + "','" + txtTelefono_AU.Text + "', '" + txtEmail_AU.Text + "'," + txtEdad_AU.Text + ",'" + sexo + "', '" + fecha + "');";
-                c1.Abrir();
-                c1.leer(consulta);  
-               // c1.actualizar(consulta);
-                c1.cerrar();
-
-                consulta2 = "SELECT idPersona FROM persona WHERE nombre= '" + txtNombre_AU.Text + "' && apellido='" + txtApellido_AU.Text + "';";
-                c1.Abrir();
-                c1.leer(consulta2);
-                while (c1.cnLeerConsulta.Read())
-                {
-                    idString = c1.cnLeerConsulta[0].ToString();
-                                          
-                }
-
-               c1.cerrar();
+            String consulta = " INSERT INTO Persona( Nombre, Apellido, Direccion, Telefono, eMail, Edad, Sexo, FechaRegistro )VALUES('" + txtNombre_AU.Text + "','" + txtApellido_AU.Text + "','" + txtDireccion_AU.Text + "','" + txtTelefono_AU.Text + "', '" + txtEmail_AU.Text + "'," + txtEdad_AU.Text + ",'" + sexo + "', '" + fecha + "');";
+            c1.Abrir();
+            c1.leer(consulta);
+            c1.cerrar();
 
 
+            String consulta2 = "SELECT idPersona FROM persona WHERE nombre= '" + txtNombre_AU.Text + "' AND apellido='" + txtApellido_AU.Text + "';";
+            c1.Abrir();
+            c1.leer(consulta2);
+            while (c1.cnLeerConsulta.Read())
+            {
+                idString = c1.cnLeerConsulta[0].ToString(); //Tiene id del Usuario seleccionado                                          
+            }
+            c1.cerrar();
 
-                ///<summary>
-                /// Select a la Base de datos a la tabla tipo de usuario 
-                /// </summary>
+            String consulta3 = "INSERT INTO usuario(idPersona,idTipoUsuario,Contrasena, Estado )VALUES( '" + idString + "','" + idTipoUsuario + "','" + txtContraseña_AU.Text + "','Alta');";
+            c1.Abrir();
+            c1.leer(consulta3);
+            c1.cerrar();
 
-
-                ///<summary>
-                /// Insercion a la Base de datos a la Medico 
-                /// </summary>
-                consulta4 = "INSERT INTO usuario( idPersona,idTipoUsuario,Contrasena, Estado )VALUES( '" + idString + "','" + idTipoUsuario + "','" + txtContraseña_AU.Text + "',1);";
- 
-                c1.Abrir();
-                c1.leer(consulta4);
-                
-
-                while (c1.cnLeerConsulta.Read())
-                {
-                    MessageBox.Show(datos.cnLeerConsulta[2].ToString());
-                    //cbNombreEU.Items.Add(datos.cnLeerConsulta[0]);
-                }
-                c1.cerrar();
-
-                ///Mensaje de aviso de insercion correcta 
-                MessageBox.Show("Elemento insertado correctamente");
-
-                ///Funcion para 
-            
+            cbNombreEU.Items.Add(txtNombre_AU.Text); //Agrega al conboBox de "Editar Usuarios"
+            MessageBox.Show("Usuario insertado correctamente");            
         }
+
 
 
 
@@ -678,6 +649,8 @@ namespace Proyecto_interfaz
 
             datos.cerrar();
         }
+
+
 
 
 
