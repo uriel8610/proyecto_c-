@@ -60,6 +60,7 @@ namespace Proyecto_interfaz
             llenar_camposEU();
             llenar_camposEC();
             llenar_camposAU();
+            //llenar_camposmedEC();
 
         }
 
@@ -450,6 +451,8 @@ namespace Proyecto_interfaz
             foreach (string nombres in nombre)
             {
                 cbAgragarCitaM.Items.Add(nombres);
+                cbmedicoscita.Items.Add(nombres);
+
             }
 
 
@@ -470,7 +473,8 @@ namespace Proyecto_interfaz
             {
 
                 cbAgregarCitaH.Items.Add(horario);
-
+                cbHorario.Items.Add(horario);
+                cbNewHorario.Items.Add(horario);
             }
 
 
@@ -833,38 +837,38 @@ namespace Proyecto_interfaz
 
         private void cbPacientes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            BaseDeDatos bd = new BaseDeDatos();
-            int i = cbHorario.SelectedIndex;
+            //BaseDeDatos bd = new BaseDeDatos();
+            //int i = cbHorario.SelectedIndex;
 
-            datos.Abrir();
-            consulta = "SELECT p.Nombre, p.Apellido FROM Paciente pa, Persona p WHERE p.idPersona = pa.idPersona" + cbHorario.Text + "';";
-            datos.leer(consulta);
-            while (datos.cnLeerConsulta.Read())
-            {
-                id = Convert.ToInt32(datos.cnLeerConsulta[0].ToString());
-                cbHorario.Text = datos.cnLeerConsulta[1].ToString();
-                //tbMedico.Text = datos.cnLeerConsulta[2].ToString();
-                //tbHorario.Text = datos.cnLeerConsulta[3].ToString();
-                //tbFecha.Text = fecha;
-                //tbHora.Text = hora;
-            }
-            datos.cerrar();
+            //datos.Abrir();
+            //consulta = "SELECT p.Nombre, p.Apellido FROM Paciente pa, Persona p WHERE p.idPersona = pa.idPersona" + cbHorario.Text + "';";
+            //datos.leer(consulta);
+            //while (datos.cnLeerConsulta.Read())
+            //{
+            //    id = Convert.ToInt32(datos.cnLeerConsulta[0].ToString());
+            //    cbHorario.Text = datos.cnLeerConsulta[1].ToString();
+            //    //tbMedico.Text = datos.cnLeerConsulta[2].ToString();
+            //    //tbHorario.Text = datos.cnLeerConsulta[3].ToString();
+            //    //tbFecha.Text = fecha;
+            //    //tbHora.Text = hora;
+            //}
+            //datos.cerrar();
         }
 
         //llena el combobox de los nombres de los pacientes que se pueden Editar en las citas
         public void llenar_camposEC()
         {
-            BaseDeDatos bd = new BaseDeDatos();
-            datos.Abrir();
+        //    BaseDeDatos bd = new BaseDeDatos();
+        //    datos.Abrir();
 
-            consulta = "SELECT p.nombre from persona p, paciente pa WHERE p.idPersona=pa.idPersona";
-            datos.leer(consulta);
-            while (datos.cnLeerConsulta.Read())
-            {
-                cbHorario.Items.Add(datos.cnLeerConsulta[0]);
-            }
+        //    consulta = "SELECT p.nombre from persona p, paciente pa WHERE p.idPersona=pa.idPersona";
+        //    datos.leer(consulta);
+        //    while (datos.cnLeerConsulta.Read())
+        //    {
+        //        cbHorario.Items.Add(datos.cnLeerConsulta[0]);
+        //    }
 
-            datos.cerrar();
+        //    datos.cerrar();
         }
 
         private void tabPage5_Click(object sender, EventArgs e)
@@ -875,11 +879,13 @@ namespace Proyecto_interfaz
         private void btAgregarCitaB_Click(object sender, EventArgs e)
         {
 
-            string  consulta1;
+            string consulta1;
             txtAgregarCitaN.Text.ElementAt(0);
             txtAgregarCitaA.Text.ElementAt(0);
-            MessageBox.Show(txtAgregarCitaN.Text.ElementAt(0).ToString());
-            consulta1 = "SELECT Nombre, Apellido, Direccion, Edad FROM Persona WHERE Nombre LIKE '" + txtAgregarCitaN.Text.ElementAt(0).ToString() + "%' AND  Apellido LIKE '" +txtAgregarCitaA.Text.ElementAt(0).ToString()+"%'";
+            //MessageBox.Show(txtAgregarCitaN.Text.ElementAt(0).ToString());
+            consulta1 = "SELECT * FROM vista_paciente WHERE Nombre LIKE '" + txtAgregarCitaN.Text.ElementAt(0).ToString() + "%' AND  Apellido LIKE '" + txtAgregarCitaA.Text.ElementAt(0).ToString() + "%'";
+
+
 
             BaseDeDatos C1 = new BaseDeDatos();
             C1.Abrir();
@@ -894,14 +900,17 @@ namespace Proyecto_interfaz
             {
                 int renglon = dgwAgregarCitaVP.Rows.Add();
 
-            dgwAgregarCitaVP.Rows[renglon].Cells["Nombre"].Value = C1.cnLeerConsulta[0].ToString();
-            dgwAgregarCitaVP.Rows[renglon].Cells["Apellido"].Value = C1.cnLeerConsulta[1].ToString();
-            dgwAgregarCitaVP.Rows[renglon].Cells["Direccion"].Value = C1.cnLeerConsulta[2].ToString();
-            dgwAgregarCitaVP.Rows[renglon].Cells["Edad"].Value = C1.cnLeerConsulta[3].ToString();
-          
-            
+                dgwAgregarCitaVP.Rows[renglon].Cells["Nombre"].Value = C1.cnLeerConsulta[0].ToString();
+                dgwAgregarCitaVP.Rows[renglon].Cells["Apellido"].Value = C1.cnLeerConsulta[1].ToString();
+                dgwAgregarCitaVP.Rows[renglon].Cells["Direccion"].Value = C1.cnLeerConsulta[2].ToString();
+                dgwAgregarCitaVP.Rows[renglon].Cells["Edad"].Value = C1.cnLeerConsulta[3].ToString();
+
+
             }
             C1.cerrar();
+
+
+            //Falta tomar el valor de la de la persona que selecciona en el datagridview
 
 
             //Falta tomar el valor de la de la persona que selecciona en el datagridview
@@ -912,32 +921,63 @@ namespace Proyecto_interfaz
 
         private void btAgregarCita_Click(object sender, EventArgs e)
         {
-            string  consulta2, consulta3, consulta4, consulta5;
-
-
-            MessageBox.Show((cbAgragarCitaM.SelectedIndex + 1).ToString());
-            MessageBox.Show(cbAgregarCitaH.SelectedIndex.ToString());
-            mcAgregarCitas.SelectionEnd.ToString("yyyy-MM-dd");
+           BaseDeDatos c1 = new BaseDeDatos();
+            string fechaCita = mcAgregarCitas.SelectionEnd.ToString("yyyy-MM-dd");
             int idMedico, idHorario;
             idMedico = cbAgragarCitaM.SelectedIndex + 1;
             idHorario = cbAgregarCitaH.SelectedIndex + 1;
-            string fechaCita = mcAgregarCitas.SelectionEnd.ToString("yyyy-MM-dd");
-            consulta2 = "INSERT INTO Cita( idMedico, idPaciente, idHorario, idUsuario, Fecha, FechaActual, HoraActual, Estado)VALUES(" + idMedico + "," + idPersonaAgregarCita + ", " + idHorario + ", " + idUsuario + ",  '" + fechaCita + "','" + fecha + "', '" + hora + "', 'realizada');";
-            MessageBox.Show(consulta2);
+            string  consulta2, consulta3, consulta4, consulta111;
+            bool Bandera = false;
 
-            BaseDeDatos c1 = new BaseDeDatos();
+            consulta111 = "SELECT * FROM Cita WHERE idMedico = " + idMedico + "  AND idPaciente =" + idPersonaAgregarCita + " AND idHorario =" + idHorario + " AND fecha = '"+fechaCita+" '";
+           // MessageBox.Show(consulta111);
             c1.Abrir();
-            c1.actualizar(consulta2);
-            MessageBox.Show("Cita ingresada correctamente ");
+            c1.leer(consulta111);
+
+            while(c1.cnLeerConsulta.Read())
+            {
+                MessageBox.Show("Fecha ya ocupada, Seleccione Otra ");
+                Bandera = true;
+            }
             c1.cerrar();
-        
+
+
+
+            if (Bandera == false)
+            {
+                // MessageBox.Show((cbAgragarCitaM.SelectedIndex + 1).ToString());
+                //MessageBox.Show(cbAgregarCitaH.SelectedIndex.ToString());
+                mcAgregarCitas.SelectionEnd.ToString("yyyy-MM-dd");
+
+
+                consulta2 = "INSERT INTO Cita( idMedico, idPaciente, idHorario, idUsuario, Fecha, FechaActual, HoraActual, Estado)VALUES(" + idMedico + "," + idPersonaAgregarCita + ", " + idHorario + ", " + idUsuario + ",  '" + fechaCita + "','" + fecha + "', '" + hora + "', 'realizada');";
+                // MessageBox.Show(consulta2);
+
+
+                List<string> idDescripcion = new List<string>();
+                c1.Abrir();
+                c1.actualizar(consulta2);
+                MessageBox.Show("Cita ingresada correctamente ");
+                c1.cerrar();
+
+                consulta3 = "SELECT idHorario FROM Cita";
+                c1.Abrir();
+                c1.leer(consulta3);
+
+                while (c1.cnLeerConsulta.Read())
+                {
+
+                    idDescripcion.Add(c1.cnLeerConsulta[0].ToString());
+                }
+
+
+                c1.cerrar();
+            }
+
         }
 
         private void dgwAgregarCitaVP_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-
-
             nombreAgregarCita = dgwAgregarCitaVP.CurrentRow.Cells[0].Value.ToString();
             apellidoAgregarCita = dgwAgregarCitaVP.CurrentRow.Cells[1].Value.ToString();
             direccionAgregarCita = dgwAgregarCitaVP.CurrentRow.Cells[2].Value.ToString();
@@ -946,11 +986,11 @@ namespace Proyecto_interfaz
             string consulta;
             //MessageBox.Show("select idPersona From Persona where nombre='" + nombreAgregarCita + "' AND apellido='" + apellidoAgregarCita + "' AND direccion='" + direccionAgregarCita + "'  AND edad=" + edadAgregarCita + "");
             consulta = "select idPersona From Persona where nombre='" + nombreAgregarCita + "' AND apellido='" + apellidoAgregarCita + "' AND direccion='" + direccionAgregarCita + "'  AND edad=" + edadAgregarCita + "";
-            MessageBox.Show(nombreAgregarCita + ',' + apellidoAgregarCita + ',' + direccionAgregarCita + ',' + edadAgregarCita.ToString());
+            MessageBox.Show("USUARIO SELECCIONADO PARA LA CITA:" + "      " + nombreAgregarCita + ',' + apellidoAgregarCita + ',' + direccionAgregarCita + ',' + edadAgregarCita.ToString());
             BaseDeDatos c1 = new BaseDeDatos();
             c1.Abrir();
             c1.leer(consulta);
-          
+
             while (c1.cnLeerConsulta.Read())
             {
 
@@ -958,7 +998,7 @@ namespace Proyecto_interfaz
                 MessageBox.Show(idPersonaAgregarCita.ToString());
             }
 
-            c1.cerrar();            
+            c1.cerrar();         
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -1071,6 +1111,7 @@ namespace Proyecto_interfaz
             txtFinal.Text = "";
         }
 
+<<<<<<< HEAD
         private void dgvAltaBajaM_Click(object sender, EventArgs e)
         {
             BaseDeDatos bd = new BaseDeDatos();
@@ -1100,6 +1141,192 @@ namespace Proyecto_interfaz
 
             datos.cerrar();
         }
+=======
+        private void cbmedicoscita_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //BaseDeDatos bd = new BaseDeDatos();
+            //int i = cbmedicoscita.SelectedIndex;
+
+            //datos.Abrir();
+            //consulta = "SELECT p.Nombre FROM Medico m, Persona p WHERE p.idPersona = m.idMedico" + cbmedicoscita.Text + "';";
+            //datos.leer(consulta);
+            //while (datos.cnLeerConsulta.Read())
+            //{
+            //   // id = Convert.ToInt32(datos.cnLeerConsulta[0].ToString());
+            //    cbmedicoscita.Text = datos.cnLeerConsulta[0].ToString();
+            //}
+            //datos.cerrar();
+        }
+
+        //llena el combobox de los nombres de los pacientes que se pueden Editar en las citas
+        public void llenar_camposmedEC()
+        {
+            //BaseDeDatos bd = new BaseDeDatos();
+            //datos.Abrir();
+
+            //consulta = "SELECT p.Nombre FROM Medico m, Persona p WHERE p.idPersona = m.idMedico";
+            //datos.leer(consulta);
+            //while (datos.cnLeerConsulta.Read())
+            //{
+            //    cbmedicoscita.Items.Add(datos.cnLeerConsulta[0]);
+            //}
+
+            //datos.cerrar();
+        
+        }
+
+        private void cbHorario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //BaseDeDatos bd = new BaseDeDatos();
+            //int i = cbHorario.SelectedIndex;
+
+            //datos.Abrir();
+            //consulta = "SELECT p.Nombre, p.Apellido FROM Paciente pa, Persona p WHERE p.idPersona = pa.idPersona" + cbHorario.Text + "';";
+            //datos.leer(consulta);
+            //while (datos.cnLeerConsulta.Read())
+            //{
+            //    id = Convert.ToInt32(datos.cnLeerConsulta[0].ToString());
+            //    cbHorario.Text = datos.cnLeerConsulta[1].ToString();
+            //   //tbMedico.Text = datos.cnLeerConsulta[2].ToString();
+            //    //tbHorario.Text = datos.cnLeerConsulta[3].ToString();
+            //    //tbFecha.Text = fecha;
+            //    //tbHora.Text = hora;
+            //}
+            //datos.cerrar();
+        }
+
+        private void cbAgregarCitaH_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btAgregarPaciente_Click(object sender, EventArgs e)
+        {
+            //new
+            string sexo="N";
+
+
+            if (chAgregarPacienteM.Checked == true && chAgregarPacienteF.Checked == true)
+            {
+                MessageBox.Show("Seleccione una sola casilla");
+            }
+            else if (chAgregarPacienteM.Checked == false && chAgregarPacienteF.Checked == false)
+            {
+                MessageBox.Show("Seleccione una  casilla");
+            }
+
+
+            if (txtAgregarPacienteN.Text == string.Empty || txtAgregarPacienteA.Text == string.Empty || txtAgregarPacienteD.Text == string.Empty || txtAgregarPacienteT.Text == string.Empty || txtAgregarPacienteEm.Text == string.Empty || txtAgregarPacienteE.Text==string.Empty )
+            {
+
+                MessageBox.Show("rellene todos los campos");
+            }
+
+
+            else if (txtAgregarPacienteN.Text != string.Empty || txtAgregarPacienteA.Text != string.Empty || txtAgregarPacienteD.Text != string.Empty || txtAgregarPacienteT.Text != string.Empty || txtAgregarPacienteEm.Text != string.Empty || txtAgregarPacienteE.Text != string.Empty)
+            {
+
+
+
+                if (chAgregarPacienteM.Checked == true && chAgregarPacienteF.Checked == false)
+                {
+                    sexo = "M";
+
+
+
+
+                    string consultaa = "INSERT INTO Persona(Nombre,Apellido,Direccion,Telefono,eMail,Edad,Sexo,FechaRegistro)VALUES('" + txtAgregarPacienteN.Text + "','" + txtAgregarPacienteA.Text
+                    + "','" + txtAgregarPacienteD.Text + "','" + txtAgregarPacienteT.Text + "','" + txtAgregarPacienteEm.Text + "'," + txtAgregarPacienteE.Text + ",'" + sexo + "','" + fecha.ToString() + "');";
+                    BaseDeDatos c1 = new BaseDeDatos();
+                    c1.Abrir();
+                    c1.actualizar(consultaa);
+                    c1.cerrar();
+
+
+
+                    string consulta22 = "SELECT idPersona FROM Persona WHERE Nombre='" + txtAgregarPacienteN.Text + "' AND Apellido='" + txtAgregarPacienteA.Text + "' AND Direccion='" + txtAgregarPacienteD.Text + "' AND Telefono='" + txtAgregarPacienteT.Text + "' ";
+                    c1.Abrir();
+                    c1.leer(consulta22);
+                    int IdPersonaIngresada = 0;
+                    while (c1.cnLeerConsulta.Read())
+                    {
+                        IdPersonaIngresada = Convert.ToInt32(c1.cnLeerConsulta[0].ToString());
+
+                    }
+                    c1.cerrar();
+
+                    string consulta33 = "INSERT INTO Paciente(idPersona) VALUES (" + IdPersonaIngresada + ");";
+                    c1.Abrir();
+                    c1.actualizar(consulta33);
+                    c1.cerrar();
+
+
+                    MessageBox.Show("Paciente Ingresado Correctamente");
+
+                    txtAgregarPacienteN.Text = string.Empty;
+                    txtAgregarPacienteA.Text = string.Empty;
+                    txtAgregarPacienteD.Text = string.Empty;
+                    txtAgregarPacienteT.Text = string.Empty;
+                    txtAgregarPacienteEm.Text = string.Empty;
+                    txtAgregarPacienteE.Text = string.Empty;
+                    chAgregarPacienteF.Checked = false;
+                    chAgregarPacienteM.Checked = false;
+
+
+                }
+
+                if (chAgregarPacienteF.Checked == true && chAgregarPacienteM.Checked == false)
+                {
+                    sexo = "F";
+
+
+                    string consultaa = "INSERT INTO Persona(Nombre,Apellido,Direccion,Telefono,eMail,Edad,Sexo,FechaRegistro)VALUES('" + txtAgregarPacienteN.Text + "','" + txtAgregarPacienteA.Text
+                    + "','" + txtAgregarPacienteD.Text + "','" + txtAgregarPacienteT.Text + "','" + txtAgregarPacienteEm.Text + "'," + txtAgregarPacienteE.Text + ",'" + sexo + "','" + fecha.ToString() + "');";
+                    BaseDeDatos c1 = new BaseDeDatos();
+                    c1.Abrir();
+                    c1.actualizar(consultaa);
+                    c1.cerrar();
+
+
+
+                    string consulta22 = "SELECT idPersona FROM Persona WHERE Nombre='" + txtAgregarPacienteN.Text + "' AND Apellido='" + txtAgregarPacienteA.Text + "' AND Direccion='" + txtAgregarPacienteD.Text + "' AND Telefono='" + txtAgregarPacienteT.Text + "' ";
+                    c1.Abrir();
+                    c1.leer(consulta22);
+                    int IdPersonaIngresada = 0;
+                    while (c1.cnLeerConsulta.Read())
+                    {
+                        IdPersonaIngresada = Convert.ToInt32(c1.cnLeerConsulta[0].ToString());
+
+                    }
+                    c1.cerrar();
+
+                    string consulta33 = "INSERT INTO Paciente(idPersona) VALUES (" + IdPersonaIngresada + ");";
+                    c1.Abrir();
+                    c1.actualizar(consulta33);
+                    c1.cerrar();
+
+
+                    MessageBox.Show("Paciente Ingresado Correctamente");
+
+                    txtAgregarPacienteN.Text = string.Empty;
+                    txtAgregarPacienteA.Text = string.Empty;
+                    txtAgregarPacienteD.Text = string.Empty;
+                    txtAgregarPacienteT.Text = string.Empty;
+                    txtAgregarPacienteEm.Text = string.Empty;
+                    txtAgregarPacienteE.Text = string.Empty;
+                    chAgregarPacienteF.Checked = false;
+                    chAgregarPacienteM.Checked = false;
+
+
+                }
+
+
+
+
+            }
+
+
+>>>>>>> 7a5f2e010268091b6b1fc502dc18fc3416eade40
         }
 
      }
