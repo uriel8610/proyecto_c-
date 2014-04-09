@@ -973,8 +973,8 @@ namespace Proyecto_interfaz
             edadAgregarCita = Convert.ToInt32(dgwAgregarCitaVP.CurrentRow.Cells[3].Value.ToString());
 
             string consulta;
-            MessageBox.Show("select idPersona From Persona where nombre='" + nombre + "' AND apellido='" + apellido + "' AND direccion='" + direccionAgregarCita + "'  AND edad=" + edadAgregarCita + "");
-            consulta = "select idPersona From Persona where nombre='" + nombre + "' AND apellido='" + apellido + "' AND direccion='" + direccionAgregarCita + "'  AND edad=" + edadAgregarCita + "";
+            //MessageBox.Show("select idPersona From Persona where nombre='" + nombreAgregarCita + "' AND apellido='" + apellidoAgregarCita + "' AND direccion='" + direccionAgregarCita + "'  AND edad=" + edadAgregarCita + "");
+            consulta = "select idPersona From Persona where nombre='" + nombreAgregarCita + "' AND apellido='" + apellidoAgregarCita + "' AND direccion='" + direccionAgregarCita + "'  AND edad=" + edadAgregarCita + "";
             MessageBox.Show(nombreAgregarCita + ',' + apellidoAgregarCita + ',' + direccionAgregarCita + ',' + edadAgregarCita.ToString());
             BaseDeDatos c1 = new BaseDeDatos();
             c1.Abrir();
