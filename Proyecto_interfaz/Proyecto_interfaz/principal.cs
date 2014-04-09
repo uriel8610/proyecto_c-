@@ -31,6 +31,17 @@ namespace Proyecto_interfaz
         public string nombre, apellido;
         public int idUsuario;
 
+
+
+        /// <summary>
+        /// variables necesarias para agregar cita , se llenan del datagridview de la ventana de agregar cita 
+        /// </summary>
+        /// 
+
+        string nombreAgregarCita, apellidoAgregarCita, direccionAgregarCita;
+        int edadAgregarCita, idPersonaAgregarCita;
+
+        string hora;
         public principal(string nombre, int idusuario, string Apellido)
         {
             this.idUsuario = idusuario;
@@ -41,6 +52,7 @@ namespace Proyecto_interfaz
 
             TipoUsuario();  //Inicializa el ambiente de trabajo segun si es Usuario Administrador o Usuario Normal
             fecha = DateTime.Now.ToString("yyyy-MM-dd");//modulo de agregar medico
+            hora = DateTime.Now.ToString("hh:mm:ss");//modulo agregar cita
             llenar_campos();
             llenar_camposEP();
             llenar_camposEU();
@@ -442,6 +454,57 @@ namespace Proyecto_interfaz
 
             c1.cerrar();
 
+
+            string cc1, cc2;
+            cc1 = "SELECT  Nombre, Apellido  FROM Medico m, Persona p WHERE p.idPersona= m.idPersona && Estado='Alta'";
+            cc2 = "SELECT Descripcion FROM Horario";
+            List<string> nombre = new List<string>();
+            List<string> horarios = new List<string>();
+
+            c1.Abrir();
+            c1.leer(cc1);
+
+            while (c1.cnLeerConsulta.Read())
+            {
+
+                nombre.Add(c1.cnLeerConsulta[0].ToString());
+
+
+            }
+            c1.cerrar();
+
+
+
+
+            ///Foreach para agregar al comboBox "cbEspecialidades" en la interfaz
+            foreach (string nombres in nombre)
+            {
+                cbAgragarCitaM.Items.Add(nombres);
+            }
+
+
+            c1.Abrir();
+            c1.leer(cc2);
+
+            while (c1.cnLeerConsulta.Read())
+            {
+
+                horarios.Add(c1.cnLeerConsulta[0].ToString());
+
+
+            }
+            c1.cerrar();
+
+
+            foreach (string horario in horarios)
+            {
+
+                cbAgregarCitaH.Items.Add(horario);
+
+            }
+
+
+
         }
 
         private void btAgregarAM_Click(object sender, EventArgs e)
@@ -549,7 +612,8 @@ namespace Proyecto_interfaz
 
                 ///Mensaje de aviso de insercion correcta 
                 MessageBox.Show("Elemento insertado correctamente");
-
+                cbNombreEU.Items.Add(txtNombre_AU.Text); ///Agrega al conboBox de "Editar Usuarios"
+                
                 ///Funcion para limpiar los elementos de la interfaz
                 LimpiarCampos();
             }
@@ -878,17 +942,52 @@ namespace Proyecto_interfaz
 
         private void btAgregarCita_Click(object sender, EventArgs e)
         {
-            string consulta1;
-            consulta1 = "INSERT INTO Cita( idMedico, idPaciente, idHorario, idUsuario, Fecha, FechaActual, HoraActual, Estado) VALUES(0001, 0001, 0001, 0001, 0001, '17/03/2014','15/03/2014', '10:00', 'realizada');";
+            string  consulta2, consulta3, consulta4, consulta5;
 
+
+            MessageBox.Show((cbAgragarCitaM.SelectedIndex + 1).ToString());
+            MessageBox.Show(cbAgregarCitaH.SelectedIndex.ToString());
+            mcAgregarCitas.SelectionEnd.ToString("yyyy-MM-dd");
+            int idMedico, idHorario;
+            idMedico = cbAgragarCitaM.SelectedIndex + 1;
+            idHorario = cbAgregarCitaH.SelectedIndex + 1;
+            consulta2 = "INSERT INTO Cita(idCita, idMedico, idPaciente, idHorario, idUsuario, Fecha, FechaActual, HoraActual, Estado)VALUES(" + idMedico + "," + idPersonaAgregarCita + ", " + idHorario + ", " + idUsuario + ",  '" + mcAgregarCitas.SelectionEnd.ToString("yyyy-MM-dd") + "','" + fecha + "', '" + hora + "', 'realizada');";
+            MessageBox.Show(consulta2);
+
+            BaseDeDatos c1 = new BaseDeDatos();
+            c1.Abrir();
+            c1.actualizar(consulta2);
+            MessageBox.Show("Cita ingresada correctamente ");
+            c1.cerrar();
+        
         }
 
         private void dgwAgregarCitaVP_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-           
-            MessageBox.Show(dgwAgregarCitaVP.RowCount.ToString());
-            
+
+
+
+            nombreAgregarCita = dgwAgregarCitaVP.CurrentRow.Cells[0].Value.ToString();
+            apellidoAgregarCita = dgwAgregarCitaVP.CurrentRow.Cells[1].Value.ToString();
+            direccionAgregarCita = dgwAgregarCitaVP.CurrentRow.Cells[2].Value.ToString();
+            edadAgregarCita = Convert.ToInt32(dgwAgregarCitaVP.CurrentRow.Cells[3].Value.ToString());
+
+            string consulta;
+            MessageBox.Show("select idPersona From Persona where nombre='" + nombre + "' AND apellido='" + apellido + "' AND direccion='" + direccionAgregarCita + "'  AND edad=" + edadAgregarCita + "");
+            consulta = "select idPersona From Persona where nombre='" + nombre + "' AND apellido='" + apellido + "' AND direccion='" + direccionAgregarCita + "'  AND edad=" + edadAgregarCita + "";
+            MessageBox.Show(nombreAgregarCita + ',' + apellidoAgregarCita + ',' + direccionAgregarCita + ',' + edadAgregarCita.ToString());
+            BaseDeDatos c1 = new BaseDeDatos();
+            c1.Abrir();
+            c1.leer(consulta);
+          
+            while (c1.cnLeerConsulta.Read())
+            {
+
+                idPersonaAgregarCita = Convert.ToInt32(c1.cnLeerConsulta[0].ToString());
+                MessageBox.Show(idPersonaAgregarCita.ToString());
+            }
+
+            c1.cerrar();            
         }
 
         private void label8_Click(object sender, EventArgs e)
