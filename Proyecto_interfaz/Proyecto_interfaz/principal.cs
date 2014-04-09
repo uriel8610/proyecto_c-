@@ -104,7 +104,7 @@ namespace Proyecto_interfaz
             BaseDeDatos bd = new BaseDeDatos();
             datos.Abrir();
 
-            consulta = "UPDATE persona p, medico m SET p.Nombre='" + cbNombre.Text + "',p.Apellido='" + txtApellido.Text + "',p.Direccion='" + txtDireccion.Text + "',p.Telefono='" + txtTelefono.Text + "',p.eMail='" + txtEmail.Text + "',p.Edad=" + Convert.ToInt32(txtEdad.Text) + ",p.FechaRegistro='" + txtFechaRegistro.Text + "',m.Cedula='" + txtCedula.Text + "' WHERE p.nombre='" + cbNombre.Text + "' AND m.idPersona=p.idPersona;";
+            consulta = "UPDATE persona p, medico m SET p.Nombre='" + cbNombre.Text + "',p.Apellido='" + txtApellido.Text + "',p.Direccion='" + txtDireccion.Text + "',p.Telefono='" + txtTelefono.Text + "',p.eMail='" + txtEmail.Text + "',p.Edad=" + Convert.ToInt32(txtEdad.Text) + ",m.Cedula='" + txtCedula.Text + "' WHERE p.nombre='" + cbNombre.Text + "' AND m.idPersona=p.idPersona;";
             datos.leer(consulta);
 
             consulta = "UPDATE medico m, especialidad e SET m.idEspecialidad = e.idEspecialidad WHERE e.Descripcion = '" + cbEspecialidad.Text + "'";
@@ -112,7 +112,9 @@ namespace Proyecto_interfaz
 
             datos.cerrar();
             MessageBox.Show("Médico Editado");
+            limpiarMedico();
         }
+
 
 
         //Llena los datos del Medico a Editar al seleccionar un item del ComboBox con los nombres de los médicos
@@ -151,6 +153,19 @@ namespace Proyecto_interfaz
         }
 
 
+        public void limpiarMedico()
+        {
+            txtApellido.Text = string.Empty;
+            txtDireccion.Text = string.Empty;
+            txtTelefono.Text = string.Empty;
+            txtEmail.Text = string.Empty;
+            txtEdad.Text = string.Empty;
+            txtCedula.Text = string.Empty;
+            txtFechaRegistro.Text = string.Empty;
+            cbNombre.Text = string.Empty;
+            cbEspecialidad.Text = string.Empty;
+        }
+
         //Boton Editar Paciente: Edita los datos del paciente
         private void btEditarEP_Click(object sender, EventArgs e)
         {
@@ -164,11 +179,12 @@ namespace Proyecto_interfaz
             else
                 sexo = "M";
 
-            consulta = "UPDATE persona p, paciente pa SET p.Nombre='" + cbNombreEP.Text + "',p.Apellido='" + txApellidoEP.Text + "',p.Direccion='" + txDireccionEP.Text + "',p.Telefono='" + txTelefonoEP.Text + "',p.eMail='" + txeMailEP.Text + "',p.Edad=" + Convert.ToInt32(txEdadEP.Text) + ",p.Sexo='" + sexo + "',p.FechaRegistro='" + txfechaRegistroEP.Text + "' WHERE p.nombre='" + cbNombreEP.Text + "' AND pa.idPersona=p.idPersona;";
+            consulta = "UPDATE persona p, paciente pa SET p.Nombre='" + cbNombreEP.Text + "',p.Apellido='" + txApellidoEP.Text + "',p.Direccion='" + txDireccionEP.Text + "',p.Telefono='" + txTelefonoEP.Text + "',p.eMail='" + txeMailEP.Text + "',p.Edad=" + Convert.ToInt32(txEdadEP.Text) + ",p.Sexo='" + sexo + "' WHERE p.nombre='" + cbNombreEP.Text + "' AND pa.idPersona=p.idPersona;";
 
             datos.leer(consulta);
             datos.cerrar();
             MessageBox.Show("Paciente Editado");
+            limpiarPaciente();
 
         }
 
@@ -220,6 +236,22 @@ namespace Proyecto_interfaz
 
             datos.cerrar();
         }
+
+
+        public void limpiarPaciente() 
+        {
+            txApellidoEP.Text = string.Empty;
+            txDireccionEP.Text = string.Empty;
+            txTelefonoEP.Text = string.Empty;
+            txeMailEP.Text = string.Empty;
+            txEdadEP.Text = string.Empty;
+            //txtCedulaAM.Text = string.Empty;
+            txfechaRegistroEP.Text = string.Empty;
+            rbFemeninoEP.Checked = false;                        
+            cbNombreEP.Text = string.Empty;     
+        }
+
+
 
 
         //Hace la consulta del reporte usando solo fechas seleccionadas
@@ -329,6 +361,23 @@ namespace Proyecto_interfaz
         }
 
 
+
+        public void limpiarUsuario()
+        {
+            txtApellidoEU.Text = string.Empty;
+            txtDireccionEU.Text = string.Empty;
+            txtTelefonoEU.Text = string.Empty;
+            txteMailEU.Text = string.Empty;
+            txtEdadEU.Text = string.Empty;
+            txtContraseñaEU.Text = string.Empty;
+            txtFechaRegistroEU.Text = string.Empty;
+            cbNombreEU.Text = string.Empty;
+            cbTipoEU.Text = string.Empty;
+        }
+
+
+
+
         //Edita todos los datos de un usuario (secretaria)
         private void btEditarEU_Click(object sender, EventArgs e)
         {
@@ -353,6 +402,7 @@ namespace Proyecto_interfaz
 
             datos.cerrar();
             MessageBox.Show("Usuario Editado");
+            limpiarUsuario();
 
         }
 
@@ -885,6 +935,29 @@ namespace Proyecto_interfaz
                     break;
             }
 
+        }
+
+        private void btVerEspecialidad_Click(object sender, EventArgs e)
+        {
+            gridEspecialidad.Rows.Clear();
+            gridEspecialidad.Columns.Clear();
+            gridEspecialidad.Refresh();
+
+            string consulta = "SELECT * FROM Especialidad";
+            datos.Abrir();
+            datos.leer(consulta);
+
+            // DataRow dr;
+            gridEspecialidad.Columns.Add("Identificador", "Identificador");
+            gridEspecialidad.Columns.Add("Descripcion", "Descripcion");
+            while (datos.cnLeerConsulta.Read())
+            {
+                int renglon = gridEspecialidad.Rows.Add();
+
+                gridEspecialidad.Rows[renglon].Cells["Identificador"].Value = datos.cnLeerConsulta[0].ToString();
+                gridEspecialidad.Rows[renglon].Cells["Descripcion"].Value = datos.cnLeerConsulta[1].ToString();
+            }
+            datos.cerrar();
         }
 
      }

@@ -215,10 +215,13 @@
             this.btAltaU = new System.Windows.Forms.Button();
             this.tabPage15 = new System.Windows.Forms.TabPage();
             this.txtEspecialida_AE = new System.Windows.Forms.TextBox();
-            this.label33 = new System.Windows.Forms.Label();
             this.btAgregar_AE = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.user = new System.Windows.Forms.TextBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.gridEspecialidad = new System.Windows.Forms.DataGridView();
+            this.btVerEspecialidad = new System.Windows.Forms.Button();
             this.tcAgregarEspecialidad.SuspendLayout();
             this.tpCita.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -252,6 +255,9 @@
             this.tabPage11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAltaBajaU)).BeginInit();
             this.tabPage15.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEspecialidad)).BeginInit();
             this.SuspendLayout();
             // 
             // tcAgregarEspecialidad
@@ -1997,7 +2003,7 @@
             this.tabPage11.Controls.Add(this.btAltaU);
             this.tabPage11.Location = new System.Drawing.Point(4, 22);
             this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Size = new System.Drawing.Size(517, 310);
+            this.tabPage11.Size = new System.Drawing.Size(534, 310);
             this.tabPage11.TabIndex = 2;
             this.tabPage11.Text = "Alta/Baja";
             this.tabPage11.UseVisualStyleBackColor = true;
@@ -2032,9 +2038,7 @@
             // 
             // tabPage15
             // 
-            this.tabPage15.Controls.Add(this.txtEspecialida_AE);
-            this.tabPage15.Controls.Add(this.label33);
-            this.tabPage15.Controls.Add(this.btAgregar_AE);
+            this.tabPage15.Controls.Add(this.groupBox10);
             this.tabPage15.Location = new System.Drawing.Point(4, 22);
             this.tabPage15.Name = "tabPage15";
             this.tabPage15.Size = new System.Drawing.Size(653, 392);
@@ -2044,23 +2048,14 @@
             // 
             // txtEspecialida_AE
             // 
-            this.txtEspecialida_AE.Location = new System.Drawing.Point(206, 124);
+            this.txtEspecialida_AE.Location = new System.Drawing.Point(23, 32);
             this.txtEspecialida_AE.Name = "txtEspecialida_AE";
-            this.txtEspecialida_AE.Size = new System.Drawing.Size(117, 20);
+            this.txtEspecialida_AE.Size = new System.Drawing.Size(284, 20);
             this.txtEspecialida_AE.TabIndex = 2;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(203, 64);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(120, 13);
-            this.label33.TabIndex = 1;
-            this.label33.Text = "Agregue la especialidad";
             // 
             // btAgregar_AE
             // 
-            this.btAgregar_AE.Location = new System.Drawing.Point(230, 188);
+            this.btAgregar_AE.Location = new System.Drawing.Point(365, 30);
             this.btAgregar_AE.Name = "btAgregar_AE";
             this.btAgregar_AE.Size = new System.Drawing.Size(75, 23);
             this.btAgregar_AE.TabIndex = 0;
@@ -2079,6 +2074,46 @@
             this.user.Name = "user";
             this.user.Size = new System.Drawing.Size(653, 20);
             this.user.TabIndex = 1;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.txtEspecialida_AE);
+            this.groupBox9.Controls.Add(this.btAgregar_AE);
+            this.groupBox9.Location = new System.Drawing.Point(41, 36);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(480, 78);
+            this.groupBox9.TabIndex = 6;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Especialidad";
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.gridEspecialidad);
+            this.groupBox10.Controls.Add(this.groupBox9);
+            this.groupBox10.Controls.Add(this.btVerEspecialidad);
+            this.groupBox10.Location = new System.Drawing.Point(44, 33);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(565, 341);
+            this.groupBox10.TabIndex = 7;
+            this.groupBox10.TabStop = false;
+            // 
+            // gridEspecialidad
+            // 
+            this.gridEspecialidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridEspecialidad.Location = new System.Drawing.Point(129, 130);
+            this.gridEspecialidad.Name = "gridEspecialidad";
+            this.gridEspecialidad.Size = new System.Drawing.Size(268, 152);
+            this.gridEspecialidad.TabIndex = 3;
+            // 
+            // btVerEspecialidad
+            // 
+            this.btVerEspecialidad.Location = new System.Drawing.Point(129, 299);
+            this.btVerEspecialidad.Name = "btVerEspecialidad";
+            this.btVerEspecialidad.Size = new System.Drawing.Size(75, 23);
+            this.btVerEspecialidad.TabIndex = 4;
+            this.btVerEspecialidad.Text = "Ver Especialidades";
+            this.btVerEspecialidad.UseVisualStyleBackColor = true;
+            this.btVerEspecialidad.Click += new System.EventHandler(this.btVerEspecialidad_Click);
             // 
             // principal
             // 
@@ -2138,7 +2173,10 @@
             this.tabPage11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAltaBajaU)).EndInit();
             this.tabPage15.ResumeLayout(false);
-            this.tabPage15.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridEspecialidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2267,7 +2305,6 @@
         private System.Windows.Forms.Button btBajaM;
         private System.Windows.Forms.Button btAltaM;
         private System.Windows.Forms.TextBox txtEspecialida_AE;
-        private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Button btAgregar_AE;
         private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.Label label41;
@@ -2337,5 +2374,9 @@
         private System.Windows.Forms.RadioButton rbM;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.TextBox user;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.DataGridView gridEspecialidad;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.Button btVerEspecialidad;
     }
 }
