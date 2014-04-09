@@ -49,7 +49,10 @@
             this.mcAgregarCitas = new System.Windows.Forms.MonthCalendar();
             this.tabPage16 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.Visualizar = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.Horarios = new System.Windows.Forms.ListBox();
             this.label32 = new System.Windows.Forms.Label();
@@ -213,9 +216,6 @@
             this.btVerEspecialidad = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.user = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.Visualizar = new System.Windows.Forms.Button();
             this.tcAgregarEspecialidad.SuspendLayout();
             this.tpCita.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -464,6 +464,22 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Informacion";
             // 
+            // Visualizar
+            // 
+            this.Visualizar.Location = new System.Drawing.Point(206, 185);
+            this.Visualizar.Name = "Visualizar";
+            this.Visualizar.Size = new System.Drawing.Size(63, 24);
+            this.Visualizar.TabIndex = 1;
+            this.Visualizar.Text = "Visualizar";
+            this.Visualizar.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(20, 26);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(214, 20);
+            this.dateTimePicker1.TabIndex = 0;
+            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.comboBox1);
@@ -473,6 +489,14 @@
             this.groupBox5.TabIndex = 0;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Medicos";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(15, 25);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(169, 21);
+            this.comboBox1.TabIndex = 0;
             // 
             // tabPage5
             // 
@@ -1296,6 +1320,7 @@
             this.dgvAltaBajaM.Name = "dgvAltaBajaM";
             this.dgvAltaBajaM.Size = new System.Drawing.Size(477, 154);
             this.dgvAltaBajaM.TabIndex = 2;
+            this.dgvAltaBajaM.Click += new System.EventHandler(this.dgvAltaBajaM_Click);
             // 
             // btBajaM
             // 
@@ -1927,6 +1952,7 @@
             this.dgvAltaBajaU.Name = "dgvAltaBajaU";
             this.dgvAltaBajaU.Size = new System.Drawing.Size(391, 152);
             this.dgvAltaBajaU.TabIndex = 2;
+            this.dgvAltaBajaU.Click += new System.EventHandler(this.dgvAltaBajaU_Click);
             // 
             // btBajaU
             // 
@@ -2026,30 +2052,6 @@
             this.user.Name = "user";
             this.user.Size = new System.Drawing.Size(653, 20);
             this.user.TabIndex = 1;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(15, 25);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(169, 21);
-            this.comboBox1.TabIndex = 0;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(20, 26);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(214, 20);
-            this.dateTimePicker1.TabIndex = 0;
-            // 
-            // Visualizar
-            // 
-            this.Visualizar.Location = new System.Drawing.Point(206, 185);
-            this.Visualizar.Name = "Visualizar";
-            this.Visualizar.Size = new System.Drawing.Size(63, 24);
-            this.Visualizar.TabIndex = 1;
-            this.Visualizar.Text = "Visualizar";
-            this.Visualizar.UseVisualStyleBackColor = true;
             // 
             // principal
             // 

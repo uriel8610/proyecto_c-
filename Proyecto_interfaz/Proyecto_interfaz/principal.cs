@@ -1071,6 +1071,37 @@ namespace Proyecto_interfaz
             txtFinal.Text = "";
         }
 
+        private void dgvAltaBajaM_Click(object sender, EventArgs e)
+        {
+            BaseDeDatos bd = new BaseDeDatos();
+            consulta = "UPDATE Medico SET Estado= 'Alta'  WHERE Estado='Baja'";
+            datos.Abrir();
+            datos.leer(consulta);
+            if (datos.cnLeerConsulta.Read())
+            {
+                int renglon = dgvAltaBajaM.Rows.Add();
+                dgvAltaBajaM.Rows[renglon].Cells["Estado"].Value = datos.cnLeerConsulta[4].ToString();
+            }
+
+            datos.cerrar();
+        }
+
+        private void dgvAltaBajaU_Click(object sender, EventArgs e)
+        {
+             BaseDeDatos bd = new BaseDeDatos();
+            consulta = "UPDATE Usuario SET Estado= 'Alta'  WHERE Estado='Baja'";
+            datos.Abrir();
+            datos.leer(consulta);
+            if (datos.cnLeerConsulta.Read())
+            {
+                int renglon = dgvAltaBajaM.Rows.Add();
+                dgvAltaBajaM.Rows[renglon].Cells["Estado"].Value = datos.cnLeerConsulta[4].ToString();
+            }
+
+            datos.cerrar();
+        }
+        }
+
      }
-   }
+   
 
