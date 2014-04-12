@@ -28,8 +28,8 @@ namespace Proyecto_interfaz
         /// </summary>
         DateTime fechaSistema = DateTime.Now;
         string fecha;
-        //Strings para juardar los datos de seleccion para el reporte
-        String TInicio, TFinal, RMedico, RPaciente, RUsuario;
+        //Strings para guardar los datos de seleccion para el reporte
+        String TInicio, TFinal, RMedico, RPaciente, RUsuario, UsuarioActivo;
         public string nombre, apellido;
         public int idUsuario;
 
@@ -253,7 +253,7 @@ namespace Proyecto_interfaz
         }
 
 
-        public void limpiarPaciente() 
+        public void limpiarPaciente()
         {
             txApellidoEP.Text = string.Empty;
             txDireccionEP.Text = string.Empty;
@@ -262,8 +262,8 @@ namespace Proyecto_interfaz
             txEdadEP.Text = string.Empty;
             //txtCedulaAM.Text = string.Empty;
             txfechaRegistroEP.Text = string.Empty;
-            rbFemeninoEP.Checked = false;                        
-            cbNombreEP.Text = string.Empty;     
+            rbFemeninoEP.Checked = false;
+            cbNombreEP.Text = string.Empty;
         }
 
 
@@ -277,12 +277,14 @@ namespace Proyecto_interfaz
             txtFinal.Text = mtcFinal.SelectionEnd.ToString("yyyy/MM/dd");
             TInicio = txtInicio.Text;
             TFinal = txtFinal.Text;
-            RMedico = (cbMedicoReporte.SelectedIndex+1).ToString();
-            RUsuario = (cbUsuarioReporte.SelectedIndex+1).ToString();
-            RPaciente = (cbPacienteReporte.SelectedIndex+1).ToString();
-            Reporte repo = new Reporte(TInicio, TFinal, RMedico, RPaciente, RUsuario);
+            RMedico = (cbMedicoReporte.SelectedIndex + 1).ToString();
+            RUsuario = (cbUsuarioReporte.SelectedIndex + 1).ToString();
+            RPaciente = (cbPacienteReporte.SelectedIndex + 1).ToString();
+            UsuarioActivo = user.Text;
+
+            Reporte repo = new Reporte(TInicio, TFinal, RMedico, RUsuario, RPaciente, UsuarioActivo);
             repo.Show();
-}
+        }
 
 
 
@@ -587,7 +589,7 @@ namespace Proyecto_interfaz
                 ///Mensaje de aviso de insercion correcta 
                 MessageBox.Show("Elemento insertado correctamente");
                 cbNombreEU.Items.Add(txtNombre_AU.Text); ///Agrega al conboBox de "Editar Usuarios"
-                
+
                 ///Funcion para limpiar los elementos de la interfaz
                 LimpiarCampos();
             }
@@ -715,7 +717,7 @@ namespace Proyecto_interfaz
             c1.cerrar();
 
             cbNombreEU.Items.Add(txtNombre_AU.Text); //Agrega al conboBox de "Editar Usuarios"
-            MessageBox.Show("Usuario insertado correctamente");            
+            MessageBox.Show("Usuario insertado correctamente");
         }
 
 
@@ -725,7 +727,7 @@ namespace Proyecto_interfaz
         {
             BaseDeDatos bd = new BaseDeDatos();
             txtFecha_AU.Text = fecha;
-            
+
             datos.Abrir();
 
             consulta = "SELECT descripcion from tipousuario";
@@ -783,7 +785,7 @@ namespace Proyecto_interfaz
             dgvAltaBajaU.Rows.Clear();
             dgvAltaBajaU.Columns.Clear();
             dgvAltaBajaU.Refresh();
-            
+
             string consulta = "SELECT  p.Nombre, p.Apellido, p.Direccion, u.Estado FROM Usuario u, Persona p WHERE p.idPersona= u.idPersona && Estado='Alta'";
             datos.Abrir();
             datos.leer(consulta);
@@ -811,8 +813,8 @@ namespace Proyecto_interfaz
             dgvAltaBajaU.Rows.Clear();
             dgvAltaBajaU.Columns.Clear();
             dgvAltaBajaU.Refresh();
-            
-            
+
+
             string consulta = "SELECT  p.Nombre, p.Apellido, p.Direccion, u.Estado FROM Usuario u, Persona p WHERE p.idPersona= u.idPersona && Estado='Baja'";
             datos.Abrir();
             datos.leer(consulta);
@@ -858,17 +860,17 @@ namespace Proyecto_interfaz
         //llena el combobox de los nombres de los pacientes que se pueden Editar en las citas
         public void llenar_camposEC()
         {
-        //    BaseDeDatos bd = new BaseDeDatos();
-        //    datos.Abrir();
+            //    BaseDeDatos bd = new BaseDeDatos();
+            //    datos.Abrir();
 
-        //    consulta = "SELECT p.nombre from persona p, paciente pa WHERE p.idPersona=pa.idPersona";
-        //    datos.leer(consulta);
-        //    while (datos.cnLeerConsulta.Read())
-        //    {
-        //        cbHorario.Items.Add(datos.cnLeerConsulta[0]);
-        //    }
+            //    consulta = "SELECT p.nombre from persona p, paciente pa WHERE p.idPersona=pa.idPersona";
+            //    datos.leer(consulta);
+            //    while (datos.cnLeerConsulta.Read())
+            //    {
+            //        cbHorario.Items.Add(datos.cnLeerConsulta[0]);
+            //    }
 
-        //    datos.cerrar();
+            //    datos.cerrar();
         }
 
         private void tabPage5_Click(object sender, EventArgs e)
@@ -916,25 +918,25 @@ namespace Proyecto_interfaz
             //Falta tomar el valor de la de la persona que selecciona en el datagridview
 
 
-        
+
         }
 
         private void btAgregarCita_Click(object sender, EventArgs e)
         {
-           BaseDeDatos c1 = new BaseDeDatos();
+            BaseDeDatos c1 = new BaseDeDatos();
             string fechaCita = mcAgregarCitas.SelectionEnd.ToString("yyyy-MM-dd");
             int idMedico, idHorario;
             idMedico = cbAgragarCitaM.SelectedIndex + 1;
             idHorario = cbAgregarCitaH.SelectedIndex + 1;
-            string  consulta2, consulta3, consulta4, consulta111;
+            string consulta2, consulta3, consulta4, consulta111;
             bool Bandera = false;
 
-            consulta111 = "SELECT * FROM Cita WHERE idMedico = " + idMedico + "  AND idPaciente =" + idPersonaAgregarCita + " AND idHorario =" + idHorario + " AND fecha = '"+fechaCita+" '";
-           // MessageBox.Show(consulta111);
+            consulta111 = "SELECT * FROM Cita WHERE idMedico = " + idMedico + "  AND idPaciente =" + idPersonaAgregarCita + " AND idHorario =" + idHorario + " AND fecha = '" + fechaCita + " '";
+            // MessageBox.Show(consulta111);
             c1.Abrir();
             c1.leer(consulta111);
 
-            while(c1.cnLeerConsulta.Read())
+            while (c1.cnLeerConsulta.Read())
             {
                 MessageBox.Show("Fecha ya ocupada, Seleccione Otra ");
                 Bandera = true;
@@ -998,7 +1000,7 @@ namespace Proyecto_interfaz
                 MessageBox.Show(idPersonaAgregarCita.ToString());
             }
 
-            c1.cerrar();         
+            c1.cerrar();
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -1035,7 +1037,7 @@ namespace Proyecto_interfaz
             {
                 cbPacienteReporte.Items.Add(datos.cnLeerConsulta[0]);
             }
-               datos.cerrar();
+            datos.cerrar();
 
 
         }
@@ -1053,8 +1055,8 @@ namespace Proyecto_interfaz
         public void TipoUsuario()
         {
             int id = Convert.ToInt32(idUsuario.ToString());
-           // MessageBox.Show(id.ToString());
-            user.Text = nombre+" "+apellido;
+            // MessageBox.Show(id.ToString());
+            user.Text = nombre + " " + apellido;
             switch (id)
             {
                 case 1:
@@ -1111,7 +1113,7 @@ namespace Proyecto_interfaz
             txtFinal.Text = "";
         }
 
-<<<<<<< HEAD
+
         private void dgvAltaBajaM_Click(object sender, EventArgs e)
         {
             BaseDeDatos bd = new BaseDeDatos();
@@ -1129,7 +1131,7 @@ namespace Proyecto_interfaz
 
         private void dgvAltaBajaU_Click(object sender, EventArgs e)
         {
-             BaseDeDatos bd = new BaseDeDatos();
+            BaseDeDatos bd = new BaseDeDatos();
             consulta = "UPDATE Usuario SET Estado= 'Alta'  WHERE Estado='Baja'";
             datos.Abrir();
             datos.leer(consulta);
@@ -1141,7 +1143,7 @@ namespace Proyecto_interfaz
 
             datos.cerrar();
         }
-=======
+
         private void cbmedicoscita_SelectedIndexChanged(object sender, EventArgs e)
         {
             //BaseDeDatos bd = new BaseDeDatos();
@@ -1172,7 +1174,7 @@ namespace Proyecto_interfaz
             //}
 
             //datos.cerrar();
-        
+
         }
 
         private void cbHorario_SelectedIndexChanged(object sender, EventArgs e)
@@ -1203,7 +1205,7 @@ namespace Proyecto_interfaz
         private void btAgregarPaciente_Click(object sender, EventArgs e)
         {
             //new
-            string sexo="N";
+            string sexo = "N";
 
 
             if (chAgregarPacienteM.Checked == true && chAgregarPacienteF.Checked == true)
@@ -1216,7 +1218,7 @@ namespace Proyecto_interfaz
             }
 
 
-            if (txtAgregarPacienteN.Text == string.Empty || txtAgregarPacienteA.Text == string.Empty || txtAgregarPacienteD.Text == string.Empty || txtAgregarPacienteT.Text == string.Empty || txtAgregarPacienteEm.Text == string.Empty || txtAgregarPacienteE.Text==string.Empty )
+            if (txtAgregarPacienteN.Text == string.Empty || txtAgregarPacienteA.Text == string.Empty || txtAgregarPacienteD.Text == string.Empty || txtAgregarPacienteT.Text == string.Empty || txtAgregarPacienteEm.Text == string.Empty || txtAgregarPacienteE.Text == string.Empty)
             {
 
                 MessageBox.Show("rellene todos los campos");
@@ -1326,9 +1328,9 @@ namespace Proyecto_interfaz
             }
 
 
->>>>>>> 7a5f2e010268091b6b1fc502dc18fc3416eade40
         }
 
-     }
+    }
+}
    
 

@@ -52,11 +52,11 @@
             this.Visualizar = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-<<<<<<< HEAD
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-=======
+
+            //this.comboBox1 = new System.Windows.Forms.ComboBox();
+
             this.cbmedicoscita = new System.Windows.Forms.ComboBox();
->>>>>>> 7a5f2e010268091b6b1fc502dc18fc3416eade40
+
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.cbNewHorario = new System.Windows.Forms.ComboBox();
             this.label32 = new System.Windows.Forms.Label();
@@ -220,8 +220,7 @@
             this.btVerEspecialidad = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.user = new System.Windows.Forms.TextBox();
-<<<<<<< HEAD
-=======
+
             this.label49 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
@@ -238,7 +237,7 @@
             this.txtAgregarPacienteEm = new System.Windows.Forms.TextBox();
             this.txtAgregarPacienteE = new System.Windows.Forms.TextBox();
             this.btAgregarPaciente = new System.Windows.Forms.Button();
->>>>>>> 7a5f2e010268091b6b1fc502dc18fc3416eade40
+
             this.tcAgregarEspecialidad.SuspendLayout();
             this.tpCita.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -516,15 +515,15 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Medicos";
             // 
-<<<<<<< HEAD
-            // comboBox1
+
+            /*// comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(15, 25);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(169, 21);
             this.comboBox1.TabIndex = 0;
-=======
+            */
             // cbmedicoscita
             // 
             this.cbmedicoscita.FormattingEnabled = true;
@@ -533,7 +532,7 @@
             this.cbmedicoscita.Size = new System.Drawing.Size(169, 21);
             this.cbmedicoscita.TabIndex = 0;
             this.cbmedicoscita.SelectedIndexChanged += new System.EventHandler(this.cbmedicoscita_SelectedIndexChanged);
->>>>>>> 7a5f2e010268091b6b1fc502dc18fc3416eade40
+
             // 
             // tabPage5
             // 
@@ -2105,8 +2104,7 @@
             this.user.Size = new System.Drawing.Size(653, 20);
             this.user.TabIndex = 1;
             // 
-<<<<<<< HEAD
-=======
+
             // label49
             // 
             this.label49.AutoSize = true;
@@ -2244,7 +2242,7 @@
             this.btAgregarPaciente.UseVisualStyleBackColor = true;
             this.btAgregarPaciente.Click += new System.EventHandler(this.btAgregarPaciente_Click);
             // 
->>>>>>> 7a5f2e010268091b6b1fc502dc18fc3416eade40
+
             // principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
